@@ -1,4 +1,3 @@
-bolsa
+Bolsa de Empleos
 =====
-
-prototipo de una bolsa de trabajo...
+Prototipo de una bolsa de Empleos en PHP, CSS3, HTML5 y JS.
