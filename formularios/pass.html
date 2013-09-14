@@ -3,41 +3,48 @@
 	<html>
 		<head>
 			<title> Formulario de loging</title>
+            	<link rel="stylesheet" href="css/bootstrap.css">
+    			<link rel="stylesheet" href="css/bootstrap-theme.css">
+   				<link rel="stylesheet" href="css/bootstrap.min.css">
+				<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    			<link rel="stylesheet" href="css/main.css">
 
-    <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+            	<script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		</head>
 		<body>
+        <div>
 			<form class="form-horizontal">
-           <section>
-  <div class="control-group">
-           <fieldset>
-          
-    <label class="control-label" for="inputEmail">Correo</label>
-    <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email">
-    </div>
+  			  
+  			<div class="form-group">
+           	<fieldset>
+            
+            <div class="form-group">
+    		<label class="col-lg-3 control-label" for="inputEmail">Correo</label>
+    		<div class="col-lg-4">
+      		<input type="text" class="form-control input-lg" id = "focusedInput" placeholder="Email">
+    		</div>
+            </div>
     
-    <div class="control-group">
-    <label class="control-label" for="inputPassword">Password</label>
-    <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Password">
-   
-  </div>
+            <div class="form-group">
+            <label class="col-lg-3 control-label" for="inputPassword">Password</label>
+            <div class="col-lg-4">
+            <input type="password" class="form-control input-lg" id = "focusedInput" placeholder="Password">
+            </div>
+  			</div>
   
-  <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Recordarme
-      </label> 
-      <button type="submit" class="btn btn-primary">Ingresar</button> <a href="registrarse.html"> Registrate</a>
-    </div>
-  </div>
+ 		 	<div class="form-group">
+   			
+      		 <label class="checkbox-inline col-lg-4 control-label">Recordarme
+        	 <input type="checkbox" > 
+             </label> 
+     		 <button type="submit" class="btn btn-primary">Ingresar</button> 
+             <a href="registrarse.html"> Registrate</a>
+    		 </div>
+ 			 </div>
 
-              </fieldset>
- 
-            <p>&nbsp;</p>
-			</form>
-
+              			</fieldset>
+ 					</div>
+				</form>
+			</div>
 		</body>
-
 	</html>
