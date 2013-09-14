@@ -1,37 +1,58 @@
 <doctype html>
 	<html>
 		<head>
-			<title> Formulario de para registro de empresa</title>
+		<title> Formulario de para registro de empresa</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+    	<link rel="stylesheet" href="css/bootstrap-theme.css">
+   		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    	<link rel="stylesheet" href="css/main.css">
 
-    <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    	<script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		</head>
 		<body>
-			<form action="#" method="POST">
-            <div class="control-group">
-           <fieldset>
-           <legend>Datos de Regitro</legend>
-         
-						  <p><label for="Nombre" class="col-lg-2 control-labe">Nombre del Encargado</label>
-						  <input type="text" class="from-control" placeholder="Escriba su nombre" required>
-						  </p><br>
-         
-						  <p><label for="Nombre" class="col-lg-2 control-labe">Nombre de la Empresa</label>
-						  <input type="text" class="from-control" placeholder="Nombre de la empresa" required>
-						  </p><br>
-                           <p>
-						  <label for="correo" class="col-lg-2 control-labe">Correo</label>
-						  <input type="text" class="from-control" placeholder="adcd@algo.aaa" required>
-						  </p><br>
-                           <p>Fecha de Funcionar:<input type="date" name="fecha">
-						  </p> 
-            </fieldset>
+        <div>
+		<form action="#" method="POST" class="form-horizontal" role="form">
+        <div class="form-group">
+        <fieldset>
+           <center><legend>Datos de Regitro</legend></center>
            
+          <div class="form-group">
+          
+          <div class="form-group">
+          <label for="Nombre" class="col-lg-3 control-label">Nombre del Encargado</label>
+          <div class="col-lg-4">
+          <input type="text" class="form-control" id = "focusedInput" placeholder="Escriba su nombre" required>
+          </div>
+          </div>
+         
+          <div class="form-group">
+          <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
+          <div class="col-lg-4">
+          <input type="text" class="from-control" placeholder="Nombre de la empresa" required>
+          </div>
+          </div>
+          
+          <div class="form-group">
+          <label for="correo" class="col-lg-3 control-label">Correo</label>
+          <div class="col-lg-4">
+          <input type="text" class="form-control" id = "focusedInput" placeholder="adcd@algo.aaa" required>
+          </div>
+          </div>
+        
+          <div class="form-group">
+          <label for="fecha" class="col-lg-3 control-label">Fecha de Funcionar</label>
+          <div class="col-lg-4">
+          <input type="date" name="fecha" class="form-control" id = "focusedInput">
+          </div> 
+          </div>
+            
+            </div>            
+            </fieldset>
             </div>
-           <button type="submit">Enviar</button>   
-            <p>&nbsp;</p>
-			</form>
-
-			
+           
+           			<button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>   
+				</form>
+			</div>
 		</body>
-
 	</html>
