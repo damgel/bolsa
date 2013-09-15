@@ -1,380 +1,380 @@
-<doctype html>
-    <html>
-        <head>
-            <title></title>
-            <link rel="stylesheet" href="assets/css/bootstrap.css">
-            <link rel="stylesheet" href="assets/css/bootstrap-theme.css">
-            <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
-            <link rel="stylesheet" href="assets/css/main.css">
+<!Doctype html>
+<html lang="es">
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
 
-        </head>
+    </head>
 
-        <body>
-            <div> 
-                <form action="#" method="POST" class="form-horizontal" role="form">
+    <body>
+        <div> 
+            <form action="#" method="POST" class="form-horizontal" role="form">
 
-                    <div class="form-group">
-                        <fieldset>
-                            <center><legend> INFORMACION PERSONAL</legend></center>
+                <div class="form-group">
+                    <fieldset>
+                        <center><legend> INFORMACION PERSONAL</legend></center>
+
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="Nombre" class="col-lg-3 control-label" >Nombre</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput" required>
+                                </div>
+                            </div>
 
                             <div class="form-group">
-                                <div class="form-group">
-                                    <label for="Nombre" class="col-lg-3 control-label" >Nombre</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput" required>
-                                    </div>
+                                <label for="Apellido"class="col-lg-3 control-label">Apellido</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput" required>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="Apellido"class="col-lg-3 control-label">Apellido</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput" required>
-                                    </div>
+                            <div class="form-group">
+                                <label for="Edad"class="col-lg-3 control-label">Edad</label>
+                                <div class="col-lg-4">
+                                    <input type="number" name="num" min="18" max="65" class="form-control" id = "focusedInput" required>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="Edad"class="col-lg-3 control-label">Edad</label>
-                                    <div class="col-lg-4">
-                                        <input type="number" name="num" min="18" max="65" class="form-control" id = "focusedInput" required>
-                                    </div>
+
+                            <div class="form-group">
+                                <label for="Fecha de nacimienro"class="col-lg-3 control-label">Fecha de Nacimiento</label>
+                                <div class="col-lg-4">
+                                    <input type="date" name="fecha" class="form-control" id = "focusedInput" required>
                                 </div>
+                            </div>
 
-
-                                <div class="form-group">
-                                    <label for="Fecha de nacimienro"class="col-lg-3 control-label">Fecha de Nacimiento</label>
-                                    <div class="col-lg-4">
-                                        <input type="date" name="fecha" class="form-control" id = "focusedInput" required>
-                                    </div>
+                            <div class="form-group">
+                                <label for="Estado Civil" class="col-lg-3 control-label">Estado Civil</label> 
+                                <div class="col-lg-4">
+                                    <select name="estadoci" id="estadoci" class="form-control" id = "focusedInput" required>
+                                        <option value="S">Solter@</option>	
+                                        <option value="C">Casad@</option>
+                                        <option value="V">Viud@</option>
+                                        <option value="D">Divorciad@</option>
+                                    </select>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="Estado Civil" class="col-lg-3 control-label">Estado Civil</label> 
-                                    <div class="col-lg-4">
-                                        <select name="estadoci" id="estadoci" class="form-control" id = "focusedInput" required>
-                                            <option value="S">Solter@</option>	
-                                            <option value="C">Casad@</option>
-                                            <option value="V">Viud@</option>
-                                            <option value="D">Divorciad@</option>
-                                        </select>
-                                    </div>
+                            <div class="form-group">
+                                <label for="Direccion" class="col-lg-3 control-label">Direccion</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="Escriba su Direccion" class="form-control" id = "focusedInput" required>
                                 </div>
+                            </div>						
 
-                                <div class="form-group">
-                                    <label for="Direccion" class="col-lg-3 control-label">Direccion</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="Escriba su Direccion" class="form-control" id = "focusedInput" required>
-                                    </div>
-                                </div>						
-
-                                <div class="form-group">
-                                    <label for="DUI" class="col-lg-3 control-label">N de DUI</label>
-                                    <div class="col-lg-4">
-                                        <input type="text"  placeholder="Escriba el numero" class="form-control" id = "focusedInput" required>
-                                    </div>
+                            <div class="form-group">
+                                <label for="DUI" class="col-lg-3 control-label">N de DUI</label>
+                                <div class="col-lg-4">
+                                    <input type="text"  placeholder="Escriba el numero" class="form-control" id = "focusedInput" required>
                                 </div>
+                            </div>
 
 
-                                <div class="form-group">
-                                    <label for="Phone" class="col-lg-3 control-label"> Telefono </label>
-                                    <div class="col-lg-4">
-                                        <input type="tel" name="phone" class="form-control" id = "focusedInput" required>
-                                    </div>
+                            <div class="form-group">
+                                <label for="Phone" class="col-lg-3 control-label"> Telefono </label>
+                                <div class="col-lg-4">
+                                    <input type="tel" name="phone" class="form-control" id = "focusedInput" required>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="Celular" class="col-lg-3 control-label"> Celular </label>
-                                    <div class="col-lg-4">
-                                        <input type="tel" id="phone" name="phone" class="form-control" id = "focusedInput" required>
-                                    </div>     
+                            <div class="form-group">
+                                <label for="Celular" class="col-lg-3 control-label"> Celular </label>
+                                <div class="col-lg-4">
+                                    <input type="tel" id="phone" name="phone" class="form-control" id = "focusedInput" required>
                                 </div>     
+                            </div>     
 
-                                <div class="form-group">
-                                    <label for="Correo" class="col-lg-3 control-label">Correo</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" class="form-control" placeholder="Escriba un correo aqui"  id = "focusedInput" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="genero" class="col-lg-3 control-label">Sexo</label>
-                                    <div class="col-lg-4">
-                                        <select name="sexolst" class="form-control input-lg" id = "focusedInput">
-                                            <option value="M">Masculino</option>	
-                                            <option value="F">Femenino</option>
-                                        </select>
-                                    </div>
+                            <div class="form-group">
+                                <label for="Correo" class="col-lg-3 control-label">Correo</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" placeholder="Escriba un correo aqui"  id = "focusedInput" required>
                                 </div>
                             </div>
-                        </fieldset>
-                    </div>		
 
-                    <div class="form-group"> 
-                        <fieldset>
-                            <center><legend> Eduacacion Basica </legend></center>
                             <div class="form-group">
-                                <div class="form-group"> 
-                                    <label for="Lugar Basica" class="col-lg-3 control-label">Lugar de Estudio</label>
-                                    <div class="form-group col-lg-4"> 
-                                        <input type="text" placeholder="Lugar de Estudio" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div> 
+                                <label for="genero" class="col-lg-3 control-label">Sexo</label>
+                                <div class="col-lg-4">
+                                    <select name="sexolst" class="form-control input-lg" id = "focusedInput">
+                                        <option value="M">Masculino</option>	
+                                        <option value="F">Femenino</option>
+                                    </select>
                                 </div>
                             </div>
-                        </fieldset> 
-                    </div>      
+                        </div>
+                    </fieldset>
+                </div>		
+
+                <div class="form-group"> 
+                    <fieldset>
+                        <center><legend> Eduacacion Basica </legend></center>
+                        <div class="form-group">
+                            <div class="form-group"> 
+                                <label for="Lugar Basica" class="col-lg-3 control-label">Lugar de Estudio</label>
+                                <div class="form-group col-lg-4"> 
+                                    <input type="text" placeholder="Lugar de Estudio" class="form-control input-lg" id = "focusedInput" required> 
+                                </div> 
+                            </div>
+                        </div>
+                    </fieldset> 
+                </div>      
 
 
-                    <div class="form-group"> 
-                        <fieldset>
-                            <center><legend> Eduacacion Media</legend></center>
-                            <div class="form-group">
-                                <div class="form-group">  
-                                    <label for="Bachiller Opcion" class="col-lg-3 control-label"> Bachiller en</label>
-                                    <div class="col-lg-4"> 
-                                        <input type="text" placeholder="Opcion" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div>
-                                </div>
-
-                                <div class="form-group"> 
-                                    <label for="Lugar Media" class="col-lg-3 control-label">Lugar de Estudio</label> 
-                                    <div class="col-lg-4"> 
-                                        <input type="text" placeholder="Lugar de Estudio" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div> 
+                <div class="form-group"> 
+                    <fieldset>
+                        <center><legend> Eduacacion Media</legend></center>
+                        <div class="form-group">
+                            <div class="form-group">  
+                                <label for="Bachiller Opcion" class="col-lg-3 control-label"> Bachiller en</label>
+                                <div class="col-lg-4"> 
+                                    <input type="text" placeholder="Opcion" class="form-control input-lg" id = "focusedInput" required> 
                                 </div>
                             </div>
-                        </fieldset> 
-                    </div>
 
-
-                    <div class="form-group"> 
-                        <fieldset>
-                            <center><legend> Eduacacion Superior</legend></center>	
-
-                            <div class="form-group">
-                                <div class="form-group">  
-                                    <label for="Universidad"  class="col-lg-2 control-label">Universidad</label>
-                                    <div class="col-lg-4"> 
-                                        <select name="universidades" class="form-control input-lg" id="sexolst">
-                                            <option value="GAVIDIA">Universidad Gavidia</option>
-                                            <option value="UES">Universidad Nacional</option>
-                                            <option value="UTEC">Universidad Tecnologica</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Titulo" class="col-lg-2 control-label">Titulo en</label>
-                                    <div class="col-lg-3"> 
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required>  
-                                    </div> 
-                                    <label for="Lugart" class="col-lg-1 control-label">Lugar donde lo optuvo</label>
-                                    <div class="col-lg-3"> 
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required>
-                                    </div> 
-                                    <label for="Fechat"class="col-lg-1 control-label">Fecha que lo optuvo</label>
-                                    <div class="col-lg-2"> 
-                                        <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput"> 
-                                    </div>  
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Maestria" class="col-lg-2 control-label">Maestria</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" placeholder="----------" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div>
-                                    <label for="Lugar Maestria"  class="col-lg-1 control-label">Lugar donde lo optuvo</label> 
-                                    <div class="col-lg-3">
-                                        <input type="text" placeholder="----------" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div>
-                                    <label for="Fecha Maestria"  class="col-lg-1 control-label">Fecha que lo optuvo</label>
-                                    <div class="col-lg-2">
-                                        <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput"> 
-                                    </div>
-                                </div>
-
-                                <div class="form-group">    
-                                    <label for="Diplomado" class="col-lg-2 control-label">Diplomado</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" placeholder="----------" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div>
-                                    <label for="Lugar Diplomado" class="col-lg-1 control-label">Lugar donde lo optuvo</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div>
-                                    <label for="Maestria" class="col-lg-1 control-label">Fecha de que lo optuvo</label>
-                                    <div class="col-lg-2">
-                                        <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput"> 
-                                    </div>
-                                </div>
-
-                                <div class="form-group"> 
-                                    <label for="Doctorado" class="col-lg-2 control-label">Doctorado</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" placeholder="-----------" class="form-control input-lg" id = "focusedInput"required> 
-                                    </div>
-                                    <label for="Lugar Doctorado" class="col-lg-1 control-label">Lugar donde lo optuvo</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput"required>
-                                    </div>
-                                    <label for="Fecla Doctorado" class="col-lg-1 control-label">Fecha de que lo optuvo</label>
-                                    <div class="col-lg-2">
-                                        <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput">
-                                    </div> 
-                                </div>
-
-
-                                <center> <legend> Experiencia en el Medio</legend></center>
-
-                                <div class="form-group">      
-                                    <label for="Experiencia en anos" class="col-lg-3 control-label">Experiencia en anos</label>
-                                    <div class="col-lg-4">
-                                        <select name="anos" class="form-control input-lg" id = "focusedInput">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="mas de 5">mas de 5</option>
-                                            <option value="Sin experiencia">sin experiencia</option>
-                                        </select>
-                                    </div>
-                                </div>
-
+                            <div class="form-group"> 
+                                <label for="Lugar Media" class="col-lg-3 control-label">Lugar de Estudio</label> 
+                                <div class="col-lg-4"> 
+                                    <input type="text" placeholder="Lugar de Estudio" class="form-control input-lg" id = "focusedInput" required> 
+                                </div> 
                             </div>
-                        </fieldset>
-                    </div>
+                        </div>
+                    </fieldset> 
+                </div>
 
 
-                    <div class="form-group">  
+                <div class="form-group"> 
+                    <fieldset>
+                        <center><legend> Eduacacion Superior</legend></center>	
 
-                        <fieldset>
-                            <center><legend> Rerencias Laborales</legend></center>
-                            <div class="form-group">
-
-                                <div class="form-group">
-                                    <label for="Nombre" class="col-lg-2 control-label">Nombre</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput"required> 
-                                    </div>
-                                    <label for="Apellido" class="col-lg-1 control-label">Apellido</label> 
-                                    <div class="col-lg-3">
-                                        <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput"required>
-                                    </div>
-                                    <label for="telefono" class="col-lg-1 control-label">Telefono</label>
-                                    <div class="col-lg-2">
-                                        <input type="telefono" class="form-control" pattern="(+[0-9]{3}) [0-9]{4} [0-9]{4}"  id = "focusedInput" required>
-                                    </div>
+                        <div class="form-group">
+                            <div class="form-group">  
+                                <label for="Universidad"  class="col-lg-2 control-label">Universidad</label>
+                                <div class="col-lg-4"> 
+                                    <select name="universidades" class="form-control input-lg" id="sexolst">
+                                        <option value="GAVIDIA">Universidad Gavidia</option>
+                                        <option value="UES">Universidad Nacional</option>
+                                        <option value="UTEC">Universidad Tecnologica</option>
+                                    </select>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="Nombre" class="col-lg-2 control-label"> Nombre </label>
-                                    <div class="col-lg-3">
-                                        <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput"required> 
-                                    </div>              					              
-                                    <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput" required>
-                                    </div>        
-                                    <label for="telefono" class="col-lg-1 control-label">Telefono </label>
-                                    <div class="col-lg-2">
-                                        <input type="telefono" class="form-control" pattern="(+[0-9]{3}) [0-9]{4} [0-9]{4}" required  id = "focusedInput"> 
-                                    </div>
-                                </div>
-
-                                <div class="form-group"> 
-                                    <label for="Nombre" class="col-lg-2 control-label">Nombre</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput"required>
-                                    </div>       
-                                    <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput"required> 
-                                    </div>                                      
-                                    <label for="telefono" class="col-lg-1 control-label">Telefono </label>
-                                    <div class="col-lg-2">
-                                        <input type="telefono" class="form-control" pattern="(+[0-9]{3}) [0-9]{4} [0-9]{4}" required  id = "focusedInput">  
-                                    </div>
-                                </div>
-
-
-                            </div>              
-                        </fieldset>
-                    </div>
-
-
-
-
-
-                    <div class="form-group">
-                        <fieldset>       
-                            <center><legend> Otros Conocimientos </legend></center>
+                            </div>
 
                             <div class="form-group">
-
-                                <div class="form-group">
-                                    <label for="idioma"class="col-lg-3 control-label" >Practica otro idioma</label>
-                                    <div class="form-group  col-lg-4">
-                                        <input type="radio" name="idioma"  id = "focusedInput" checked> Si
-                                        <input type="radio" name="idioma"  id = "focusedInput"> No
-                                    </div>
-                                </div>
-
-                                <div class="form-group">	
-
-                                    <label for="Idioma" class="col-lg-3 control-label">Que idioma practica</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="--------"  class="form-control input-lg" id = "focusedInput" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <label for="Otro Idioma" class="col-lg-3 control-label">Que otro idioma practica</label>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Idioma2" class="col-lg-2 control-label">Idioma</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="Idioma" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div> 
-                                    <label for="Lugar Idioma1" class="col-lg-2 control-label">Lugar donde lo aprendio</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="Idioma3" class="col-lg-2 control-label">Idioma</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="Idioma" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div> 
-                                    <label for="Lugar Idioma" class="col-lg-2 control-label">Lugar donde lo aprendio</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required>  
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="Idioma4" class="col-lg-2 control-label">Idioma</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="Idioma" class="form-control input-lg" id = "focusedInput" required> 
-                                    </div> 
-                                    <label for="Lugar Idioma3" class="col-lg-2 control-label">Lugar donde lo aprendio</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput"required>  
-                                    </div> 
+                                <label for="Titulo" class="col-lg-2 control-label">Titulo en</label>
+                                <div class="col-lg-3"> 
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required>  
+                                </div> 
+                                <label for="Lugart" class="col-lg-1 control-label">Lugar donde lo optuvo</label>
+                                <div class="col-lg-3"> 
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required>
+                                </div> 
+                                <label for="Fechat"class="col-lg-1 control-label">Fecha que lo optuvo</label>
+                                <div class="col-lg-2"> 
+                                    <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput"> 
                                 </div>  
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Maestria" class="col-lg-2 control-label">Maestria</label>
+                                <div class="col-lg-3">
+                                    <input type="text" placeholder="----------" class="form-control input-lg" id = "focusedInput" required> 
+                                </div>
+                                <label for="Lugar Maestria"  class="col-lg-1 control-label">Lugar donde lo optuvo</label> 
+                                <div class="col-lg-3">
+                                    <input type="text" placeholder="----------" class="form-control input-lg" id = "focusedInput" required> 
+                                </div>
+                                <label for="Fecha Maestria"  class="col-lg-1 control-label">Fecha que lo optuvo</label>
+                                <div class="col-lg-2">
+                                    <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput"> 
+                                </div>
+                            </div>
+
+                            <div class="form-group">    
+                                <label for="Diplomado" class="col-lg-2 control-label">Diplomado</label>
+                                <div class="col-lg-3">
+                                    <input type="text" placeholder="----------" class="form-control input-lg" id = "focusedInput" required> 
+                                </div>
+                                <label for="Lugar Diplomado" class="col-lg-1 control-label">Lugar donde lo optuvo</label>
+                                <div class="col-lg-3">
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required> 
+                                </div>
+                                <label for="Maestria" class="col-lg-1 control-label">Fecha de que lo optuvo</label>
+                                <div class="col-lg-2">
+                                    <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput"> 
+                                </div>
+                            </div>
+
+                            <div class="form-group"> 
+                                <label for="Doctorado" class="col-lg-2 control-label">Doctorado</label>
+                                <div class="col-lg-3">
+                                    <input type="text" placeholder="-----------" class="form-control input-lg" id = "focusedInput"required> 
+                                </div>
+                                <label for="Lugar Doctorado" class="col-lg-1 control-label">Lugar donde lo optuvo</label>
+                                <div class="col-lg-3">
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput"required>
+                                </div>
+                                <label for="Fecla Doctorado" class="col-lg-1 control-label">Fecha de que lo optuvo</label>
+                                <div class="col-lg-2">
+                                    <input type="date" name="fecha" class="form-control input-lg" id = "focusedInput">
+                                </div> 
+                            </div>
 
 
-                        </fieldset>
-                    </div>
+                            <center> <legend> Experiencia en el Medio</legend></center>
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                            <div class="form-group">      
+                                <label for="Experiencia en anos" class="col-lg-3 control-label">Experiencia en anos</label>
+                                <div class="col-lg-4">
+                                    <select name="anos" class="form-control input-lg" id = "focusedInput">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="mas de 5">mas de 5</option>
+                                        <option value="Sin experiencia">sin experiencia</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                </form>
-            </div>
-        </body>
-    </html>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+                <div class="form-group">  
+
+                    <fieldset>
+                        <center><legend> Rerencias Laborales</legend></center>
+                        <div class="form-group">
+
+                            <div class="form-group">
+                                <label for="Nombre" class="col-lg-2 control-label">Nombre</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput"required> 
+                                </div>
+                                <label for="Apellido" class="col-lg-1 control-label">Apellido</label> 
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput"required>
+                                </div>
+                                <label for="telefono" class="col-lg-1 control-label">Telefono</label>
+                                <div class="col-lg-2">
+                                    <input type="telefono" class="form-control" pattern="(+[0-9]{3}) [0-9]{4} [0-9]{4}"  id = "focusedInput" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Nombre" class="col-lg-2 control-label"> Nombre </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput"required> 
+                                </div>              					              
+                                <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput" required>
+                                </div>        
+                                <label for="telefono" class="col-lg-1 control-label">Telefono </label>
+                                <div class="col-lg-2">
+                                    <input type="telefono" class="form-control" pattern="(+[0-9]{3}) [0-9]{4} [0-9]{4}" required  id = "focusedInput"> 
+                                </div>
+                            </div>
+
+                            <div class="form-group"> 
+                                <label for="Nombre" class="col-lg-2 control-label">Nombre</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" placeholder="Escriba un nombre"  id = "focusedInput"required>
+                                </div>       
+                                <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" placeholder="Escriba un apellido"  id = "focusedInput"required> 
+                                </div>                                      
+                                <label for="telefono" class="col-lg-1 control-label">Telefono </label>
+                                <div class="col-lg-2">
+                                    <input type="telefono" class="form-control" pattern="(+[0-9]{3}) [0-9]{4} [0-9]{4}" required  id = "focusedInput">  
+                                </div>
+                            </div>
+
+
+                        </div>              
+                    </fieldset>
+                </div>
+
+
+
+
+
+                <div class="form-group">
+                    <fieldset>       
+                        <center><legend> Otros Conocimientos </legend></center>
+
+                        <div class="form-group">
+
+                            <div class="form-group">
+                                <label for="idioma"class="col-lg-3 control-label" >Practica otro idioma</label>
+                                <div class="form-group  col-lg-4">
+                                    <input type="radio" name="idioma"  id = "focusedInput" checked> Si
+                                    <input type="radio" name="idioma"  id = "focusedInput"> No
+                                </div>
+                            </div>
+
+                            <div class="form-group">	
+
+                                <label for="Idioma" class="col-lg-3 control-label">Que idioma practica</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="--------"  class="form-control input-lg" id = "focusedInput" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="Otro Idioma" class="col-lg-3 control-label">Que otro idioma practica</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Idioma2" class="col-lg-2 control-label">Idioma</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="Idioma" class="form-control input-lg" id = "focusedInput" required> 
+                                </div> 
+                                <label for="Lugar Idioma1" class="col-lg-2 control-label">Lugar donde lo aprendio</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required> 
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="Idioma3" class="col-lg-2 control-label">Idioma</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="Idioma" class="form-control input-lg" id = "focusedInput" required> 
+                                </div> 
+                                <label for="Lugar Idioma" class="col-lg-2 control-label">Lugar donde lo aprendio</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput" required>  
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Idioma4" class="col-lg-2 control-label">Idioma</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="Idioma" class="form-control input-lg" id = "focusedInput" required> 
+                                </div> 
+                                <label for="Lugar Idioma3" class="col-lg-2 control-label">Lugar donde lo aprendio</label>
+                                <div class="col-lg-4">
+                                    <input type="text" placeholder="--------" class="form-control input-lg" id = "focusedInput"required>  
+                                </div> 
+                            </div>  
+
+
+                    </fieldset>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+
+            </form>
+        </div>
+    </body>
+</html>
 
 
