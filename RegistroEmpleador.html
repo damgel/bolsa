@@ -1,28 +1,40 @@
-<!Doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <title>
-            
-        </title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Registro Empleador</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+        <script src="assets/js/prefixfree.js"></script>
         <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <div>
-
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+       <div>
             <form action="#" method="POST" class="form-horizontal" role="form">
                 <div class="form-group">
                     <fieldset>
                         <center><legend> Informacion de la Empresa</legend></center>
-                        <div class="form-group">	
+                        <div class="form-group">    
 
                             <div class="form-group">
                                 <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
                                 <div class="col-lg-4">
                                     <input type="text" class="form-control" id = "focusedInput"  placeholder="Escriba un nombre" required>
                                 </div>
-                            </div>		 
+                            </div>       
 
                             <div class="form-group">
                                 <label for="correo" class="col-lg-3 control-label">Correo</label>
@@ -41,16 +53,11 @@
                         </div>
                     </fieldset>
                 </div>
-
-
                 <div class="form-group">             
                     <fieldset>
                         <center><legend> Detalles de la oferta</legend></center>
                         <div class="form-group">  
-
-
-
-                            <div class="form-group">
+                           <div class="form-group">
                                 <label for="oferta" class="col-lg-3 control-label">Nombre de la Oferta</label>
                                 <div class="col-lg-4">
                                     <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required>
@@ -63,29 +70,23 @@
                                     <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required>
                                 </div>
                             </div>
-
-
                             <div class="form-group">
                                 <label for="cargo" class="col-lg-3 control-label">Cargo Solicitado</label>
                                 <div class="col-lg-4">
                                     <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required>
                                 </div>
                             </div>
-
-
                             <div class="form-group"> 
                                 <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                 <div class="col-lg-4">
                                     <input type="number" name="num" min="1" max="10" class="form-control" id = "focusedInput" required>
                                 </div>
                             </div>
-
-
                             <div class="form-group">              
                                 <label for="tipo contratacion" class="col-lg-3 control-label">Tipo de Contratacion</label>
                                 <div class="col-lg-4">
                                     <select name="estadoci" class="form-control" id = "focusedInput" required>
-                                        <option value="TC">Tiempo Completo</option>	
+                                        <option value="TC">Tiempo Completo</option> 
                                         <option value="MT">Medio Tiempo</option>
                                         <option value="T">Temporal</option>
                                     </select>
@@ -168,10 +169,6 @@
                     </fieldset>
                 </div>
 
-
-
-
-
                 <div class="form-group"> 
                     <fieldset>
                         <center><legend> Experiencias Requeridas </legend></center>
@@ -180,14 +177,11 @@
                             <label for="indispensable" class="col-lg-3 control-label">Indispensable</label>
                             <div class="col-lg-4">
                                 <Textarea class="form-control" rows="6"> </textarea>
-					</div>
-                    </div>	       
+                    </div>
+                    </div>         
                     </fieldset>   
                    </div> 
-                    
-                    
-                    
-                    
+    
                <div class="form-group">
                     <fieldset>
                      <center><legend> Educacion Superior </legend></center>
@@ -212,10 +206,7 @@
                      </div>
                  </fieldset>
                  </div>
-                    
-                    
-                    
-                    
+  
                  <div class="form-group"> 
                     <fieldset>
                     <center><legend> Oferta de Empleo </legend></center>
@@ -228,12 +219,19 @@
                     </div>
                      
                 </fieldset>
-              	</div>
-           		<button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>   
-       			
-			</form>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>   
+                
+            </form>
 
-		 </div>	
-		</body>
+         </div> 
+ 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="assets/js/jquery-v1.10.2.js"></script>
 
-	</html>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+    </body>
+</html>
