@@ -1,41 +1,50 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head >
-    <title>Ingresa</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="assets/login.css" rel="stylesheet" />
 
+  <doctype html>
+	<html>
+		<head>
+			<title> Formulario de loging</title>
+            	<link rel="stylesheet" href="assets/css/bootstrap.css">
+    			<link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+   				<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+				<link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+    			<link rel="stylesheet" href="assets/css/main.css">
 
-  </head>
-   <body>
-    <h1>Ingresa</h1>
-    <section>
-    <form class="form-horizontal">assets/
+            	<script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		</head>
+		<body>
+        <div>
+			<form class="form-horizontal">
+  			  
+  			<div class="form-group">
+           	<fieldset>
+            
+            <div class="form-group">
+    		<label class="col-lg-3 control-label" for="inputEmail">Correo</label>
+    		<div class="col-lg-4">
+      		<input type="text" class="form-control input-lg" id = "focusedInput" placeholder="Email">
+    		</div>
+            </div>
+    
+            <div class="form-group">
+            <label class="col-lg-3 control-label" for="inputPassword">Password</label>
+            <div class="col-lg-4">
+            <input type="password" class="form-control input-lg" id = "focusedInput" placeholder="Password">
+            </div>
+  			</div>
+  
+ 		 	<div class="form-group">
+   			
+      		 <label class="checkbox-inline col-lg-4 control-label">Recordarme
+        	 <input type="checkbox" > 
+             </label> 
+     		 <button type="submit" class="btn btn-primary">Ingresar</button> 
+             <a href="registrarse.html"> Registrate</a>
+    		 </div>
+ 			 </div>
 
-  <div class="control-group">
-    <label class="control-label" for="inputEmail">Correo</label>
-    <div class="controls">
-      <input type="text" id="inputEmail" placeholder="Email">
-    </div>
-  </div>
-  <div class="control-group">
-    <label class="control-label" for="inputPassword">Contraseña</label>
-    <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Contraseña">
-    </div>
-  </div>
-  <div class="control-group">
-    <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Recuerdame
-      </label> 
-      <button type="submit" class="btn btn-primary">Ingresar</button> <a href="registrarse.html"> Registrate</a>
-    </div>
-  </div>
-</form>
-</section>
-  </body>
-</html>
+              			</fieldset>
+ 					</div>
+				</form>
+			</div>
+		</body>
+	</html>
