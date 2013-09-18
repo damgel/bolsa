@@ -17,55 +17,63 @@
         <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
         <script src="assets/js/prefixfree.js"></script>
         <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-          <div>
-            <form class="form-horizontal">
+		<div class="container">
+        <div class="row">
+        
+        <div class="col-lg-6">
+        
+        
+               <form action="#" method="POST" class="form-horizontal" role="form">
                 <div class="form-group">
-                    <fieldset>
+
+                    <center><legend>Login</legend></center>
+
+                    <div class="form-group">
+
                         <div class="form-group">
-                            <label class="col-lg-3 control-label" for="inputEmail">Correo</label>
-                            <div class="col-lg-4">
-                                <input type="text" class="form-control input-lg" id = "focusedInput" placeholder="Email">  
+                            <label for="Correo" class="col-lg-2 control-label">Correo</label>
+                            <div class="col-lg-6">
+                             <input type="text" class="form-control" id = "focusedInput" placeholder="Escriba un correo" required>
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label class="col-lg-3 control-label" for="inputPassword">Password</label>
-                            <div class="col-lg-4">
-                                <input type="password" class="form-control input-lg" id = "focusedInput" placeholder="Password">
+                            <label for="password" class="col-lg-2 control-label">Password</label>
+                            <div class="col-lg-6">
+                                <input type="password" class="form-control" id = "focusedInput" placeholder="Password" required>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="checkbox-inline col-lg-4 control-label">Recordarme
-                                <input type="checkbox" > 
-                            </label> 
-                            <button type="submit" class="btn btn-primary">Ingresar</button> 
-                           
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="col-lg-3 control-label" for="inputPassword">Registra tu Empresa</label>
-                            <div class="col-lg-4">
-                               
-                            <button type="submit" class="btn btn-primary">Registrate</button> 
-                           
-                        </div>
-                         <div class="form-group">
-                            <label class="col-lg-3 control-label" for="inputPassword">Registrate como usuario</label>
-                            <div class="col-lg-4">
-                               
-                            <button type="submit" class="btn btn-primary">Registrate</button> 
-                           
-                        </div>
-                    </fieldset>
+						
+                    
+                       <center>
+                        <label class="checkbox-inline">
+                        <input type="checkbox"> Recordarme
+                        </label>
+
+                        <button type="submit" class="btn btn-primary">Ingresar</button>   
+          			 </center>
+                    
                 </div>
-            </form> 
+            </form>
+            </div> 
+
         </div>
-    
+		
+         <div class="col-lg-6">
+            <h3>¿Ya estas registrado?</h3>
+            <h4>Ingresa como empleado</h4>
+            <button type="submit" class="btn btn-primary">Ingresar</button> 
+             <h4>Ingresa como Empresa</h4>
+            <button type="submit" class="btn btn-primary">Ingresar</button> 
+            </div>
+        
+    </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
