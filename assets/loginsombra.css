@@ -1,7 +1,9 @@
 #sombra{
+    padding-top: 5%;
     position:relative;      
                 -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
                 -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
                 box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    
   
 }
