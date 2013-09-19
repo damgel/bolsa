@@ -1,4 +1,6 @@
-
+body{
+    background-color: #f1f1f1;
+}
 /* css para la sombra del div "sombra" */
 #sombra{
     padding-top: 5%;
