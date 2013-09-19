@@ -1,64 +1,49 @@
 $(document).ready(function() {
 
 // codigo personalizado para mis validaciones
-    $('#registroUsuario').validate({
+    $('#registroEmpleador').validate({
         rules: {
-            nombre:
+            nombre_emp:
                     {
                         required: true,
-                        minlength: 4
+                        minlength: 12
                     },
-            apellido:
-                    {
-                        required: true,
-                        minlength: 4
-                    },
-            edad:
-                    {
-                        required: true,
-                        minlength: 2
-                    },
-            fecha_nac:
-                    {
-                        required: true
-                    },
-            direccion:
-                    {
-                        required: true,
-                        minlength: 25
-
-                    },
-            dui:
-                    {
-                        required: true,
-                        minlength: 8
-                    },
-            telefono_fijo:
-                    {
-                        required: true,
-                        minlength: 8
-                    },
-            telefono_movil:
-                    {
-                        required: true,
-                        minlength: 8
-                    },
-            email:
-                    {
-                        required: true,
-                        email: true
-                    },
-            password:
+            password_emp:
                     {
                         minlength: 8,
                         required: true
                     },
-            sexolst:
+            confirm_password:
+                    {
+                        minlength: 8,
+                        required: true
+                    },
+            email_emp:
+                    {
+                        required: true,
+                        email: true
+                    },
+            telefono_emp:
+                    {
+                        required: true,
+                        minlength: 8
+                    },
+            url_emp:
+                    {
+                        required: true,
+                        minlength: 12
+                    },
+            textarea:
+                    {
+                        required: true,
+                        minlength: 25
+                    },
+            actividad_empresa:
                     {
                         required: true
 
                     }
-        }, 
+        },
         highlight: function(element) {
             $(element).closest('.control-group').removeClass('success').addClass('error');
         },

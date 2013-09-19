@@ -12,111 +12,102 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="validacionStyle.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
-        <script src="assets/js/prefixfree.js"></script>
-        <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-
-        
+         <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/validarRegEmpleador.js"></script>
+        <script src="assets/js/modernizr-2.6.2-respond-1.1.0.js"></script>
         <link href="assets/dcmegamenu.css" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.hoverIntent.minified.js"></script>
         <script type="text/javascript" src="assets/js/jquery.dcmegamenu.1.3.3.js"></script>
-        
+       
+
         <script type="text/javascript">
-$(document).ready(function($){
-	$('#mega-menu-1').dcMegaMenu({
-		rowItems: '3',
-		speed: 'fast',
-		effect: 'slide',
-		fullWidth: true
-	});
-});
-</script>
+            $(document).ready(function($) {
+                $('#mega-menu-1').dcMegaMenu({
+                    rowItems: '3',
+                    speed: 'fast',
+                    effect: 'slide',
+                    fullWidth: true
+                });
+            });
+        </script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-     
-        
-     
-       
-<ul id="mega-menu-1" class="mega-menu full-width">
-	<li class=""><a href="inicio.html">Inicio</a></li>
-    
-    <!------------------------------------------------------------------------------------------------------------------>
-	<li class="dc-mega-li"><a href="#" class="dc-mega">Usuarios<span class="dc-mega-icon"></span></a>
-		<div class="sub-container mega" style="width: 360px; left: 0px; top: 40px; z-index: 1000;"><ul class="sub" style="display: none;">
-			<div class="row" style="width: 540px;"><li class="mega-unit mega-hdr" style="height: 193px;"><a href="#" class="mega-hdr-a" style="height: 30px;">Empresa</a>
-				<ul>
-					<li><a href="RegistroEmpleador.html">Registro Empresa</a></li>
-					<li><a href="PublicarOferta.html">Publicar de ofertas de empleo</a></li>
-					<li><a href="#">Empleos Actuales</a></li>
-				</ul>
-			</li><li class="mega-unit mega-hdr" style="height: 193px;"><a href="#" class="mega-hdr-a" style="height: 30px;">Empleado </a>
-			    <ul>
-					<li><a href="RegistroUsuario.html">Registro de Aspirante</a></li>
-					<li><a href="PerfilUsuario.html">Perfil de Aspirante</a></li>
-					
-				</ul>
-			</li>
-            </div>
-			
-			
-			
-			
-		</ul></div>
-	</li>
-    
 
-<!------------------------------------------------------------------------------------------------------------------------->
-<li class=""><a href="#" class="dc-mega">Acerca de nosotros<span class="dc-mega-icon"></span></a>
-<div class="sub-container non-mega" style="left: 271px; top: 40px; z-index: 1000;"><ul class="sub" style="display: none;">
-	<li><a href="#">Mision</a></li>
-	<li><a href="#">Vision</a></li>
+        <ul id="mega-menu-1" class="mega-menu full-width">
+            <li class=""><a href="inicio.html">Inicio</a></li>
 
-</ul></div>
-</li>
+            <!------------------------------------------------------------------------------------------------------------------>
+            <li class="dc-mega-li"><a href="#" class="dc-mega">Usuarios<span class="dc-mega-icon"></span></a>
+                <div class="sub-container mega" style="width: 360px; left: 0px; top: 40px; z-index: 1000;"><ul class="sub" style="display: none;">
+                        <div class="row" style="width: 540px;"><li class="mega-unit mega-hdr" style="height: 193px;"><a href="#" class="mega-hdr-a" style="height: 30px;">Empresa</a>
+                                <ul>
+                                    <li><a href="RegistroEmpleador.html">Registro Empresa</a></li>
+                                    <li><a href="PublicarOferta.html">Publicar de ofertas de empleo</a></li>
+                                    <li><a href="#">Empleos Actuales</a></li>
+                                </ul>
+                            </li><li class="mega-unit mega-hdr" style="height: 193px;"><a href="#" class="mega-hdr-a" style="height: 30px;">Empleado </a>
+                                <ul>
+                                    <li><a href="RegistroUsuario.html">Registro de Aspirante</a></li>
+                                    <li><a href="PerfilUsuario.html">Perfil de Aspirante</a></li>
 
-
-<!--------------------------------------------------------------------------------------------------------------------------->
-
-
-<li class=""><a href="faq.html">Preguntas Frecuentes</a></li>
-
-
-<!--------------------------------------------------------------------------------------------------------------------->
-<li class=""><a href="#">Contactanos</a></li>
-
-<!--------------------------------------------------------------------------------------------------------------------------->
-<li class=""><a href="login.html">Entrar/Registrarse</a></li>
-<!--------------------------------------------------------------------------------------------------------------------------->
-</ul>
+                                </ul>
+                            </li>
+                        </div>
 
 
 
 
-        
-        
-       <div>
-       <br>
-       <br>
-            <form action="#" method="POST" class="form-horizontal" role="form">
+                    </ul></div>
+            </li>
+
+
+            <!------------------------------------------------------------------------------------------------------------------------->
+            <li class=""><a href="#" class="dc-mega">Acerca de nosotros<span class="dc-mega-icon"></span></a>
+                <div class="sub-container non-mega" style="left: 271px; top: 40px; z-index: 1000;"><ul class="sub" style="display: none;">
+                        <li><a href="#">Mision</a></li>
+                        <li><a href="#">Vision</a></li>
+
+                    </ul></div>
+            </li>
+
+
+            <!--------------------------------------------------------------------------------------------------------------------------->
+
+
+            <li class=""><a href="faq.html">Preguntas Frecuentes</a></li>
+
+
+            <!--------------------------------------------------------------------------------------------------------------------->
+            <li class=""><a href="#">Contactanos</a></li>
+
+            <!--------------------------------------------------------------------------------------------------------------------------->
+            <li class=""><a href="login.html">Entrar/Registrarse</a></li>
+            <!--------------------------------------------------------------------------------------------------------------------------->
+        </ul>
+
+
+        <div>
             <br>
-                <div class="form-group">
+            <br>
+            <form action="#" id="registroEmpleador" method="POST" class="form-horizontal" role="form">
                 <br>
-                    <fieldset>
+                <div class="form-group">
                     <br>
+                    <fieldset>
+                        <br>
                         <center><legend> Registro Empleador</legend></center>
                         <div class="form-group">
 
                             <div class="form-group">
                                 <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
                                 <div class="col-lg-4">
-                                    <input type="text" class="form-control" id = "focusedInput"  placeholder="Escriba un nombre" required>
+                                    <input type="text" name="nombre_emp" class="form-control"   placeholder="Escriba un nombre" required>
                                 </div>
                             </div>
 
@@ -124,47 +115,42 @@ $(document).ready(function($){
                             <div class="form-group">
                                 <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
                                 <div class="col-lg-4">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña" required>
+                                    <input type="password" name="password_emp" class="form-control"  placeholder="Contraseña" required>
                                 </div>  
                             </div>
 
                             <div class="form-group">
                                 <label for="ConfirmContrasenia"class="col-lg-3 control-label">Confirme contraseña</label>
                                 <div class="col-lg-4">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Confirme su contraseña" required>
+                                    <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required>
                                 </div>  
-                                </div>    
-
-       
+                            </div>    
 
                             <div class="form-group">
                                 <label for="correo" class="col-lg-3 control-label">Correo</label>
                                 <div class="col-lg-4">
-                                    <input type="text" placeholder="nombrecuenta@dominio.com" class="form-control" id = "focusedInput" required>
-                                    <input type="email" placeholder="adcd@algo.aaa" class="form-control" id = "focusedInput" required>
+                                    <input type="email" name="email_emp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id = "focusedInput" required>
                                 </div>
                             </div>
-
-
 
                             <div class="form-group">
                                 <label for="telefono" class="col-lg-3 control-label">Telefono</label>
                                 <div class="col-lg-4">
-                                    <input type="text" placeholder="-----------" class="form-control" id = "focusedInput" required>
+                                    <input type="num" name="telefono_emp" placeholder="-----------" class="form-control"  required>
                                 </div>
                             </div>
 
-                        <div class="form-group">
-                            <label for="paginaWeb" class="col-lg-3 control-label">Página Web</label>
-                            <div class="col-lg-4">
-                        
-                        <input type="text" placeholder="www." class="form-control" id="focusedInput">
-                        </div>
-                        </div>
-                       <div class="form-group">    
-                            <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripción de la Empresa</label>
-                            <div class="col-lg-4">
-                                <Textarea class="form-control" rows="6"> </textarea>
+                            <div class="form-group">
+                                <label for="paginaWeb" class="col-lg-3 control-label">Página Web</label>
+                                <div class="col-lg-4">
+
+                                    <input type="url" name="url_emp" laceholder="www.ejemplo.com" class="form-control" id="focusedInput">
+                                </div>
+                            </div>
+                            <div class="form-group">    
+                                <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripción de la Empresa</label>
+                                <div class="col-lg-4">
+                                    <Textarea name="textarea" class="form-control" rows="6"> </textarea>
                     </div>
                     </div>         
                         </div>
@@ -172,8 +158,7 @@ $(document).ready(function($){
                         <div class="form-group">
                     <label for="actividadEmpresa"class="col-lg-3 control-label">Actividad Empresa</label>
                     <div class="col-lg-4">
-
-                            <select>
+                            <select name="actividad_empresa" class="form-control input-lg">
                                 <option>Aeronaves</option> 
                                 <option>Agencia de reclutamiento</option>
                                 <option>Agrícola | Ganadera</option>
@@ -240,12 +225,6 @@ $(document).ready(function($){
             </form>
 
          </div> 
- 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="assets/js/jquery-v1.10.2.js"></script>
-
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
     </body>
