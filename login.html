@@ -13,10 +13,11 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
-        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
         <script src="assets/js/prefixfree.min.js"></script>
-        <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/validarLogin.js"></script>
+        <script src="assets/js/modernizr-2.6.2-respond-1.1.0.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/loginStyle.css">
     </head>
@@ -28,25 +29,22 @@
             <div class="row">
 
                 <div class="col-lg-6 " id="sombra">
-                    <form action="#" method="POST" class="form-horizontal">
+                    <form id="frm-login" action="#" method="POST" class="form-horizontal">
                         <div class="form-group">
 
                             <center><h3>Login</h3></center>
                             <br>
-
-                            <div class="form-group">
-
                                 <div class="form-group">
-                                    <label for="Correo" class="col-lg-3 control-label">Correo</label>
+                                    <label for="email" class="col-lg-3 control-label">Correo</label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control" id = "focusedInput" placeholder="Escriba un correo" required>
+                                        <input type="email" class="form-control" name="email"  placeholder="Escriba un correo" required>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="form-group">
-                                    <label for="password" class="col-lg-3 control-label">Password</label>
+                                    <label for="passwordm" class="col-lg-3 control-label">Password</label>
                                     <div class="col-lg-6">
-                                        <input type="password" class="form-control" id = "focusedInput" placeholder="Password" required>
+                                        <input type="password" class="form-control" name="passwordm" placeholder="Escriba una contrasenia" required>
                                     </div>
                                 </div>
                                 <br>
@@ -59,7 +57,7 @@
                                 </center>
                                 <br>
                                 <br>
-                            </div>         
+      
                         </div> 
                     </form>
                 </div>
@@ -81,8 +79,6 @@
                 </div>
 
             </div>
-
-            <script src="assets/ja/jquery/1.10.2/jquery.js"></script>
             <script>window.jQuery || document.write('<script src="assets/js/jquery-v1.10.2.js"><\/script>')</script>
             <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     </body>

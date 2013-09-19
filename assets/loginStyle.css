@@ -1,3 +1,7 @@
+@import url('assets/css/bootstrap.min.css');
+@import url('assets/css/bootstrap-responsive.min.css');
+
+/* css para la sombra del div "sombra" */
 #sombra{
     padding-top: 5%;
     position:relative;      
@@ -6,4 +10,19 @@
                 box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
    
 }
+/* css para las validaciones */
 
+	label.valid {
+		  width: 24px;
+		  height: 24px;
+		  background: url(assets/img/valid.png) center center no-repeat;
+		  display: inline-block;
+		  text-indent: -9999px;
+		}
+		label.error {
+			font-weight: bold;
+			color: red;
+			display: inline-block;
+			padding: 2px 8px;
+			margin-top: 2px;
+		}
