@@ -13,6 +13,7 @@ $(document).ready(function() {
                         minlength: 8,
                         required: true
                     },
+     
             confirm_password:
                     {
                         minlength: 8,
