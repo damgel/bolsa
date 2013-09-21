@@ -12,11 +12,27 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <script src="assets/js/prefixfree.js"></script>        
-        <script src="assets/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link rel="stylesheet" href="assets/css/normalize.css">   
+        <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+
     </head>
     <body>
+        <!-- NAVBAR
+            ================================================== -->
+        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
+
+        <div id="error"></div>
+        <!-- // Script para cargar recursos html con jQuery en una pagina -->
+        <script>$(document).ready(function() {
+                $("#header").load("layout/header.html", function(status, xhr) {
+                    if (status == "error")
+                    {
+                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });</script> 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -25,9 +41,6 @@
         <!-- NO NECESITAN PONER NINGUN SCRIPTS, EXCEPTO LAS PROPIAS CLASES CSS QUE CREEN. -->
         <p>Hello world! This is HTML5 Boilerplate.</p>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="assets/js/jquery-v1.10.2.js"></script>
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
