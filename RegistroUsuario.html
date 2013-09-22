@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equ.iv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title> Registro de Usuario </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,15 @@
         <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/jquery.validate.js"></script>
         <script src="assets/js/validarRegUsuario.js"></script>
-
+        <style>
+            .container
+            {
+                background-color: #f1f1f1;
+                margin-bottom: 0px;
+                        
+            }
+            
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -43,17 +51,11 @@
                 });
             });</script> 
 
-        <div id="contenedor">
-
-            <form action="#" id="registroUsuario" method="POST" class="form-horizontal" role="Resgistro de Usuario">
+        <div id="contenedor"class="container">
+            <form action="#" id="registroUsuario" method="POST" class="form-horizontal" >
                 <div class="form-group">
-                    <br>
                     <fieldset>
-                        <br>
-                        <br>
                         <center><legend> Registro de Usuario</legend></center>
-
-
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-3 control-label">Nombre</label>
                             <div class="col-lg-4">
@@ -69,15 +71,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Edad" class="col-lg-3 control-label">Edad</label>
-                            <div class="col-lg-4">
-                                <input type="number" min="18" max="65" name="edad" min="18" max="65" class="form-control"  required>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="Fecha de nacimienro" class="col-lg-3 control-label">Fecha de Nacimiento</label>
+                            <label for="Fecha_Nacimiento" class="col-lg-3 control-label">Fecha de Nacimiento</label>
                             <div class="col-lg-4">
                                 <input type="date"  name="fecha_nac" class="form-control"  required>
                             </div>
@@ -91,30 +85,16 @@
                             </div>
                         </div>                      
 
-                        <div class="form-group">
-                            <label for="DUI" class="col-lg-3 control-label">N de DUI</label>
-                            <div class="col-lg-4">
-                                <input type="num" name="dui" placeholder="Escriba el numero" class="form-control" required>
-                            </div>
-                        </div>
-
 
                         <div class="form-group">
-                            <label for="Phone" class="col-lg-3 control-label"> Telefono Fijo </label>
+                            <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
-                                <input type="tel" name="telefono_fijo" class="form-control" required>
+                                <input type="tel" name="telefono_contacto" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="Celular" class="col-lg-3 control-label"> Telefono Celular </label>
-                            <div class="col-lg-4">
-                                <input type="tel" id="phone" name="telefono_movil" class="form-control" required>
-                            </div>     
-                        </div>     
-
-                        <div class="form-group">
-                            <label for="Correo" class="col-lg-3 control-label">Correo</label>
+                            <label for="Email" class="col-lg-3 control-label">Correo</label>
                             <div class="col-lg-4">
                                 <input type="email" name="email" class="form-control" placeholder="Escriba un correo aqui"  required>
                             </div>
@@ -135,11 +115,9 @@
                                 </select>
                             </div>
                         </div>
-
+                        <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button></center>
                     </fieldset>
                 </div>
-
-                <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button></center>
             </form>
         </div>
 

@@ -1,18 +1,34 @@
-body{
-    background-color: #f1f1f1;
+
+body
+{
+    
 }
 /* css para la sombra del div "sombra" */
 #sombra{
-    padding-top: 5%;
-    position:relative;      
+    
+    background-color: #f1f1f1;
+    padding-top: 1%;
+    position:absolute;      
                 -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
                 -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
                 box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-   
+       
 }
+#sombra2{
+    float: right;
+    padding-top: 1%;
+    background-color: #f1f1f1;
+    position:relative; 
+     -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+                box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+
+}
+
 #contenedor
 {
-    display: center;
+    display:block;
+    
 }
 /* css para las validaciones */
 
