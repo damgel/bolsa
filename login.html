@@ -2,7 +2,9 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="es-ES" class="no-js"> 
+    <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,13 +14,15 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
-        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>   
         <script src="assets/js/validarLogin.js"></script>
+        <script src="assets/js/validarRegUsuario.js"></script>      
         <script src="assets/js/modernizr-2.6.2-respond-1.1.0.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" href="validacionStyle.css">
 
+        
 
     </head>
     <body>
@@ -45,51 +49,53 @@
         <div class="container">
             <br>
             <br>
-            
+
             <div class="row">
-				
+
                 <div class="col-lg-6 " id="sombra">
-                <div class="container">
-                    <form id="frm-login" action="#" method="POST" class="form-horizontal">
                     <div class="container">
-                        <fieldset>
-                            <div class="form-group">
+                        <form id="frm-login" action="#" method="POST" class="form-horizontal">
+                            <div class="container">
+                                <fieldset>
+                                    <div class="form-group">
 
-                                <legend><center><h3>Login</h3></center></legend>
-                                <br>
-                                <div class="form-group">
-                                    <label  class="col-lg-3 control-label" for="email">Correo</label>
-                                    <div class="col-lg-6">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Escriba un correo">
-                                    </div>
-                                </div>  
-                                <br>
-                                <div class="form-group">
-                                    <label  class="col-lg-3 control-label" for="passwordm">Password</label>
-                                    <div class="col-lg-6">
-                                        <input type="password" class="form-control" name="passwordm" placeholder="Escriba una contrasenia">
-                                    </div>
-                                </div>
-                                <br>
-                                <center>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox"> Recordarme
-                                    </label>
-                                    <button type="submit" class="btn btn-success">Ingresar</button>   
-                                </center>
-                                <br>
-                                <br>
-                                <br>
+                                        <legend><center><h3>Login</h3></center></legend>
+                                        <br>
+                                        <div class="form-group">
+                                            <label  class="col-lg-3 control-label" for="email">Correo</label>
+                                            <div class="col-lg-8">
+                                                <input type="email" name="email" class="form-control"  placeholder="Escriba un correo" required>
+
+                                            </div>
+                                        </div>  
+                                        
+                                        <div class="form-group">
+                                            <label  class="col-lg-3 control-label" for="passwordm">Password</label>
+                                            <div class="col-lg-8">
+                                                <input type="password" name="passwordm" class="form-control"  placeholder="Escriba una contrasenia" required  pattern=".{8,25}">
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <center>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox"> Recordarme
+                                            </label>
+                                            <button type="submit" class="btn btn-success">Ingresar</button>   
+                                        </center>
+                                        <br>
+                                        <br>
+                                        <br>
 
 
-                            </div> 
-                        </fieldset>
-                        </div>
-                    </form>
+                                    </div> 
+                                </fieldset>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
-                <div class="col-lg-5" id="sombra2">
+                <div class="col-lg-6" id="sombra">
                     <h3><p class="text-center">¿Ya estas registrado?</p></h3>
                     <hr>
                     <h4><p class="text-center">Registrarse como Empleado</p></h4>
@@ -111,9 +117,12 @@
 
                     <br>
 
+
+
+
                 </div>
 
             </div>
-            </div>
+        </div>
     </body>
 </html>
