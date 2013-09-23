@@ -20,7 +20,8 @@ $(document).ready(function() {
                     },
             fecha_nac:
                     {
-                        required: true
+                        required: true,
+                        date:true
                     },
             direccion:
                     {
@@ -33,10 +34,10 @@ $(document).ready(function() {
                         required: true,
                         minlength: 8
                     },
-            telefono_fijo:
+            telefono_contacto:
                     {
                         required: true,
-                        minlength: 8
+                        minlength: 7
                     },
             telefono_movil:
                     {
@@ -58,13 +59,6 @@ $(document).ready(function() {
                         required: true
 
                     }
-        }, 
-        highlight: function(element) {
-            $(element).closest('.control-group').removeClass('success').addClass('error');
-        },
-        success: function(element) {
-            element.text('OK!').addClass('valid')
-                    .closest('.control-group').removeClass('error').addClass('success');
         }
     });
 
