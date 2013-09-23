@@ -3762,7 +3762,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: #333333;
 }
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #1C1B1A;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -3775,20 +3775,24 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-text {
   color: #999999;
+  font-weight: bold;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color: #ffffff;
+  font-weight: bold;
+  
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
+  color: #EDEDED;
+  font-weight: bold;
+  background-color: #0099FF; /*<<---- color que se muestra cuando se pone el foco sobre una  */
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #080808;
+  background-color: #0099FF; /* <-- color cuando esta seleccionada una pestania del menu*/
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -3813,7 +3817,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #080808;
+  background-color: #007ACC;
   color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
