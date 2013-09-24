@@ -1,0 +1,32 @@
+/* 
+    Document   : generalStyles
+    Created on : 09-23-2013, 09:50:15 PM
+    Author     : daMgeL
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body
+{
+    background-color:#f5f5f5; /*  <---- color de fondo de toda la pagina*/
+}
+.container
+{
+    margin-top: 1%;
+    max-width: 1034px;
+}
+
+#contenedor
+{
+    display: center;
+}
+.panel panel-primary
+{
+    margin-top: 1%;
+    display: center;
+    max-width: 1034px;
+}
+h2
+{
+    text-align: center;
+}
