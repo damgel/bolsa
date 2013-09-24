@@ -21,8 +21,44 @@
         <script src="assets/js/validarRegUsuario.js"></script>      
         <script src="assets/js/modernizr2.6.2.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <style>
+            .container
+            {
+                margin-top: 1%;
 
-        
+            }
+            .panel panel-primary
+            {
+             
+                display: center;
+
+            }
+            h2
+            {
+                text-align: center;
+            }
+            #frm-login
+            {
+                float:left;    /*tambien puede poner float:right, para que se alineé a la derecha */
+                padding:10px;
+                color:#fff;
+                width:500px;
+                margin:40px; 
+
+            }
+            #registrarse-container
+            {
+                float:left;       /*tambien puede poner float:right, para que se alineé a la derecha */
+                padding:10px;
+                width:400px;
+                margin:40px;
+         
+
+            }
+
+
+        </style>
+
 
     </head>
     <body>
@@ -46,16 +82,13 @@
                 });
             });</script> 
 
-        <div class="container">
-            <br>
-            <br>
+            <div class="container">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Formulario de Registro para Usuarios</div>
+                    <div class="panel-body">
+                       
+                            <form id="frm-login" action="#" method="POST" class="form-horizontal">
 
-            <div class="row">
-
-                <div class="col-lg-6 " id="sombra">
-                    <div class="container">
-                        <form id="frm-login" action="#" method="POST" class="form-horizontal">
-                            <div class="container">
                                 <fieldset>
                                     <div class="form-group">
 
@@ -68,7 +101,7 @@
 
                                             </div>
                                         </div>  
-                                        
+
                                         <div class="form-group">
                                             <label  class="col-lg-3 control-label" for="passwordm">Password</label>
                                             <div class="col-lg-8">
@@ -90,39 +123,34 @@
 
                                     </div> 
                                 </fieldset>
-                            </div>
-                        </form>
-                    </div>
+
+                            </form>
+                
+                        <div id="registrarse-container">
+                            <h3><p class="text-center">¿Ya estas registrado?</p></h3>
+                            <hr>
+                            <h4><p class="text-center">Registrarse como Empleado</p></h4>
+                            <br>
+                            <p class="text-center">
+                                <a href="RegistroUsuario.html">
+                                    <button type="submit" class="btn btn-primary">Registrarse</button> 
+                                </a>
+                            </p>
+                            <br>
+                            <h4><p class="text-center">Registrate como Empleador</p></h4>
+                            <br>
+                            <p class="text-center">
+                                <a href="RegistroEmpleador.html">
+                                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                                </a>
+                            </p>
+                        </div>
+
+                    </div>       
                 </div>
-
-                <div class="col-lg-6" id="sombra">
-                    <h3><p class="text-center">¿Ya estas registrado?</p></h3>
-                    <hr>
-                    <h4><p class="text-center">Registrarse como Empleado</p></h4>
-                    <br>
-                    <p class="text-center">
-                        <a href="RegistroUsuario.html">
-                            <button type="submit" class="btn btn-primary">Registrarse</button> 
-                        </a>
-                    </p>
-                    <br>
-                    <h4><p class="text-center">Registrate como Empleador</p></h4>
-                    <br>
-                    <p class="text-center">
-                        <a href="RegistroEmpleador.html">
-                            <button type="submit" class="btn btn-primary">Registrarse</button>
-                        </a>
-                    </p>
-                    <br>
-
-                    <br>
-
-
-
-
-                </div>
-
             </div>
-        </div>
+
+
+
     </body>
 </html>
