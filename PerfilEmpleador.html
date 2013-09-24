@@ -11,17 +11,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-     
+        <link href="assets/carousel.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jqueryUI.css">
         <link rel="stylesheet" href="assets/css/generalStyles.css">
-        <script src="assets/js/modernizr2.6.2.js"></script>
-        <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/modernizr2.6.2.js"></script>
+        <script src="assets/js/holder.js"></script>
         <script src="assets/js/jquery.validate.js"></script>
         <script src="assets/js/validarRegEmpleador.js"></script>
-        
+
         <style>
             .container
             {
@@ -37,6 +37,11 @@
             h2
             {
                 text-align: center;
+            }
+            #publicarOferta
+            {
+                text-align: right;
+          
             }
         </style>
     </head>
@@ -64,10 +69,11 @@
         </script> 
 
         <div id="contenedor" class="container" >
+            <div id="publicarOferta"><a class="btn btn-default" href="PublicarOferta.html" role="button">Publicar Oferta de Trabajo</a>
+            </div>    
             <div class="panel panel-primary">
-                <div class="panel-heading">Perfil Empresa.</div>
+                <div class="panel-heading">Perfil Empresa. </div>
                 <div class="panel-body">
-                    
                     <form action="#" id="perfilEmpleador" method="POST" class="form-horizontal">
 
                         <div class="form-group">
@@ -109,73 +115,73 @@
                             <div class="col-lg-6">
                                 <input type="text" name="direc_emp" class="form-control"   placeholder="Escriba la direccion" required>
 
-                                </div>
-                             </div>
-                               <div class="form-group">
-                    <label for="paisEmpresa"class="col-lg-3 control-label">Pais</label>
-                    <div class="col-lg-4">
-                            <select name="pais_empresa" class="form-control" required>
-                                <option value="">Seleccione el Pais:</option>
-                                <option value="-1">- Seleccione -</option>
-		<option>Alemania</option>
-		<option>Argentina</option>
-		<option>Australia</option>
-		<option>Austria</option>
-		<option>Bahamas</option>
-		<option>Barbados</option>
-		<option>B&#233;lgica</option>
-		<option>Belice</option>
-		<option>Bermudas</option>
-		<option>Bolivia</option>
-		<option>Brasil</option>
-		<option>Canad&#225;</option>
-		<option>Chile</option>
-		<option>China</option>
-		<option>Colombia</option>
-		<option>Corea del Sur</option>
-		<option>Costa Rica</option>
-		<option>Croacia</option>
-		<option>Cuba</option>
-		<option>Curacao/Aruba</option>
-		<option>Dinamarca</option>
-		<option>Ecuador</option>
-		<option>El Salvador</option>
-		<option>Eslovenia</option>
-		<option>Espa&#241;a</option>
-		<option>Estados Unidos</option>
-		<option>Filipinas</option>
-		<option>Finlandia</option>
-		<option>Francia</option>
-		<option>Grecia</option>
-		<option>Guatemala</option>
-		<option>Hait&#237;</option>
-		<option>Holanda</option>
-		<option>Honduras</option>
-		<option>Hong Kong</option>
-		<option>Hungr&#237;a</option>
-		<option>India</option>
-		<option>Irlanda</option>
-		<option>Israel</option>
-		<option>Italia</option>
-		<option>Jamaica</option>
-		<option>Jap&#243;n</option>
-		<option>Jordania</option>
-		<option>M&#233;xico</option>
-		<option>Nicaragua</option>
-		<option>Noruega</option>
-		<option>Nueva Zelanda</option>
-		<option>Panam&#225;</option>
-		<option>Paraguay</option>
-		<option>Per&#250;</option>
-		<option>Polonia</option>
-		<option>Portugal</option>
-		<option>Uruguay</option>
-		<option>Venezuela</option>
-	
-                            </select>
-                           </div>
-                    </div>
-                             
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="paisEmpresa"class="col-lg-3 control-label">Pais</label>
+                            <div class="col-lg-4">
+                                <select name="pais_empresa" class="form-control" required>
+                                    <option value="">Seleccione el Pais:</option>
+                                    <option value="-1">- Seleccione -</option>
+                                    <option>Alemania</option>
+                                    <option>Argentina</option>
+                                    <option>Australia</option>
+                                    <option>Austria</option>
+                                    <option>Bahamas</option>
+                                    <option>Barbados</option>
+                                    <option>B&#233;lgica</option>
+                                    <option>Belice</option>
+                                    <option>Bermudas</option>
+                                    <option>Bolivia</option>
+                                    <option>Brasil</option>
+                                    <option>Canad&#225;</option>
+                                    <option>Chile</option>
+                                    <option>China</option>
+                                    <option>Colombia</option>
+                                    <option>Corea del Sur</option>
+                                    <option>Costa Rica</option>
+                                    <option>Croacia</option>
+                                    <option>Cuba</option>
+                                    <option>Curacao/Aruba</option>
+                                    <option>Dinamarca</option>
+                                    <option>Ecuador</option>
+                                    <option>El Salvador</option>
+                                    <option>Eslovenia</option>
+                                    <option>Espa&#241;a</option>
+                                    <option>Estados Unidos</option>
+                                    <option>Filipinas</option>
+                                    <option>Finlandia</option>
+                                    <option>Francia</option>
+                                    <option>Grecia</option>
+                                    <option>Guatemala</option>
+                                    <option>Hait&#237;</option>
+                                    <option>Holanda</option>
+                                    <option>Honduras</option>
+                                    <option>Hong Kong</option>
+                                    <option>Hungr&#237;a</option>
+                                    <option>India</option>
+                                    <option>Irlanda</option>
+                                    <option>Israel</option>
+                                    <option>Italia</option>
+                                    <option>Jamaica</option>
+                                    <option>Jap&#243;n</option>
+                                    <option>Jordania</option>
+                                    <option>M&#233;xico</option>
+                                    <option>Nicaragua</option>
+                                    <option>Noruega</option>
+                                    <option>Nueva Zelanda</option>
+                                    <option>Panam&#225;</option>
+                                    <option>Paraguay</option>
+                                    <option>Per&#250;</option>
+                                    <option>Polonia</option>
+                                    <option>Portugal</option>
+                                    <option>Uruguay</option>
+                                    <option>Venezuela</option>
+
+                                </select>
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <label for="paginaWeb" class="col-lg-3 control-label">P�gina Web</label>
