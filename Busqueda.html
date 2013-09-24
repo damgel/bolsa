@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> Template </title>
+        <title> Busqueda de Empleo </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,18 @@
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
-
+        <script>
+            // fallback para el datepicker con jquery
+            Modernizr.load({
+                test: Modernizr.inputtypes.date,
+                nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
+                complete: function() {
+                    $('input[type=date]').datepicker({
+                        dateFormat: 'yy-mm-dd'
+                    });
+                }
+            });
+        </script>
     </head>
     <body>
         <!-- NAVBAR
@@ -40,14 +51,129 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div id="contenedor" class="container">
 
-        <!-- TODO EL CODIGO HTML QUE VAYAN A UTILIZA AQUI, NO BORREN NINGUNA LINEA DE CODIGO DE LAS QUE YA ESTAN AQUI -->
-        <!-- NO NECESITAN PONER NINGUN SCRIPTS, EXCEPTO LAS PROPIAS CLASES CSS QUE CREEN. -->
-          <div id="contenedor" class="container">
             <div class="panel panel-primary">
-                <div class="panel-heading">PONER UN TITULO</div>
+                <div class="panel-heading">Buscar Empleo</div>
                 <div class="panel-body">
-                 <!-- PONER EL FORMULARIO AQUI Y TODO EL CONTENIDO AQUI-->
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel title</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" id="busquedaEmpleo" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="Busqueda" class="col-lg-2 control-label">Busqueda:</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" name="buscar" class="form-control "   placeholder="Seleccione un filtro para hacer una busqueda" required>
+                                    </div>
+                                    <a href="#" class="btn btn-info btn-large"><i class="glyphicon glyphicon-search"></i> Buscar Empleo</a>
+                                </div> 
+                            </form>
+                            <div class="col-lg-8">
+                                <div class="form-group">
+
+                                    <label for="actividadEmpresa"class="col-lg-4 control-label">Cargo Solicitado:</label>
+                                    <div class="col-lg-5">
+                                        <select name="cargo_solicitado" class="form-control">
+                                            <option value="">Seleccione un cargo:</option>
+                                            <option>Asistente</option> 
+                                            <option>Desarrollador</option>
+                                            <option>Diseniador</option>
+                                            <option>Otros</option>
+
+                                        </select>
+                                    </div>
+                                    <label for="actividadEmpresa"class="col-lg-4 control-label">Actividad Empresa:</label>
+                                    <div class="col-lg-5">
+                                        <select name="actividad_empresa" class="form-control" required>
+                                            <option value="">Seleccione una actividad:</option>
+                                            <option>Aeronaves</option> 
+                                            <option>Agencia de reclutamiento</option>
+                                            <option>Agrícola | Ganadera</option>
+                                            <option>Agroindustria</option>
+                                            <option>Arquitectura | Diseño | Decoración</option>
+                                            <option>Automotriz</option>
+                                            <option>Bancos | Financieras</option>
+                                            <option>Bienes Raíces</option>
+                                            <option>Bufete de Abogados</option>
+                                            <option>Call Center</option>
+                                            <option>Carpíntería|Muebles</option>
+                                            <option>Científica</option>
+                                            <option>Combustible |(Gas | Petroleo)</option>
+                                            <option>Comercial</option>
+                                            <option>Comercio Mayorista</option>
+                                            <option>Comercio Minorista</option>
+                                            <option>Confecciones</option>
+                                            <option>Construcción</option>
+                                            <option>Consultoría | Asesoría</option>
+                                            <option>Bebidas | Alimentos</option>
+                                            <option>Defensa</option>
+                                            <option>Educación | Capacitación</option>
+                                            <option>Electricidad (Distribución | Generación)</option>
+                                            <option>Entretenimiento</option>
+                                            <option>Estudios Jurídicos</option>
+                                            <option>Exportación | Importación</option>
+                                            <option>Farmaceutica</option>
+                                            <option>Forestal | Papel | Celulosa</option>
+                                            <option>Gobierno</option>
+                                            <option>Hotelería | Turismo | Restaurantes</option>
+                                            <option>Imprenta | Editoriales</option>
+                                            <option>Industrial</option>
+                                            <option>Ingeniería</option>
+                                            <option>Inmobiliaria | Propiedades</option>
+                                            <option>Internet</option>
+                                            <option>Inversiones</option>
+                                            <option>Logística | Distribución</option>
+                                            <option>Manufacturas varias</option> 
+                                            <option>Maquila</option>
+                                            <option>Materiales de consrucción</option>
+                                            <option>Medicina | Salud</option>
+                                            <option>Medios de Comunicación</option>
+                                            <option>Metalmecánica; Minería</option>
+                                            <option>Naviera</option>
+                                            <option>Operaciones Portuarias</option>
+                                            <option>Organizaciones sin Fines de Lucro</option>
+                                            <option>Pesquera</option>
+                                            <option>Publicidad | Marketing</option>
+                                            <option>Química</option>
+                                            <option>Seguros | Previsión; Servicios</option>
+                                            <option>Servicios Financieros varios</option>
+                                            <option>Tecnologías de Información</option>
+                                            <option>Telecomunicaciones</option>
+                                            <option>Textil | Maquila</option>
+                                            <option>Transporte</option>
+                                            <option>Otros</option>
+                                        </select>
+                                    </div>
+                                    <label for="Fecha_Nacimiento" class="col-lg-4 control-label">Fecha de Publicacion:</label>
+                                    <div class="col-lg-5">
+                                        <input type="date"  class="form-control">
+                                    </div>
+                                    <div id="tipo_contratacion">
+                                        <label for="tipo_contrato" class="col-lg-3 control-label">Contrato</label>
+                                        <div class="col-lg-5">
+                                            <select name="estadoci" class="form-control">
+                                                <option value="">Seleccione una opcion:</option>
+                                                <option>Tiempo Completo</option> 
+                                                <option>Medio Tiempo</option>
+                                                <option>Temporal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                    </div>
+                    <div class="form-group">
+
+                    </div>
                 </div>       
             </div>
         </div>
