@@ -18,23 +18,20 @@
         <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/jquery.validate.js"></script>
         <script src="assets/js/validarRegEmpleador.js"></script>
-        <script src="assets/js/modernizr-2.6.2-respond-1.1.0.js"></script>
+        <script src="assets/js/modernizr2.6.2.js"></script>
         <style>
             .container
             {
-                
-                background-color:  #f1f1f1;
                 margin-top: 1%;
-                margin-bottom: 0px;
-                
-                -webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC;
-                -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC;
-                box-shadow:0 0px 4px #777, 0 0 20px #CCC;
-                -webkit-border-radius: 10px;
-                border-radius: 10px;
-
+                max-width: 1034px;
             }
-            legend
+            .panel panel-primary
+            {
+                margin-top: 1%;
+                display: center;
+                max-width: 1034px;
+            }
+            h2
             {
                 text-align: center;
             }
@@ -62,66 +59,62 @@
                 });
             });
         </script> 
-        <div class="container">
-        <br>
-        <div class="jumbotron">
-        
-        
-            <form action="#" id="registroEmpleador" method="POST" class="form-horizontal" role="FormularioEmpleador">
-                <div class="form-group">
 
+        <div id="contenedor" class="container" >
+            <div class="panel panel-primary">
+                <div class="panel-heading">Formulario de Registro para Empresas</div>
+                <div class="panel-body">
+                    
+                    <form action="#" id="registroEmpleador" method="POST" class="form-horizontal">
 
-                    <center><legend>Registro Empleador</legend></center>
-
-                    <div class="form-group">
-                        <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
-                        <div class="col-lg-4">
-                            <input type="text" name="nombre_emp" class="form-control"   placeholder="Escriba un nombre" required>
+                        <div class="form-group">
+                            <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
+                            <div class="col-lg-4">
+                                <input type="text" name="nombre_emp" class="form-control"   placeholder="Escriba un nombre" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
-                        <div class="col-lg-4">
-                            <input type="password" name="password_emp" class="form-control"  placeholder="Contraseña" required>
-                        </div>  
-                    </div>
-
-                    <div class="form-group">
-                        <label for="ConfirmContrasenia"class="col-lg-3 control-label">Confirme contraseña</label>
-                        <div class="col-lg-4">
-                            <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required>
-                        </div>  
-                    </div>    
-
-                    <div class="form-group">
-                        <label for="correo" class="col-lg-3 control-label">Correo</label>
-                        <div class="col-lg-4">
-                            <input type="email" name="email_emp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id = "focusedInput" required>
+                        <div class="form-group">
+                            <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
+                            <div class="col-lg-4">
+                                <input type="password" name="password_emp" class="form-control"  placeholder="Contraseña" required>
+                            </div>  
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="telefono" class="col-lg-3 control-label">Telefono</label>
-                        <div class="col-lg-4">
-                            <input type="tel" name="telefono_emp" placeholder="Escriba un numero de telefono" class="form-control"  required>
-                        </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="ConfirmContrasenia"class="col-lg-3 control-label">Confirme contraseña</label>
+                            <div class="col-lg-4">
+                                <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required>
+                            </div>  
+                        </div>    
 
-                    <div class="form-group">
-                        <label for="paginaWeb" class="col-lg-3 control-label">Página Web</label>
-                        <div class="col-lg-4">
-                            <input type="url" name="url_emp" placeholder="www.ejemplo.com" class="form-control" >
+                        <div class="form-group">
+                            <label for="correo" class="col-lg-3 control-label">Correo</label>
+                            <div class="col-lg-4">
+                                <input type="email" name="email_emp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id = "focusedInput" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">    
-                        <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripción de la Empresa</label>
-                        <div class="col-lg-6">
-                            <Textarea name="textarea" class="form-control col-lg-6" rows="2"> </textarea>
+
+                        <div class="form-group">
+                            <label for="telefono" class="col-lg-3 control-label">Telefono</label>
+                            <div class="col-lg-4">
+                                <input type="tel" name="telefono_emp" placeholder="Escriba un numero de telefono" class="form-control"  required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paginaWeb" class="col-lg-3 control-label">Página Web</label>
+                            <div class="col-lg-4">
+                                <input type="url" name="url_emp" placeholder="www.ejemplo.com" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group">    
+                            <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripción de la Empresa</label>
+                            <div class="col-lg-6">
+                                <Textarea name="textarea" class="form-control col-lg-6" rows="2"> </textarea>
 
                                 </div>
                              </div>         
-                        
-
+                       
                         <div class="form-group">
                     <label for="actividadEmpresa"class="col-lg-3 control-label">Actividad Empresa</label>
                     <div class="col-lg-4">
@@ -183,18 +176,17 @@
                                 <option>Textil | Maquila</option>
                                 <option>Transporte</option>
                             </select>
-                    </div>
+                           </div>
                     </div>
                         <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button> </center> 
-                    
-
+                        <br>
             </form>
-</div>
-
-
-</div>
-
-         
+            
+                        </div>
+                 </div>
+            </div>
+        
+  
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
     </body>
