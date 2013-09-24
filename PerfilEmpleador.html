@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Registro Empleador</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+     
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/jqueryUI.css">
+        <link rel="stylesheet" href="assets/css/generalStyles.css">
+        <script src="assets/js/modernizr2.6.2.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/validarRegEmpleador.js"></script>
+        
+        <style>
+            .container
+            {
+                margin-top: 1%;
+                max-width: 1034px;
+            }
+            .panel panel-primary
+            {
+                margin-top: 1%;
+                display: center;
+                max-width: 1034px;
+            }
+            h2
+            {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- NAVBAR
+     ================================================== -->
+
+        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
+
+        <div id="error"></div>
+        <!-- // Script para cargar recursos html con jQuery en una pagina -->
+        <script>$(document).ready(function() {
+                $("#header").load("layout/header.html", function(status, xhr) {
+                    if (status == "error")
+                    {
+                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
+                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        </script> 
+
+        <div id="contenedor" class="container" >
+            <div class="panel panel-primary">
+                <div class="panel-heading">Perfil Empresa.</div>
+                <div class="panel-body">
+                    
+                    <form action="#" id="registroEmpleador" method="POST" class="form-horizontal">
+
+                        <div class="form-group">
+                            <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
+                            <div class="col-lg-4">
+                                <input type="text" name="nombre_emp" class="form-control"   placeholder="Escriba un nombre" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo" class="col-lg-3 control-label">Correo</label>
+                            <div class="col-lg-4">
+                                <input type="email" name="email_emp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id = "focusedInput" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono" class="col-lg-3 control-label">Telefono</label>
+                            <div class="col-lg-4">
+                                <input type="tel" name="telefono_emp" placeholder="Escriba un numero de telefono" class="form-control"  required>
+                            </div>
+                        </div>
+                        <div class="form-group">    
+                            <label for="direccionEmpresa" class="col-lg-3 control-label">Direccion de la Empresa</label>
+                            <div class="col-lg-6">
+                                <input type="text" name="direc_emp" class="form-control"   placeholder="Escriba la direccion" required>
+
+                                </div>
+                             </div>
+                               <div class="form-group">
+                    <label for="paisEmpresa"class="col-lg-3 control-label">Pais</label>
+                    <div class="col-lg-4">
+                            <select name="pais_empresa" class="form-control" required>
+                                <option value="">Seleccione el Pais:</option>
+                                <option value="-1">- Seleccione -</option>
+		<option>Alemania</option>
+		<option>Argentina</option>
+		<option>Australia</option>
+		<option>Austria</option>
+		<option>Bahamas</option>
+		<option>Barbados</option>
+		<option>B&#233;lgica</option>
+		<option>Belice</option>
+		<option>Bermudas</option>
+		<option>Bolivia</option>
+		<option>Brasil</option>
+		<option>Canad&#225;</option>
+		<option>Chile</option>
+		<option>China</option>
+		<option>Colombia</option>
+		<option>Corea del Sur</option>
+		<option>Costa Rica</option>
+		<option>Croacia</option>
+		<option>Cuba</option>
+		<option>Curacao/Aruba</option>
+		<option>Dinamarca</option>
+		<option>Ecuador</option>
+		<option>El Salvador</option>
+		<option>Eslovenia</option>
+		<option>Espa&#241;a</option>
+		<option>Estados Unidos</option>
+		<option>Filipinas</option>
+		<option>Finlandia</option>
+		<option>Francia</option>
+		<option>Grecia</option>
+		<option>Guatemala</option>
+		<option>Hait&#237;</option>
+		<option>Holanda</option>
+		<option>Honduras</option>
+		<option>Hong Kong</option>
+		<option>Hungr&#237;a</option>
+		<option>India</option>
+		<option>Irlanda</option>
+		<option>Israel</option>
+		<option>Italia</option>
+		<option>Jamaica</option>
+		<option>Jap&#243;n</option>
+		<option>Jordania</option>
+		<option>M&#233;xico</option>
+		<option>Nicaragua</option>
+		<option>Noruega</option>
+		<option>Nueva Zelanda</option>
+		<option>Panam&#225;</option>
+		<option>Paraguay</option>
+		<option>Per&#250;</option>
+		<option>Polonia</option>
+		<option>Portugal</option>
+		<option>Uruguay</option>
+		<option>Venezuela</option>
+	
+                            </select>
+                           </div>
+                    </div>
+                             
+
+                        <div class="form-group">
+                            <label for="paginaWeb" class="col-lg-3 control-label">P�gina Web</label>
+                            <div class="col-lg-4">
+                                <input type="url" name="url_emp" placeholder="www.ejemplo.com" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="form-group">    
+                            <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripci�n de la Empresa</label>
+                            <div class="col-lg-6">
+                                <Textarea name="textarea" class="form-control col-lg-6" rows="2"> </textarea>
+
+                                </div>
+                             </div>         
+                       
+                        <div class="form-group">
+                    <label for="actividadEmpresa"class="col-lg-3 control-label">Actividad Empresa</label>
+                    <div class="col-lg-4">
+                            <select name="actividad_empresa" class="form-control" required>
+                                <option value="">Seleccione una actividad:</option>
+                                <option>Aeronaves</option> 
+                                <option>Agencia de reclutamiento</option>
+                                <option>Agr�cola | Ganadera</option>
+                                <option>Agroindustria</option>
+                                <option>Arquitectura | Dise�o | Decoraci�n</option>
+                                <option>Automotriz</option>
+                                <option>Bancos | Financieras</option>
+                                <option>Bienes Ra�ces</option>
+                                <option>Bufete de Abogados</option>
+                                <option>Call Center</option>
+                                <option>Carp�nter�a|Muebles</option>
+                                <option>Cient�fica</option>
+                                <option>Combustible |(Gas | Petroleo)</option>
+                                <option>Comercial</option>
+                                <option>Comercio Mayorista</option>
+                                <option>Comercio Minorista</option>
+                                <option>Confecciones</option>
+                                <option>Construcci�n</option>
+                                <option>Consultor�a | Asesor�a</option>
+                                <option>Bebidas | Alimentos</option>
+                                <option>Defensa</option>
+                                <option>Educaci�n | Capacitaci�n</option>
+                                <option>Electricidad (Distribuci�n | Generaci�n)</option>
+                                <option>Entretenimiento</option>
+                                <option>Estudios Jur�dicos</option>
+                                <option>Exportaci�n | Importaci�n</option>
+                                <option>Farmaceutica</option>
+                                <option>Forestal | Papel | Celulosa</option>
+                                <option>Gobierno</option>
+                                <option>Hoteler�a | Turismo | Restaurantes</option>
+                                <option>Imprenta | Editoriales</option>
+                                <option>Industrial</option>
+                                <option>Ingenier�a</option>
+                                <option>Inmobiliaria | Propiedades</option>
+                                <option>Internet</option>
+                                <option>Inversiones</option>
+                                <option>Log�stica | Distribuci�n</option>
+                                <option>Manufacturas varias</option> 
+                                <option>Maquila</option>
+                                <option>Materiales de consrucci�n</option>
+                                <option>Medicina | Salud</option>
+                                <option>Medios de Comunicaci�n</option>
+                                <option>Metalmec�nica; Miner�a</option>
+                                <option>Naviera</option>
+                                <option>Operaciones Portuarias</option>
+                                <option>Organizaciones sin Fines de Lucro</option>
+                                <option>Pesquera</option>
+                                <option>Publicidad | Marketing</option>
+                                <option>Qu�mica</option>
+                                <option>Seguros | Previsi�n; Servicios</option>
+                                <option>Servicios Financieros varios</option>
+                                <option>Tecnolog�as de Informaci�n</option>
+                                <option>Telecomunicaciones</option>
+                                <option>Textil | Maquila</option>
+                                <option>Transporte</option>
+                            </select>
+                           </div>
+                    </div>
+                        <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button> </center> 
+                        <br>
+            </form>
+            
+                        </div>
+                 </div>
+            </div>
+        
+  
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+    </body>
+</html>
