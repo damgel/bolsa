@@ -24,7 +24,7 @@
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
-        
+
 
         <style>
 
@@ -52,7 +52,8 @@
 
         <div id="error"></div>
         <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
+        <script>
+            $(document).ready(function() {
                 $("#header").load("layout/header.html", function(status, xhr) {
                     if (status == "error")
                     {
@@ -60,153 +61,171 @@
                         $("#error").html(msg + xhr.status + " " + xhr.statusText);
                     }
                 });
-            });</script> 
+            });
 
-        <!-- Carousel
-        ================================================== -->
-        <div id="myCarousel" class="carousel slide">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="data:image/png;base64," data-src="assets/js/holder.js/900x500/auto/#B2D0FF:#B2D0FF/text:First slide" alt="First slide">
-                    <!-- EN EL DIV QUE CONTIEME LA CLASE "item active"DEBEN AGREGARSE LAS IMAGENES -->
-                    <img src="assets/img/banner1.jpg">
-                    <div class="container">
-                        <div class="carousel-caption">
+            //JS PARA INICIALIZAR EL CARUSEL
+            // INTEVAL = TIEMPO QUE DURA CADA SLIDE
+            var $ = jQuery.noConflict();
+            $(document).ready(function()
+            {
+                $('#myCarousel').carousel({interval: 3000});
+            }
+            );
+            
+            // CUANDO EL FOCO ESTE SOBRE EL SLIDE TRES, ESTE PAUSA EL SLIDE
+            // PARA PODER VER EL VIDEO
+                    $('#item_vidUfg').hover(function() {
+                $(this).carousel('pause');
+            });
+        
 
-                            <h1>Universidad Francisco Gavidia.</h1>
-                            <p> ¿Deseas Trabajar o Contratar?</p>
-                            <p>
-                                <a class="btn btn-lg btn-primary" href="RegistroEmpleador.html" role="button">Contratar</a>
-                                <a class="btn btn-lg btn-primary" href="RegistroUsuario.html" role="button">Trabajar</a>
-                            </p>
+    </script> 
 
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="data:image/png;base64," data-src="assets/js/holder.js/900x500/auto/#B2D0FF:#B2D0FF/text:Second slide" alt="Second slide">
-                    <img src="assets/img/banner2.jpg">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>¿Eres Estudiante, Egresado o Graduado?</h1>
-                            <h2>¿Buscas Empleo?</h2>
-                            <p>Registra tu currículum con nosotros y busca las mejores oportunidades de empleo.</p>
-                            <p><a class="btn btn-lg btn-primary" href="login.html" role="button">Entrar</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="data:image/png;base64," data-src="assets/js/holder.js/900x500/auto/#B2D0FF:#B2D0FF/text:Third slide" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Conoce mas sobre la UFG.</h1>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="data:image/png;base64," data-src="assets/js/holder.js/900x500/auto/#B2D0FF:#B2D0FF/text:First slide" alt="First slide">
+                <!-- EN EL DIV QUE CONTIEME LA CLASE "item active"DEBEN AGREGARSE LAS IMAGENES -->
+                <img src="assets/img/banner1.jpg">
+                <div class="container">
+                    <div class="carousel-caption">
 
-                            <embed
-                                width="700" height="400"
-                                src="http://www.youtube.com/v/5V-FQocQ4PY"
-                                type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true">
-                            </embed>   
+                        <h1>Universidad Francisco Gavidia.</h1>
+                        <p> ¿Deseas Trabajar o Contratar?</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="RegistroEmpleador.html" role="button">Contratar</a>
+                            <a class="btn btn-lg btn-primary" href="RegistroUsuario.html" role="button">Trabajar</a>
+                        </p>
 
-                        </div>
                     </div>
                 </div>
             </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-        </div><!-- /.carousel -->
-
-
-
-        <!-- Marketing messaging and featurettes
-        ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
-        <div class="container marketing">
-
-            <!-- Three columns of text below the carousel -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <img class="img-circle" src="assets/img/curriculum.png" alt="Generic placeholder image">
-                    <h2>Oferta 1</h2>
-                    <p>Descripción de la última oferta de trabajo publicada.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="img-circle" src="assets/img/PublicarOferta.png" alt="Generic placeholder image">
-                    <h2>Oferta 2</h2>
-                    <p>Descripción de la penúltima oferta de trabajo publicada.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <img class="img-circle" src="assets/img/VisionMision.png" alt="Generic placeholder image">
-                    <h2>Oferta 3</h2>
-                    <p>Descripción de la antepenúltima oferta de trabajo publicada.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-
-
-            <!-- START THE FEATURETTES -->
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">Registre su Empresa. <span class="text-muted">Ahora.</span></h2>
-                    <p class="lead">Con solo registrarse, encuentre en nuestra base de datos, de acuerdo a sus necesidades, profesionales altamente capacitados, teóricos y prácticos 100%; formados por nuestro experto cuerpo de docentes.
-                        Registre su empresa, publique su oferta y podrá seleccionar entre nuestros estudiantes o graduados que apliquen a su oferta.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="featurette-image img-responsive" src="assets/img/Empleador1.jpg"  alt="Generic placeholder image">
+            <div class="item">
+                <img src="data:image/png;base64," data-src="assets/js/holder.js/900x500/auto/#B2D0FF:#B2D0FF/text:Second slide" alt="Second slide">
+                <img src="assets/img/banner2.jpg">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>¿Eres Estudiante, Egresado o Graduado?</h1>
+                        <h2>¿Buscas Empleo?</h2>
+                        <p>Registra tu currículum con nosotros y busca las mejores oportunidades de empleo.</p>
+                        <p><a class="btn btn-lg btn-primary" href="login.html" role="button">Entrar</a></p>
+                    </div>
                 </div>
             </div>
+            <div class="item" id="item_vidUfg">
+                <img src="data:image/png;base64," data-src="assets/js/holder.js/900x500/auto/#B2D0FF:#B2D0FF/text:Third slide" alt="Third slide">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Conoce mas sobre la UFG.</h1>
 
-            <hr class="featurette-divider">
+                        <embed
+                            width="700" height="400"
+                            src="http://www.youtube.com/v/5V-FQocQ4PY"
+                            type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true">
+                        </embed>   
 
-            <div class="row featurette">
-                <div class="col-md-5">
-                    <img class="featurette-image img-responsive" src="assets/img/vacantes1.jpg"  alt="Generic placeholder image">
-                </div>
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">Si eres estudiante de la UFG. <span class="text-muted">Registra tu currículum gratuitamente</span></h2>
-                    <p class="lead">Agregue su currículum gratuitamente a nuestra base de datos y dese a conocer a cientos de empresas registradas en nuestra base de datos. También puede aplicar a cientos de oportunidades de empleo, ofertadas por las mejores empresas nacionales e internacionales.</p>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">Empresas registradas <span class="text-muted">con nosotros.</span></h2>
-                    <p class="lead">Contamos con un registro de empresas prestigiosas nacionales e internacionales, que utilizan nuestra base de datos para contratar y cubrir sus plazas vacantes.</p>
-                </div>
-                <div class="col-md-5">
-                    <img class="featurette-image img-responsive" src="assets/img/Logos.jpg" alt="Generic placeholder image">
+                    </div>
                 </div>
             </div>
-
-            <hr class="featurette-divider">
-
-            <!-- /END THE FEATURETTES -->
-
-
-            <!-- FOOTER -->
-            <footer>
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; 2013 Bolsa de Empleo UFG, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a></p>
-            </footer>
-
-        </div><!-- /.container -->
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
 
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-    </body>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="img-circle" src="assets/img/curriculum.png" alt="Generic placeholder image">
+                <h2>Oferta 1</h2>
+                <p>Descripción de la última oferta de trabajo publicada.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="assets/img/PublicarOferta.png" alt="Generic placeholder image">
+                <h2>Oferta 2</h2>
+                <p>Descripción de la penúltima oferta de trabajo publicada.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="img-circle" src="assets/img/VisionMision.png" alt="Generic placeholder image">
+                <h2>Oferta 3</h2>
+                <p>Descripción de la antepenúltima oferta de trabajo publicada.</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Registre su Empresa. <span class="text-muted">Ahora.</span></h2>
+                <p class="lead">Con solo registrarse, encuentre en nuestra base de datos, de acuerdo a sus necesidades, profesionales altamente capacitados, teóricos y prácticos 100%; formados por nuestro experto cuerpo de docentes.
+                    Registre su empresa, publique su oferta y podrá seleccionar entre nuestros estudiantes o graduados que apliquen a su oferta.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="assets/img/Empleador1.jpg"  alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="assets/img/vacantes1.jpg"  alt="Generic placeholder image">
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Si eres estudiante de la UFG. <span class="text-muted">Registra tu currículum gratuitamente</span></h2>
+                <p class="lead">Agregue su currículum gratuitamente a nuestra base de datos y dese a conocer a cientos de empresas registradas en nuestra base de datos. También puede aplicar a cientos de oportunidades de empleo, ofertadas por las mejores empresas nacionales e internacionales.</p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Empresas registradas <span class="text-muted">con nosotros.</span></h2>
+                <p class="lead">Contamos con un registro de empresas prestigiosas nacionales e internacionales, que utilizan nuestra base de datos para contratar y cubrir sus plazas vacantes.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-responsive" src="assets/img/Logos.jpg" alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2013 Bolsa de Empleo UFG, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a></p>
+        </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+</body>
 </html>
