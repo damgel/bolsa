@@ -11,18 +11,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link href="assets/carousel.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
+       <link rel="stylesheet" href="assets/css/bootstrap.css">
+         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jqueryUI.css">
-        <link rel="stylesheet" href="assets/css/generalStyles.css">
+        <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>   
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
-        <script src="assets/js/jquery.validate.js"></script>
         <script src="assets/js/validarRegEmpleador.js"></script>
-        <script src="assets/js/bootstrap.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
+        <script>
+                  // fallback para el datepicker con jquery
+            Modernizr.load({
+                test: Modernizr.inputtypes.date,
+                nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
+                complete: function() {
+                    $('input[type=date]').datepicker({
+                        dateFormat: 'yy-mm-dd'
+                    });
+                }
+
+            });
+        </script>
 
         <style>
             .container

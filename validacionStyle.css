@@ -1,11 +1,50 @@
+/* 
+    Document   : generalStyles
+    Created on : 09-23-2013, 09:50:15 PM
+    Author     : daMgeL
+    Description:
+        Purpose of the stylesheet follows.
+*/
 
 body
 {
     background-color:#f5f5f5; /*  <---- color de fondo de toda la pagina*/
 }
-/* css para la sombra del div "sombra" */
+.container
+{
+    margin-top: 1%;
 
-/* === HTML5 validation styles === */
+}
+
+#contenedor
+{
+    display: center;
+}
+
+
+.panel panel-primary
+{
+    margin-top: 1%;
+    display: center;
+    max-width: 1034px;
+}
+
+#tipo_contratacion
+{
+    float:right;       /*tambien puede poner float:right, para que se alineé a la derecha */
+    padding:10px;
+    width:35%;
+    margin:0px;
+    background-color: blue;
+
+
+}
+h2
+{
+    text-align: center;
+
+    /* === HTML5 validation styles === */
+}
 
 .form-horizontal input:required,.form-horizontal text:required , .form-horizontal date:required, .form-horizontal select:required, .form-horizontal textarea:required {
     background: #fff url(assets/img/red_asterisk.png) no-repeat 98% center;
@@ -22,12 +61,6 @@ body
     border-color: #b03535
 }  
 
-
-
-#contenedor
-{
-    display: center;
-}
 /* css para las validaciones */
 
 label.valid {
@@ -62,6 +95,7 @@ label.lerror {
     padding: 2px 8px;
     margin-top: 2px;
 }
+
 
 
 

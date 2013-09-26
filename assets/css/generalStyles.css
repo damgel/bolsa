@@ -13,13 +13,15 @@ body
 .container
 {
     margin-top: 1%;
- 
+
 }
 
 #contenedor
 {
     display: center;
 }
+
+
 .panel panel-primary
 {
     margin-top: 1%;
@@ -27,16 +29,16 @@ body
     max-width: 1034px;
 }
 
- #tipo_contratacion
-            {
-                float:right;       /*tambien puede poner float:right, para que se alineé a la derecha */
-                padding:10px;
-                width:35%;
-                margin:0px;
-                background-color: blue;
-         
+#tipo_contratacion
+{
+    float:right;       /*tambien puede poner float:right, para que se alineé a la derecha */
+    padding:10px;
+    width:35%;
+    margin:0px;
+    background-color: blue;
 
-            }
+
+}
 h2
 {
     text-align: center;
