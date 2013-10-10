@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="es">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> Busqueda de Empleo </title>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <title>Busqueda de Empleos</title>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/jqueryUI.css">
-        <link rel="stylesheet" href="assets/css/generalStyles.css">
+        
         <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
+        <style>
+        body {
+                
+                /* background-color: gainsboro;    */
+                /* background-color:#d0e5f5;  */
+                background-color:#d6e9c6;
+            }
+        </style>
         <script>
             // fallback para el datepicker con jquery
             Modernizr.load({
@@ -30,24 +35,14 @@
                 }
 
             });
-            Modernizr.load({
-                test: Modernizr.inputtypes.range,
-                nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
-                complete: function() {
-                    $('input[type=range]').spinner({
-                        min: $input.attr('min'),
-                        max: $input.attr('max'),
-                        step: $input.attr('step')
-                    });
-                }
 
-            });
 
         </script>
     </head>
     <body>
         <!-- NAVBAR
             ================================================== -->
+    <div class="container">
         <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
 
         <div id="error"></div>
@@ -64,10 +59,7 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="contenedor" class="container">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Buscar Empleo</div>
-                <div class="panel-body">
+         
 
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -240,11 +232,13 @@
                             </ul>
                         </div>       
                     </div>  
-                </div>       
-            </div>
-
+            <hr class="featurette-divider">
+            <!-- FOOTER -->
+                <footer>
+                    <p class="pull-right"><a href="#">Back to top</a></p>
+                    <p>&copy; 2013 Bolsa de Empleo UFG, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a></p>
+                </footer>
         </div>
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
     </body>
 </html>
