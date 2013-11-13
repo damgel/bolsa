@@ -137,13 +137,13 @@
                             <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Confirmar Password</label>
                             <div class="col-lg-4">
-                                <input type="password" name="password" class="form-control" placeholder="Confirmar Password"  required pattern=.{8,25}>
+                                <input type="password" name="password2" class="form-control" placeholder="Confirmar Password"  required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="genero" class="col-lg-3 control-label">Sexo</label>
+                            <label for="genero" class="col-lg-3 control-label">Genero</label>
                             <div class="col-lg-4">
-                                <select name="sexolst" class="form-control" required>
+                                <select name="genero" class="form-control" required>
                                     <option value="">Seleccione una opcion: </option> 
                                     <option value="M">Masculino</option>    
                                     <option value="F">Femenino</option>

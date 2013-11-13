@@ -116,13 +116,13 @@
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Confirmar Password</label>
                             <div class="col-lg-4">
-                                <input type="password" name="password" class="form-control" placeholder="Confirmar Password"  required pattern=.{8,25}>
+                                <input type="password" name="password2" class="form-control" placeholder="Confirmar Password"  required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="genero" class="col-lg-3 control-label">Sexo</label>
+                            <label for="genero" class="col-lg-3 control-label">Genero</label>
                             <div class="col-lg-4">
-                                <select name="sexolst" class="form-control" required>
+                                <select name="genero" class="form-control" required>
                                     <option value="">Seleccione una opcion: </option> 
                                     <option value="M">Masculino</option>    
                                     <option value="F">Femenino</option>
@@ -145,52 +145,52 @@
                         <br>
 
                         <div class="form-group">
-                            <label for="Nombre" class="col-lg-1 control-label">Nombre</label>
+                            <label for="Nombre" class="col-lg-1 control-label" >Nombre</label>
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required> 
+                                <input type="text" name="nombrereferencia1" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required> 
                             </div>
-                            <label for="Apellido" class="col-lg-1 control-label">Apellido</label> 
+                            <label for="Apellido" class="col-lg-1 control-label" name="apellidoreferencia1">Apellido</label> 
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required>
+                                <input type="text" name="apellidoreferencia1" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required>
                             </div>
-                            <label for="telefono" class="col-lg-1 control-label">Telefono</label>
+                            <label for="telefono" class="col-lg-1 control-label" name="telreferencia1">Telefono</label>
                             <div class="col-lg-3">
-                                <input type="tel" class="form-control" pattern=.{7,12} id="focusedInput" required>
+                                <input type="tel" class="form-control" pattern=.{7,12} id="focusedInput" name="telreferencia1"required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-1 control-label"> Nombre </label>
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required> 
+                                <input type="text" name="nombrereferencia2" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required> 
                             </div>                                                
                             <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required>
+                                <input type="text" name="apellidoreferencia2" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required>
                             </div>        
                             <label for="telefono" class="col-lg-1 control-label">Telefono </label>
                             <div class="col-lg-3">
-                                <input type="tel" class="form-control" pattern=.{7,12} required id="focusedInput"> 
+                                <input type="tel" class="form-control" pattern=.{7,12} required id="focusedInput" name="telreferencia2"> 
                             </div>
                         </div>
                         <div class="form-group"> 
                             <label for="Nombre" class="col-lg-1 control-label">Nombre</label>
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required>
+                                <input type="text" name="nombrereferencia3" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required>
                             </div>       
                             <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
                             <div class="col-lg-3">
-                                <input type="text" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required> 
+                                <input type="text" name="apellidoreferencia3" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required> 
                             </div>                                      
                             <label for="telefono" class="col-lg-1 control-label">Telefono </label>
                             <div class="col-lg-3">
-                                <input type="tel" class="form-control" pattern=.{7,12} required id="focusedInput">  
+                                <input type="tel" name="telreferencia3" class="form-control" pattern=.{7,12} required id="focusedInput">  
                             </div>
                         </div>
 							<br>
 							<div class="form-group">
                             <label class="col-lg-2 control-label">Subir curriculum </label>
                              <div class="col-lg-3">
-                            <input type="file" id="exampleInputFile">
+                            <input type="file" id="exampleInputFile" name="subir">
                             <p class="help-block"></p>
                             </div>
                           </div>

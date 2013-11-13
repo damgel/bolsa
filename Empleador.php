@@ -105,20 +105,20 @@
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
                                     <div class="col-lg-4">
-                                        <input type="text" name="nombre_emp" class="form-control" placeholder="Escriba un nombre" required>
+                                        <input type="text" name="nombre_perfilemp" class="form-control" placeholder="Escriba un nombre" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="password_emp" class="form-control" placeholder="Contraseña" required>
+                                        <input type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" required>
                                     </div>  
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ConfirmContrasenia" class="col-lg-3 control-label">Confirme contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required>
+                                        <input type="password" name="confirm_password_perfilemp" class="form-control" placeholder="Confirme su contraseña" required>
                                     </div>  
                                 </div>    
 
@@ -126,93 +126,21 @@
                                 <div class="form-group">
                                     <label for="correo" class="col-lg-3 control-label">Correo</label>
                                     <div class="col-lg-4">
-                                        <input type="email" name="email_emp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id="focusedInput" required>
+                                        <input type="email" name="email_perfilemp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id="focusedInput" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-3 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_emp" placeholder="Escriba un numero de telefono" class="form-control" required>
+                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" required>
                                     </div>
                                 </div>
-                                <div class="form-group">    
-                                    <label for="direccionEmpresa" class="col-lg-3 control-label">Direccion de la Empresa</label>
-                                    <div class="col-lg-6">
-                                        <input type="text" name="direc_emp" class="form-control" placeholder="Escriba la direccion" required>
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="paisEmpresa" class="col-lg-3 control-label">Pais</label>
-                                    <div class="col-lg-4">
-                                        <select name="pais_empresa" class="form-control" required="">
-                                            <option value="">Seleccione el Pais:</option>
-                                            <option value="-1">- Seleccione -</option>
-                                            <option>Alemania</option>
-                                            <option>Argentina</option>
-                                            <option>Australia</option>
-                                            <option>Austria</option>
-                                            <option>Bahamas</option>
-                                            <option>Barbados</option>
-                                            <option>Bélgica</option>
-                                            <option>Belice</option>
-                                            <option>Bermudas</option>
-                                            <option>Bolivia</option>
-                                            <option>Brasil</option>
-                                            <option>Canadá</option>
-                                            <option>Chile</option>
-                                            <option>China</option>
-                                            <option>Colombia</option>
-                                            <option>Corea del Sur</option>
-                                            <option>Costa Rica</option>
-                                            <option>Croacia</option>
-                                            <option>Cuba</option>
-                                            <option>Curacao/Aruba</option>
-                                            <option>Dinamarca</option>
-                                            <option>Ecuador</option>
-                                            <option>El Salvador</option>
-                                            <option>Eslovenia</option>
-                                            <option>España</option>
-                                            <option>Estados Unidos</option>
-                                            <option>Filipinas</option>
-                                            <option>Finlandia</option>
-                                            <option>Francia</option>
-                                            <option>Grecia</option>
-                                            <option>Guatemala</option>
-                                            <option>Haití</option>
-                                            <option>Holanda</option>
-                                            <option>Honduras</option>
-                                            <option>Hong Kong</option>
-                                            <option>Hungría</option>
-                                            <option>India</option>
-                                            <option>Irlanda</option>
-                                            <option>Israel</option>
-                                            <option>Italia</option>
-                                            <option>Jamaica</option>
-                                            <option>Japón</option>
-                                            <option>Jordania</option>
-                                            <option>México</option>
-                                            <option>Nicaragua</option>
-                                            <option>Noruega</option>
-                                            <option>Nueva Zelanda</option>
-                                            <option>Panamá</option>
-                                            <option>Paraguay</option>
-                                            <option>Perú</option>
-                                            <option>Polonia</option>
-                                            <option>Portugal</option>
-                                            <option>Uruguay</option>
-                                            <option>Venezuela</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-
-
+                                
                                 <div class="form-group">
                                     <label for="paginaWeb" class="col-lg-3 control-label">P�gina Web</label>
                                     <div class="col-lg-4">
-                                        <input type="url" name="url_emp" placeholder="www.ejemplo.com" class="form-control">
+                                        <input type="url" name="url_perfilemp" placeholder="www.ejemplo.com" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">    
@@ -286,6 +214,48 @@
                                         </select>
                                     </div>
                                 </div>
+                                
+                                
+                                
+                                <div class="form-group">    
+                                    <label for="direccionEmpresa" class="col-lg-3 control-label">Direccion de la Empresa</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" name="direc_perfilemp" class="form-control" placeholder="Escriba la direccion" required>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="departamento" class="col-lg-3 control-label">departamento</label>
+                                    <div class="col-lg-4">
+                                        <select name="departamento_perfilemp" class="form-control valid" required="">
+
+                                            <option value="">- Seleccione -</option>
+                                            <option value="San Salvador">San Salvador</option>
+                                            <option value="La Paz">La Paz</option>
+                                            <option value="San Miguel">San Miguel</option>
+                                            <option value="La union">La Union</option>
+                                            <option value="La Libertad">La Libertad</option>
+                                            <option value="Santa Ana">Santa Ana</option>
+                                            <option value="Sonsonate">Sonsonate</option>
+                                            <option value="Ahuachapan">Ahuachapan</option>
+                                            <option value="San Vicente">San Vicente</option>
+                                            <option value="Chalatenango">Chalatenango</option>
+                                            <option value="Cabanias">Cabañas</option>
+                                            <option value="Cuscatlan">Cuscatlan</option>
+                                            <option value="Usulutan">Usulutan</option>
+                                            <option value="Morazan">Morazan</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+				<div class="form-group">
+                            <label class="col-lg-3 control-label">Subir Logo de la Empresa </label>
+                             <div class="col-lg-4">
+                            <input type="file" id="exampleInputFile" name="subirlogo">
+                            <p class="help-block"></p>
+                            </div>
+                          </div>
                                 <center><button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button> </center> 
                                 <br>
                             </form>
@@ -316,38 +286,39 @@
                                         <div class="form-group">
                                             <label for="oferta" class="col-lg-3 control-label">Titulo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input type="text" name="titulo" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="nivelacademico" class="col-lg-3 control-label">Descripcion de la Oferta</label>
                                             <div class="col-lg-6">
-                                                <textarea class="form-control" rows="3" required>  </textarea>
+                                                 <textarea name="descripcion" class="form-control" rows="3"> </textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="area" class="col-lg-3 control-label">Area de la Empresa</label>
                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input name="area" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="cargo" class="col-lg-3 control-label">Cargo Solicitado</label>
                                             <div class="col-lg-4">
-                                                <input type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input name="cargo" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group"> 
                                             <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                             <div class="col-lg-4">
-                                                <input type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
+                                                <input name="vacantes" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">              
                                             <label for="tipo contratacion" class="col-lg-3 control-label">Tipo de Contratacion</label>
                                             <div class="col-lg-4">
-                                                <select name="estadoci" class="form-control" id="focusedInput" required="">
+                                                <select name="tipodecontratacion" class="form-control" id="focusedInput" required="">
+                                                     <option value="">Seleccione una opcion</option>
                                                     <option value="TC">Tiempo Completo</option> 
                                                     <option value="MT">Medio Tiempo</option>
                                                     <option value="T">Temporal</option>
@@ -360,7 +331,8 @@
                                         <div class="form-group">   
                                             <label for="nivel experiencia" class="col-lg-3 control-label">Experiencia en anos</label>
                                             <div class="col-lg-4">
-                                                <select name="anos" class="form-control" id="focusedInput" required="">
+                                                <select name="anosexp" class="form-control" id="focusedInput" required="">
+                                                     <option value="">Seleccione una opcion</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -375,16 +347,16 @@
                                         <div class="form-group">        
                                             <label for="edad" class="col-lg-3 control-label">Edad</label>
                                             <div class="col-lg-4">
-                                                <input type="number" name="num" min="18" max="65" class="form-control" id="focusedInput" required>
+                                                <input type="number" name="edad" min="18" max="65" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Genero</label>
                                             <div class="col-lg-4">
-                                                <input type="radio" name="optionsRadios" id="focusedInput" checked="">
+                                                <input type="radio" name="genero" value="M" id="focusedInput" checked="">
                                                 Masculino
-                                                <input type="radio" name="optionsRadios" id="focusedInput">
+                                                <input type="radio" name="genero" value="F" id="focusedInput">
                                                 Femenino   
                                             </div>  
                                         </div>
@@ -392,15 +364,15 @@
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Vehiculo</label>
                                             <div class="col-lg-4">
-                                                <input type="radio" name="idioma" value="Si" checked=""> 
+                                                <input type="radio" name="vehiculo" value="Si" checked=""> 
                                                 Si
-                                                <input type="radio" name="idioma" value="No"> 
+                                                <input type="radio" name="vehiculo" value="No"> 
                                                 No
                                             </div>
                                         </div>
 
                                         <div class="form-group">        
-                                            <label for="salariom" class="col-lg-3 control-label">Salario Maximo</label>
+                                            <label for="salariomax" class="col-lg-3 control-label">Salario Maximo</label>
                                             <div class="col-lg-4">
                                                 <input type="text" class="form-control" id="focusedInput" placeholder="salariom" required>
                                             </div>
@@ -413,19 +385,32 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group"> 
-                                            <label for="pais" class="col-lg-3 control-label">Pais</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" class="form-control" id="focusedInput" placeholder="Pais" required>
-                                            </div>
-                                        </div>
+                                        
 
-                                        <div class="form-group"> 
-                                            <label for="departamento" class="col-lg-3 control-label">Departamento</label>
-                                            <div class="col-lg-4">
-                                                <input type="text" class="form-control" id="focusedInput" placeholder="Departamento" required>
-                                            </div>
-                                        </div>
+                                        <div class="form-group">
+                                    <label for="departamento" class="col-lg-3 control-label">departamento</label>
+                                    <div class="col-lg-4">
+                                        <select name="departamento" class="form-control valid" required="">
+
+                                            <option value="">- Seleccione -</option>
+                                            <option value="San Salvador">San Salvador</option>
+                                            <option value="La Paz">La Paz</option>
+                                            <option value="San Miguel">San Miguel</option>
+                                            <option value="La union">La Union</option>
+                                            <option value="La Libertad">La Libertad</option>
+                                            <option value="Santa Ana">Santa Ana</option>
+                                            <option value="Sonsonate">Sonsonate</option>
+                                            <option value="Ahuachapan">Ahuachapan</option>
+                                            <option value="San Vicente">San Vicente</option>
+                                            <option value="Chalatenango">Chalatenango</option>
+                                            <option value="Cabanias">Cabañas</option>
+                                            <option value="Cuscatlan">Cuscatlan</option>
+                                            <option value="Usulutan">Usulutan</option>
+                                            <option value="Morazan">Morazan</option>
+
+                                        </select>
+                                    </div>
+                                </div>
 
                                     </div>
 
@@ -438,7 +423,7 @@
                                     <div class="form-group">    
                                         <label for="indispensable" class="col-lg-3 control-label">Indispensable</label>
                                         <div class="col-lg-6">
-                                            <textarea class="form-control" rows="3"> </textarea>
+                                            <textarea name="exp" class="form-control" rows="3"> </textarea>
                                         </div>
                                     </div>         
 
@@ -451,7 +436,7 @@
                                     <div class="form-group">
                                         <label for="Titulo" class="col-lg-3 control-label">Titulo en</label>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control" id="focusedInput" placeholder="Detalle " required>
+                                            <input type="text" name="tituloen" class="form-control" id="focusedInput" placeholder="Detalle " required>
                                         </div>
                                     </div>
 
@@ -459,15 +444,17 @@
                                         <label for="nivel academico" class="col-lg-3 control-label">Nivel Academico </label>
                                         <div class="col-lg-4">
                                             <select name="nivel" id="nivel" class="form-control" required="">
-                                                <option value="1">Estudiante Universitario-Graduado</option>
-                                                <option value="2">Estudiante Universitario-mitad de sus estudios</option>
-                                                <option value="3">Estudiante Universitario-empesando sus estudios</option>
-                                                <option value="4">Bachiller</option>
+                                            <option value="">Seleccione una opcion </option>
+                                                <option value="Estudiante Universitario-Graduado">Estudiante Universitario-Graduado</option>
+                                                <option value="Estudiante Universitario-mitad de sus estudios">Estudiante Universitario-mitad de sus estudios </option>
+                                                <option value="Estudiante Universitario-empesando sus estudios">Estudiante Universitario-empesando sus estudios  </option>
+                                                <option value="Bachiller">Bachiller</option>
                                             </select>
                                         </div>
                                     </div>
 
                                 </div>
+                                
 
                                 <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button> </center>  
 
