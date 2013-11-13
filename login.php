@@ -138,7 +138,7 @@
                             <h4><p class="text-center">Registrarse como Empleado</p></h4>
                             
                             <p class="text-center">
-                                <a href="RegistroUsuario.html">
+                                <a href="RegistroUsuario.php">
                                     <button type="submit" class="btn btn-primary">Registrarse</button> 
                                 </a>
                             </p>
@@ -146,7 +146,7 @@
                             <h4><p class="text-center">Registrate como Empleador</p></h4>
                             
                             <p class="text-center">
-                                <a href="RegistroEmpleador.html">
+                                <a href="RegistroEmpleador.php">
                                     <button type="submit" class="btn btn-primary">Registrarse</button>
                                 </a>
                             </p>
