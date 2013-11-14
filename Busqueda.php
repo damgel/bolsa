@@ -56,11 +56,6 @@
                         }
                     });
                 });</script> 
-            <!--[if lt IE 7]>
-                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
-
-
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">Seleccione sus criterios de busqueda:</h3>
