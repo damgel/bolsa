@@ -146,10 +146,7 @@
                                     <option>Otros</option>
                                 </select>
                             </div>
-
                         </div>
-
-
                     </div>
 
                     <form action="" class="form-inline">
