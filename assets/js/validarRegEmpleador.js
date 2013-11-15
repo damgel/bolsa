@@ -3,57 +3,45 @@ $(document).ready(function() {
 // codigo personalizado para mis validaciones
     $('#registroEmpleador').validate({
         rules: {
-			
-			
-			
             nombre_emp:
                     {
                         required: true,
-                        minlength: 12,
-						patterner:[0,10]
+                        minlength: 8,
+                        patterner: [0, 8]
                     },
-            password_emp:
+            password_em:
                     {
                         minlength: 8,
                         required: true,
-						patterner:[0,10]
+                        patterner: [0, 8]
                     },
             confirm_password:
                     {
                         minlength: 8,
                         required: true,
-                        equalTo: '#password_emp',
-						patterner:[0,10]
+                        equalTo: '#password_em',
+                        patterner: [0, 8]
                     },
-            email_emp:
+            email_em:
                     {
                         required: true,
                         email: true,
-						patterner:[0,10]
                     },
-            telefono_emp:
+            telefono_em:
                     {
                         required: true,
                         minlength: 8,
-						patterner:[0,10]
+                        patterner: [0, 8]
+
                     },
-            url_emp:
-                    {
-                        required: true,
-                        minlength: 12,
-						patterner:[0,10]
-                    },
-            textarea:
+            descripcion_em:
                     {
                         required: true,
                         minlength: 25,
-						patterner:[0,10]
                     },
-            actividad_empresa:
+            actividad_em:
                     {
                         required: true,
-						patterner:[0,10]
-
                     }
         }
     });
