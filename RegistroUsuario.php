@@ -11,8 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-         <link rel="stylesheet" href="assets/css/bootstrap.css">
-         <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jqueryUI.css">
         <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
@@ -22,9 +22,9 @@
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
         <script src="assets/js/validarRegUsuario.js"></script>
-        
+
         <script>
-                  // fallback para el datepicker con jquery
+            // fallback para el datepicker con jquery
             Modernizr.load({
                 test: Modernizr.inputtypes.date,
                 nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
@@ -55,35 +55,18 @@
             }
 
         </style>
- 
+
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- NAVBAR
-================================================== -->
-
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
-
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status == "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });</script> 
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
 
         <div id="contenedor" class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">Formulario de Registro para Usuarios</div>
                 <div class="panel-body">
-                    
+
                     <form action="#" id="registroUsuario" method="POST" class="form-horizontal" >
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-3 control-label">Nombre</label>
@@ -134,7 +117,7 @@
                                 <input type="password" name="password" class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
                             </div>
                         </div>
-                            <div class="form-group">
+                        <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Confirmar Password</label>
                             <div class="col-lg-4">
                                 <input type="password" name="password2" class="form-control" placeholder="Confirmar Password"  required pattern=.{8,25}>

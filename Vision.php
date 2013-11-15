@@ -16,8 +16,8 @@
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
-        
-         <style>
+
+        <style>
             .container
             {
                 margin-top: 2%;
@@ -32,46 +32,25 @@
             }
 
         </style>
-        
-        
+
+
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-        <!-- NAVBAR
-================================================== -->
-
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
-
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status == "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });</script> 
-
-        
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
         <div class="container">
-      
-<br>
-      <div class="jumbotron">
-        <center><h1>Vision</h1></center>
-        <br>
-        <p class="lead">Ser la mejor opción en búsquedas de empleos a nivel regional y obtener el reconocimiento de la excelencia en el ramo. Así como mantener la preferencia de nuestros usuarios y visitantes.</p>
-      
-      </div>
-<br>
-    </div>
-        
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+            <br>
+            <div class="jumbotron">
+                <center><h1>Vision</h1></center>
+                <br>
+                <p class="lead">Ser la mejor opción en búsquedas de empleos a nivel regional y obtener el reconocimiento de la excelencia en el ramo. Así como mantener la preferencia de nuestros usuarios y visitantes.</p>
+
+            </div>
+            <br>
+        </div>
 
     </body>
 </html>

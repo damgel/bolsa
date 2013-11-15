@@ -28,25 +28,9 @@
 
     </head>
     <body>
-
-
-        <!-- TODO EL CODIGO HTML QUE VAYAN A UTILIZA AQUI, NO BORREN NINGUNA LINEA DE CODIGO DE LAS QUE YA ESTAN AQUI -->
-        <!-- NO NECESITAN PONER NINGUN SCRIPTS, EXCEPTO LAS PROPIAS CLASES CSS QUE CREEN. -->
-
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
-
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status == "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });</script> 
-
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
         <div id="contenedor" class="container">
             <div class="panel panel-primary">
                 <div class="panel-heading">Publicar Oferta</div>

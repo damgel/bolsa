@@ -21,21 +21,9 @@
     </head>
     <body>
 
-        <!-- NAVBAR
-            ================================================== -->
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
-
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status == "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });</script> 
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
 
         <div class="jumbotron">              
 

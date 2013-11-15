@@ -9,7 +9,6 @@
         <title>Perfil Empleador</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
@@ -61,27 +60,9 @@
         </style>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- NAVBAR
-     ================================================== -->
-
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
-
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status == "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });
-        </script> 
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
 
         <div id="contenedor" class="container">
 
@@ -106,6 +87,12 @@
                                     <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
                                     <div class="col-lg-4">
                                         <input type="text" name="nombre_perfilemp" class="form-control" placeholder="Escriba un nombre" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Nombre" class="col-lg-3 control-label">Usuario</label>
+                                    <div class="col-lg-4">
+                                        <input type="text" name="usuario_em" class="form-control" placeholder="Escriba un nombre de usuario" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -136,15 +123,15 @@
                                         <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" required>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <label for="paginaWeb" class="col-lg-3 control-label">P�gina Web</label>
+                                    <label for="paginaWeb" class="col-lg-3 control-label">Pagina Web</label>
                                     <div class="col-lg-4">
                                         <input type="url" name="url_perfilemp" placeholder="www.ejemplo.com" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">    
-                                    <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripci�n de la Empresa</label>
+                                    <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripcion de la Empresa</label>
                                     <div class="col-lg-6">
                                         <textarea name="textarea" class="form-control col-lg-6" rows="2"> </textarea>
 
@@ -214,9 +201,9 @@
                                         </select>
                                     </div>
                                 </div>
-                                
-                                
-                                
+
+
+
                                 <div class="form-group">    
                                     <label for="direccionEmpresa" class="col-lg-3 control-label">Direccion de la Empresa</label>
                                     <div class="col-lg-6">
@@ -249,13 +236,13 @@
                                     </div>
                                 </div>
 
-				<div class="form-group">
-                            <label class="col-lg-3 control-label">Subir Logo de la Empresa </label>
-                             <div class="col-lg-4">
-                            <input type="file" id="exampleInputFile" name="subirlogo">
-                            <p class="help-block"></p>
-                            </div>
-                          </div>
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label">Subir Logo de la Empresa </label>
+                                    <div class="col-lg-4">
+                                        <input type="file" id="exampleInputFile" name="subirlogo">
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
                                 <center><button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button> </center> 
                                 <br>
                             </form>
@@ -292,7 +279,7 @@
                                         <div class="form-group">
                                             <label for="nivelacademico" class="col-lg-3 control-label">Descripcion de la Oferta</label>
                                             <div class="col-lg-6">
-                                                 <textarea name="descripcion" class="form-control" rows="3"> </textarea>
+                                                <textarea name="descripcion" class="form-control" rows="3"> </textarea>
                                             </div>
                                         </div>
 
@@ -318,7 +305,7 @@
                                             <label for="tipo contratacion" class="col-lg-3 control-label">Tipo de Contratacion</label>
                                             <div class="col-lg-4">
                                                 <select name="tipodecontratacion" class="form-control" id="focusedInput" required="">
-                                                     <option value="">Seleccione una opcion</option>
+                                                    <option value="">Seleccione una opcion</option>
                                                     <option value="TC">Tiempo Completo</option> 
                                                     <option value="MT">Medio Tiempo</option>
                                                     <option value="T">Temporal</option>
@@ -332,7 +319,7 @@
                                             <label for="nivel experiencia" class="col-lg-3 control-label">Experiencia en anos</label>
                                             <div class="col-lg-4">
                                                 <select name="anosexp" class="form-control" id="focusedInput" required="">
-                                                     <option value="">Seleccione una opcion</option>
+                                                    <option value="">Seleccione una opcion</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
                                                     <option value="3">3</option>
@@ -385,32 +372,32 @@
                                             </div>
                                         </div>
 
-                                        
+
 
                                         <div class="form-group">
-                                    <label for="departamento" class="col-lg-3 control-label">departamento</label>
-                                    <div class="col-lg-4">
-                                        <select name="departamento" class="form-control valid" required="">
+                                            <label for="departamento" class="col-lg-3 control-label">departamento</label>
+                                            <div class="col-lg-4">
+                                                <select name="departamento" class="form-control valid" required="">
 
-                                            <option value="">- Seleccione -</option>
-                                            <option value="San Salvador">San Salvador</option>
-                                            <option value="La Paz">La Paz</option>
-                                            <option value="San Miguel">San Miguel</option>
-                                            <option value="La union">La Union</option>
-                                            <option value="La Libertad">La Libertad</option>
-                                            <option value="Santa Ana">Santa Ana</option>
-                                            <option value="Sonsonate">Sonsonate</option>
-                                            <option value="Ahuachapan">Ahuachapan</option>
-                                            <option value="San Vicente">San Vicente</option>
-                                            <option value="Chalatenango">Chalatenango</option>
-                                            <option value="Cabanias">Cabañas</option>
-                                            <option value="Cuscatlan">Cuscatlan</option>
-                                            <option value="Usulutan">Usulutan</option>
-                                            <option value="Morazan">Morazan</option>
+                                                    <option value="">- Seleccione -</option>
+                                                    <option value="San Salvador">San Salvador</option>
+                                                    <option value="La Paz">La Paz</option>
+                                                    <option value="San Miguel">San Miguel</option>
+                                                    <option value="La union">La Union</option>
+                                                    <option value="La Libertad">La Libertad</option>
+                                                    <option value="Santa Ana">Santa Ana</option>
+                                                    <option value="Sonsonate">Sonsonate</option>
+                                                    <option value="Ahuachapan">Ahuachapan</option>
+                                                    <option value="San Vicente">San Vicente</option>
+                                                    <option value="Chalatenango">Chalatenango</option>
+                                                    <option value="Cabanias">Cabañas</option>
+                                                    <option value="Cuscatlan">Cuscatlan</option>
+                                                    <option value="Usulutan">Usulutan</option>
+                                                    <option value="Morazan">Morazan</option>
 
-                                        </select>
-                                    </div>
-                                </div>
+                                                </select>
+                                            </div>
+                                        </div>
 
                                     </div>
 
@@ -444,7 +431,7 @@
                                         <label for="nivel academico" class="col-lg-3 control-label">Nivel Academico </label>
                                         <div class="col-lg-4">
                                             <select name="nivel" id="nivel" class="form-control" required="">
-                                            <option value="">Seleccione una opcion </option>
+                                                <option value="">Seleccione una opcion </option>
                                                 <option value="Estudiante Universitario-Graduado">Estudiante Universitario-Graduado</option>
                                                 <option value="Estudiante Universitario-mitad de sus estudios">Estudiante Universitario-mitad de sus estudios </option>
                                                 <option value="Estudiante Universitario-empesando sus estudios">Estudiante Universitario-empesando sus estudios  </option>
@@ -454,7 +441,7 @@
                                     </div>
 
                                 </div>
-                                
+
 
                                 <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button> </center>  
 

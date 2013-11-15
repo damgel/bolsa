@@ -45,7 +45,7 @@
 
 
             body {
-                
+
                 /* background-color: gainsboro;    */
                 /* background-color:#d0e5f5;  */
                 background-color:#d6e9c6;
@@ -78,19 +78,13 @@
 
         </script>
     </head>
-
-    <!-- NAVBAR
-        ================================================== -->
     <body>
         <div class="container">
             <div id="header" class="navbar navbar-inverse navbar-static-top">
+                <?php include_once 'layout/header.php'; ?>
             </div>
 
-            <!-- // Script para cargar recursos html con jQuery en una pagina -->
-
-
-            <!-- Carousel
-                ================================================== -->
+            <!-- Carousel================================================== -->
             <div id="myCarousel" class="carousel slide">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -108,8 +102,8 @@
                                 <h1>Universidad Francisco Gavidia.</h1>
                                 <p>¿Deseas Trabajar o Contratar?</p>
                                 <p>
-                                    <a class="btn btn-lg btn-primary" href="RegistroEmpleador.html" role="button">Contratar</a>
-                                    <a class="btn btn-lg btn-primary" href="RegistroUsuario.html" role="button">Trabajar</a>
+                                    <a class="btn btn-lg btn-primary" href="RegistroEmpleador.php" role="button">Contratar</a>
+                                    <a class="btn btn-lg btn-primary" href="RegistroUsuario.php" role="button">Trabajar</a>
                                 </p>
 
                             </div>

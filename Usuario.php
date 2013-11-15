@@ -19,7 +19,7 @@
         <script src="assets/js/jquery.validate.js"></script>    
         <script src="assets/js/modernizr2.6.2.js"></script>  
         <script>
-             // fallback para el datepicker con jquery
+            // fallback para el datepicker con jquery
             Modernizr.load({
                 test: Modernizr.inputtypes.date,
                 nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
@@ -32,26 +32,11 @@
             });
         </script>
 
-
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
-
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status === "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });</script> 
-
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
 
         <div id="contenedor" class="container">
             <div class="panel panel-primary">
@@ -186,14 +171,14 @@
                                 <input type="tel" name="telreferencia3" class="form-control" pattern=.{7,12} required id="focusedInput">  
                             </div>
                         </div>
-							<br>
-							<div class="form-group">
+                        <br>
+                        <div class="form-group">
                             <label class="col-lg-2 control-label">Subir curriculum </label>
-                             <div class="col-lg-3">
-                            <input type="file" id="exampleInputFile" name="subir">
-                            <p class="help-block"></p>
+                            <div class="col-lg-3">
+                                <input type="file" id="exampleInputFile" name="subir">
+                                <p class="help-block"></p>
                             </div>
-                          </div>
+                        </div>
                         <br>
                         <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button></center>
 

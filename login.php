@@ -16,15 +16,15 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="validacionStyle.css">
-        
-          <script src="assets/js/jquery-v1.10.2.js"></script>
+
+        <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.validate.js"></script>   
         <script src="assets/js/validarLogin.js"></script>   
         <script src="assets/js/modernizr2.6.2.js"></script>
-        
-        
-        
+
+
+
         <style>
             .container
             {
@@ -33,7 +33,7 @@
             }
             .panel panel-primary
             {
-             
+
                 display: center;
 
             }
@@ -55,7 +55,7 @@
                 padding:10px;
                 width:400px;
                 margin:40px;
-         
+
 
             }
 
@@ -65,96 +65,79 @@
 
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <!-- NAVBAR
-        ================================================== -->
+        <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Login</div>
+                <div class="panel-body">
 
-        <div id="header" class="navbar navbar-inverse navbar-static-top"></div>
+                    <form id="frm-login" action="#" method="POST" class="form-horizontal">
 
-        <div id="error"></div>
-        <!-- // Script para cargar recursos html con jQuery en una pagina -->
-        <script>$(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status == "error")
-                    {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });</script> 
+                        <fieldset>
+                            <div class="form-group">
 
-            <div class="container">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Login</div>
-                    <div class="panel-body">
-                       
-                            <form id="frm-login" action="#" method="POST" class="form-horizontal">
+                                <legend><center><h3>Login</h3></center></legend>
+                                <br>
+                                <div class="form-group">
+                                    <label  class="col-lg-3 control-label" for="email">Correo</label>
+                                    <div class="col-lg-8">
+                                        <input type="email" name="email" class="form-control"  placeholder="Escriba un correo" required>
 
-                                <fieldset>
-                                    <div class="form-group">
+                                    </div>
+                                </div>  
 
-                                        <legend><center><h3>Login</h3></center></legend>
-                                        <br>
-                                        <div class="form-group">
-                                            <label  class="col-lg-3 control-label" for="email">Correo</label>
-                                            <div class="col-lg-8">
-                                                <input type="email" name="email" class="form-control"  placeholder="Escriba un correo" required>
+                                <div class="form-group">
+                                    <label  class="col-lg-3 control-label" for="passwordm">Password</label>
+                                    <div class="col-lg-8">
+                                        <input type="password" name="passwordm" class="form-control"  placeholder="Escriba una contrasenia" required  pattern=".{8,25}">
 
-                                            </div>
-                                        </div>  
+                                    </div>
+                                </div>
 
-                                        <div class="form-group">
-                                            <label  class="col-lg-3 control-label" for="passwordm">Password</label>
-                                            <div class="col-lg-8">
-                                                <input type="password" name="passwordm" class="form-control"  placeholder="Escriba una contrasenia" required  pattern=".{8,25}">
+                                <p class="text-center text-primary"><a href="">¿Has olvidado tu contraseña?</a></p>
 
-                                            </div>
-                                        </div>
-                                        
-                                    <p class="text-center text-primary"><a href="">¿Has olvidado tu contraseña?</a></p>
-                                        
-                                        <br>
-                                        <center>
-                                            <label class="checkbox-inline">
-                                                <input type="checkbox"> Recordarme
-                                            </label>
-                                            <button type="submit" class="btn btn-success">Ingresar</button>   
-                                        </center>
-                                        <br>
-                                        <br>
-                                        <br>
+                                <br>
+                                <center>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox"> Recordarme
+                                    </label>
+                                    <button type="submit" class="btn btn-success">Ingresar</button>   
+                                </center>
+                                <br>
+                                <br>
+                                <br>
 
 
-                                    </div> 
-                                </fieldset>
+                            </div> 
+                        </fieldset>
 
-                            </form>
-                
-                        <div id="registrarse-container">
-                            <h3><p class="text-center">¿Ya estas registrado?</p></h3>
-                            <hr>
-                            <h4><p class="text-center">Registrarse como Empleado</p></h4>
-                            
-                            <p class="text-center">
-                                <a href="RegistroUsuario.php">
-                                    <button type="submit" class="btn btn-primary">Registrarse</button> 
-                                </a>
-                            </p>
-                            <br>
-                            <h4><p class="text-center">Registrate como Empleador</p></h4>
-                            
-                            <p class="text-center">
-                                <a href="RegistroEmpleador.php">
-                                    <button type="submit" class="btn btn-primary">Registrarse</button>
-                                </a>
-                            </p>
-                        </div>
+                    </form>
 
-                    </div>       
-                </div>
+                    <div id="registrarse-container">
+                        <h3><p class="text-center">¿Ya estas registrado?</p></h3>
+                        <hr>
+                        <h4><p class="text-center">Registrarse como Empleado</p></h4>
+
+                        <p class="text-center">
+                            <a href="RegistroUsuario.php">
+                                <button type="submit" class="btn btn-primary">Registrarse</button> 
+                            </a>
+                        </p>
+                        <br>
+                        <h4><p class="text-center">Registrate como Empleador</p></h4>
+
+                        <p class="text-center">
+                            <a href="RegistroEmpleador.php">
+                                <button type="submit" class="btn btn-primary">Registrarse</button>
+                            </a>
+                        </p>
+                    </div>
+
+                </div>       
             </div>
+        </div>
 
 
 
