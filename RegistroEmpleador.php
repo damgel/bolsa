@@ -113,14 +113,14 @@ if (isset($_POST['submitted'])) {
                                 </div>
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-4 control-label">Nombre de la Empresa</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" name="nombre_em" class="form-control"   placeholder="Escriba un nombre" required>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="nombre_em" class="form-control" placeholder="Nombre" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-4 control-label">Usuario</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" name="usuario_em" class="form-control" placeholder="Escriba un nombre de usuario" required>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="usuario_em" class="form-control" placeholder="Usuario" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -139,28 +139,28 @@ if (isset($_POST['submitted'])) {
 
                                 <div class="form-group">
                                     <label for="correo" class="col-lg-4 control-label">Correo</label>
-                                    <div class="col-lg-4">
-                                        <input type="email" name="email_em" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id = "focusedInput" required>
+                                    <div class="col-sm-6">
+                                        <input type="email" name="email_em" placeholder="ejemplo@dominio.com" class="form-control" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-4 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_em" placeholder="Escriba un numero de telefono" class="form-control"  required>
+                                        <input type="tel" name="telefono_em" placeholder="Telefono" class="form-control"  required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="paginaWeb" class="col-lg-4 control-label">Página Web</label>
-                                    <div class="col-lg-4">
-                                        <input type="url" name="url_em" placeholder="www.ejemplo.com" class="form-control">
+                                    <div class="col-sm-6">
+                                        <input type="url" name="url_em" placeholder="url" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">    
                                     <label for="descripcionEmpresa" class="col-lg-4 control-label">Descripción de la Empresa</label>
-                                    <div class="col-lg-6">
-                                        <Textarea name="descripcion_em" class="form-control col-lg-6" rows="2"> </textarea>
+                                    <div class="col-sm-8">
+                                        <Textarea name="descripcion_em" class="form-control col-lg-6" rows="2" placeholder="Descripcion de su empresa"> </textarea>
 
                                 </div>
                              </div>         
@@ -242,7 +242,6 @@ if (isset($_POST['submitted'])) {
                                         text-align: center;
                                     }
                             </style>
-                            <button type="submit" class="btn btn-default btn-lg">NONE</button>
                         <input type='submit' class="btn btn-primary btn-lg" value='Guardar' /><input type='hidden' value='1' name='submitted' />
                         <br>
                         </div>
