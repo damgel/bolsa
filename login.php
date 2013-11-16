@@ -1,3 +1,29 @@
+<?php
+if ($_POST['action'] === 'Entrar') {
+    $usuario_em = $_POST['email_em'];
+    $pass_em = $_POST['password_em'];
+
+    if (isset($email_em) && !empty($password_em)) {
+        include "clases/db_connect.php";
+        $result = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa 
+                    where email_em='$usuario_em' and password_em='$pass_em'");
+        while ($row = mysql_fetch_array($result)) {
+            $cod_em = $row{'cod_em'};
+            $nombre = $row{'nombre_em'};
+            $permiso_em = $row{'activa_em'};
+            session_start();
+//            if ($permiso_em === "S") {
+            header("Location: http://localhost:8000/Empleador.php"); /* Redirect browser */
+//            } else {
+//                echo '<p class="loginError">La empresa aun no esta aprovada por el momento!.</p>';
+//            }
+        }
+    } else {
+        echo "Por favor introduzca un usuario y contrasenia correctos";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -22,9 +48,6 @@
         <script src="assets/js/jquery.validate.js"></script>   
         <script src="assets/js/validarLogin.js"></script>   
         <script src="assets/js/modernizr2.6.2.js"></script>
-
-
-
         <style>
             .container
             {
@@ -62,7 +85,6 @@
 
         </style>
 
-
     </head>
     <body>
         <div id="header" class="navbar navbar-inverse navbar-static-top">
@@ -73,17 +95,17 @@
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
 
-                    <form id="frm-login" action="#" method="POST" class="form-horizontal">
+                    <form id="frm-login" action="" method="POST" class="form-horizontal" autocomplete="off">
 
                         <fieldset>
                             <div class="form-group">
 
-                                <legend><center><h3>Login</h3></center></legend>
+                                <legend><center><h3>Login Empresa</h3></center></legend>
                                 <br>
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="email">Correo</label>
                                     <div class="col-lg-8">
-                                        <input type="email" name="email" class="form-control"  placeholder="Escriba un correo" required>
+                                        <input type="email" name="email_em" class="form-control"  placeholder="Escriba un correo">
 
                                     </div>
                                 </div>  
@@ -91,7 +113,7 @@
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="passwordm">Password</label>
                                     <div class="col-lg-8">
-                                        <input type="password" name="passwordm" class="form-control"  placeholder="Escriba una contrasenia" required  pattern=".{8,25}">
+                                        <input type="password" name="password_em" class="form-control"  placeholder="Escriba una contrasenia" pattern=".{8,25}">
 
                                     </div>
                                 </div>
@@ -103,7 +125,8 @@
                                     <label class="checkbox-inline">
                                         <input type="checkbox"> Recordarme
                                     </label>
-                                    <button type="submit" class="btn btn-success">Ingresar</button>   
+
+                                    <input type='submit' name='action' value="Entrar" class="btn btn-success">
                                 </center>
                                 <br>
                                 <br>
