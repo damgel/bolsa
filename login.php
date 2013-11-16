@@ -105,7 +105,7 @@ if ($_POST['action'] === 'Entrar') {
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="email">Correo</label>
                                     <div class="col-lg-8">
-                                        <input type="email" name="email_em" class="form-control"  placeholder="Escriba un correo">
+                                        <input type="email" name="email_em" class="form-control"  placeholder="Escriba un correo" required>
 
                                     </div>
                                 </div>  

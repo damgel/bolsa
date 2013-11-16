@@ -51,7 +51,7 @@ h2
 
 }
 .form-horizontal input:required:valid, .form-horizontal text:required:valid, .form-horizontal date:required:valid, .form-horizontal select:required:valid, .form-horizontal textarea:required:valid {
-    background: #fff url(assets/img/valid.png) no-repeat 98% center;
+    background: #fff url(assets/img/success.png) no-repeat 98% center;
     box-shadow: 0 0 2px #5cd053;
     border-color: #46D13B;
 }
