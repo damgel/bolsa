@@ -28,6 +28,11 @@
             {
                 width: 100%;
             }
+            table .estado
+            {
+                font-weight: bold;
+                text-align: center;
+            }
         </style>
 
 
@@ -52,14 +57,13 @@
                             echo "<table class=" . $tabla . ">";
                             echo "<tr>";
                             echo "<td><b>Imagen</b></td>";
-                            echo "<td><b>Estado</b></td>";
                             echo "<td><b>Activa</b></td>";
                             echo "<td><b>Nombre</b></td>";
                             echo "<td><b>Email</b></td>";
                             echo "<td><b>Telefono</b></td>";
                             echo "<td><b>Descripcion</b></td>";
                             echo "<td><b>Actividad</b></td>";
-                            echo "<td><b>Eliminar Empresa</b></td>";
+                            echo "<td><b>Acciones</b></td>";
 
                             echo "</tr>";
                             $result = mysql_query("SELECT * FROM `empresa`") or trigger_error(mysql_error());
@@ -70,15 +74,14 @@
 
 
                                 echo "<tr>";
-                                echo "<td valign='top'><img src='../" . nl2br($row['imagen_em']) . "' width='150' height='150' /></td>";
-                                echo "<td valign='top'>" . nl2br($row['activa_em']) . "</td>";
-                                echo "<td valign='top'><a href=aempresa.php?id={$row['cod_em']}>Activar</a><br><a href=dempresa.php?id={$row['cod_em']}>Desactivar</a></td>";
+                                echo "<td valign='top'><img src='../" . nl2br($row['imagen_em']) . "' width='150' height='100' /></td>";
+                                echo "<td valign='top' class='estado'>" . nl2br($row['activa_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['nombre_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['email_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['telefono_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['descripcion_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['actividad_em']) . "</td>";
-                                echo "<td valign='top'><a href=eliminarEmpresa.php?cod_em={$row['cod_em']}>Delete</a></td> ";
+                                echo "<td valign='top'><a href=aempresa.php?id={$row['cod_em']}>Activar</a><br><a href=dempresa.php?id={$row['cod_em']}>Desactivar</a><br><a href=eliminarEmpresa.php?cod_em={$row['cod_em']}>Eliminar</a></td> ";
                                 echo "</tr>";
                             }
                             echo "</table>";
