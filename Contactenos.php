@@ -1,3 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -94,7 +144,7 @@
                                     <input type="tel" name="telefono" class="form-control" required pattern=".{7,15}">
                                 </div>
                             </div>
-
+                            <input type="number" name="edad" min="18" max="60">
                             <div class="form-group">
                                 <label for="Email" class="col-lg-3 control-label">Correo</label>
                                 <div class="col-lg-4">
