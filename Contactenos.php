@@ -1,53 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -72,18 +22,7 @@
     </head>
     <body>
 
-
-
-
-
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- NAVBAR
-================================================== -->
-
-        <div id="header" class="navbar navbar-inverse navbar-static-top">
+        <div id="header" class="navbar navbar-default navbar-static-top">
             <?php include_once 'layout/header.php'; ?>
         </div>
 
@@ -144,14 +83,24 @@
                                     <input type="tel" name="telefono" class="form-control" required pattern=".{7,15}">
                                 </div>
                             </div>
-                            <input type="number" name="edad" min="18" max="60">
+
                             <div class="form-group">
                                 <label for="Email" class="col-lg-3 control-label">Correo</label>
                                 <div class="col-lg-4">
                                     <input type="email" name="email" class="form-control" placeholder="Escriba un correo aqui"  required>
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label for="motivo" class="col-lg-3 control-label" >Motivo</label>
+                                <div class="col-lg-4">
+                                    <select name="motivo" class="form-control" required="">
+                                        <option value="Dudas en general">Dudas en general</option>
+                                        <option value="Problemas con el sistema">Problemas con el sistema</option>
+                                        <option value="Recomendaciones">Recomendaciones</option>
+                                        <option value="Informacion de registro">Informacion de registro</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group">    
                                 <label for="Mensaje"  class="col-lg-3 control-label">Mensaje</label>
                                 <div class="col-lg-6">

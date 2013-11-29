@@ -40,7 +40,7 @@
     <body>
         <div id="header" class="navbar navbar-inverse navbar-static-top">
             <?php
-            include_once '../layout/header.php';
+            include_once 'menu-admin.php';
             ?>
         </div>
 

@@ -15,7 +15,6 @@
               <script src="assets/js/respond.min.js"></script>
             <![endif]-->
 
-        <!-- Custom styles for this template -->
         <link href="assets/carousel.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
@@ -45,23 +44,23 @@
 
 
             body {
-
-                /* background-color: gainsboro;    */
-                /* background-color:#d0e5f5;  */
-                background-color:#d6e9c6;
+                margin-top: 0px;
+                background-color:  #d0e9c6;
             }
+            .container
+            {
+                background-color: white;
+                padding-top: 5px;
+                margin-top: 5px;
+                overflow: hidden;
+                border:solid 1px #ccc;
+                border-radius: 10px;
+                box-shadow: 0px 0px 5px 1px #ccc;
+
+            }
+
         </style>
         <script>
-            // MENU LOADER
-            $(document).ready(function() {
-                $("#header").load("layout/header.html", function(status, xhr) {
-                    if (status === "error") {
-                        var msg = "Lo lamentamos, ha habido un errror cargando el Menu: ";
-                        $("#error").html(msg + xhr.status + " " + xhr.statusText);
-                    }
-                });
-            });
-
             //JS PARA INICIALIZAR EL CARUSEL
             // INTEVAL = TIEMPO QUE DURA CADA SLIDE
             var $ = jQuery.noConflict();
@@ -80,7 +79,7 @@
     </head>
     <body>
         <div class="container">
-            <div id="header" class="navbar navbar-inverse navbar-static-top">
+            <div id="header" class="navbar navbar-default navbar-static-top">
                 <?php include_once 'layout/header.php'; ?>
             </div>
 
@@ -112,30 +111,30 @@
                     <div class="item">
                         <img src="assets/img/banner2.jpg" alt="Second slide">
 
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <h1>¿Eres Estudiante o Egresado?</h1>
-                                <h2>¿Buscas Empleo?</h2>
-                                <p>Registra tu currículum con nosotros y busca las mejores oportunidades de empleo.</p>
-                                <p><a class="btn btn-lg btn-primary" href="login.html" role="button">Entrar</a></p>
-                            </div>
+
+                        <div class="carousel-caption">
+                            <h1>¿Eres Estudiante o Egresado?</h1>
+                            <h2>¿Buscas Empleo?</h2>
+                            <p>Registra tu currículum con nosotros y busca las mejores oportunidades de empleo.</p>
+                            <p><a class="btn btn-lg btn-primary" href="login.php" role="button">Entrar</a></p>
                         </div>
+
                     </div>
                     <div class="item" id="item_vidUfg">
                         <img src="assets/img/banner3.jpg" alt="Third slide">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <br>
-                                <h1><span class="title-ufg">Conoce mas sobre la UFG.</span></h1>
 
-                                <embed
-                                    width="700" height="400"
-                                    src="http://www.youtube.com/v/5V-FQocQ4PY"
-                                    type="application/x-shockwave-flash">
-                                </embed>
+                        <div class="carousel-caption">
+                            <br>
+                            <h1><span class="title-ufg">Conoce mas sobre la UFG.</span></h1>
 
-                            </div>
+                            <embed
+                                width="700" height="400"
+                                src="http://www.youtube.com/v/5V-FQocQ4PY"
+                                type="application/x-shockwave-flash">
+                            </embed>
+
                         </div>
+
                     </div>
                 </div>
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -143,17 +142,8 @@
             </div>
             <!-- /.carousel -->
 
-
-
-            <!-- Marketing messaging and featurettes
-                ================================================== -->
-            <!-- Wrap the rest of the page in another container to center all the content. -->
-
-
-
             <!-- Three columns of text below the carousel -->
-            <div class="container marketing">
-
+            <div class="marketing">
                 <!-- Three columns of text below the carousel -->
                 <div class="row">
                     <div class="col-lg-4">
@@ -187,7 +177,7 @@
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading">Registre su Empresa. <span class="text-muted"><a href="RegistroEmpleador.html">Ahora.</a></span></h2>
+                        <h2 class="featurette-heading">Registre su Empresa. <span class="text-muted"><a href="RegistroEmpleador.php">Ahora.</a></span></h2>
                         <p class="lead">
                             Con solo registrarse, encuentre en nuestra base de datos, de acuerdo a sus necesidades, profesionales altamente capacitados, teóricos y prácticos 100%; formados por nuestro experto cuerpo de docentes.
                             Registre su empresa, publique su oferta y podrá seleccionar entre nuestros estudiantes o graduados que apliquen a su oferta.
@@ -205,7 +195,7 @@
                         <img class="featurette-image img-responsive" src="assets/img/vacantes1.jpg" alt="Generic placeholder image">
                     </div>
                     <div class="col-md-7">
-                        <h2 class="featurette-heading">Si eres estudiante de la UFG. <span class="text-muted"><a href="RegistroUsuario.html">Registra tu currículum gratuitamente.</a></span></h2>
+                        <h2 class="featurette-heading">Si eres estudiante de la UFG. <span class="text-muted"><a href="RegistroUsuario.php">Registra tu currículum gratuitamente.</a></span></h2>
                         <p class="lead">Agregue su currículum gratuitamente a nuestra base de datos y dese a conocer a cientos de empresas registradas en nuestra base de datos. También puede aplicar a cientos de oportunidades de empleo, ofertadas por las mejores empresas nacionales e internacionales.</p>
                     </div>
                 </div>
@@ -236,10 +226,7 @@
                 </footer>
 
             </div>
-            <!-- /.container -->
-            <!-- Bootstrap core JavaScript
-                ================================================== -->
-            <!-- Placed at the end of the document so the pages load faster -->
+
         </div>
     </body>
 </html>

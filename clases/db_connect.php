@@ -10,7 +10,7 @@ $usuario = "root";
 $password = "";
 $databaseName = "bolsa";
 
-if (!($conexion = mysql_connect($servidor, $usuario, $password) or die('Error al conectar con mysql'))) {
+if (!($conexion = mysql_connect($servidor, $usuario, $password) or die('Ups el servidor de bases de datos esta apagado ^_^'))) {
     echo "algo fallo en la conexion";
     exit();
 }

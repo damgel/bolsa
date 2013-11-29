@@ -9,20 +9,16 @@
         <title>Busqueda de Empleos</title>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jqueryUI.css">
-
+        <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>   
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
-        <style>
-            body {
 
-                /* background-color: gainsboro;    */
-                /* background-color:#d0e5f5;  */
-                background-color:#d6e9c6;
-            }
-        </style>
         <script>
             // fallback para el datepicker con jquery
             Modernizr.load({
@@ -42,10 +38,11 @@
     <body>
         <!-- NAVBAR
             ================================================== -->
-        <div class="container">
-            <div id="header" class="navbar navbar-inverse navbar-static-top">
-                <?php include_once 'layout/header.php'; ?>
-            </div>
+        <div id="header" class="navbar navbar-default navbar-static-top">
+            <?php include_once 'layout/header.php'; ?>
+        </div>
+        <div id="contenedor" class="container">
+
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">Seleccione sus criterios de busqueda:</h3>
@@ -57,7 +54,7 @@
                             <div class="col-lg-6">
                                 <input type="text" name="buscar" class="form-control "   placeholder="Seleccione un filtro para hacer una busqueda" required>
                             </div>
-                            <a href="#" class="btn btn-primary btn-large"><i class="glyphicon glyphicon-search"></i> Buscar Empleo</a>
+                            <input type="submit" class="btn btn-primary btn-toolbar" value="Buscar"></input>
                         </div> 
                     </form>
 
@@ -145,13 +142,13 @@
                             <input type="date"  class="form-control">
                             <label for="sueldo" class="col-lg-3 control-label">Sueldo:</label><br>
                             <div class="col-lg-6">
-                                <input type="number" class="form-control" value="100" min="100" max="10000">  
+                                <input type="number" class="form-control" value="100" min="100" max="10000" required>  
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-
+            <hr class="featurette-divider">
             <div class="panel panel-success">
                 <div class="panel-heading">RESULTADOS DE LA BUSQUEDA:</div>
                 <div class="panel-body">
@@ -215,7 +212,7 @@
                 </div>       
             </div>  
             <hr class="featurette-divider">
-            <!-- FOOTER -->
+
             <footer>
                 <p class="pull-right"><a href="#">Back to top</a></p>
                 <p>&copy; 2013 Bolsa de Empleo UFG, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos y Condiciones</a></p>
