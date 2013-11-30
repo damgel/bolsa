@@ -11,13 +11,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="stylesheet" href="assets/css/datepicker.css">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/bootstrap-datepicker.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.validate.js"></script>    
-        <script src="assets/js/modernizr2.6.2.js"></script>       
+        <script src="assets/js/modernizr2.6.2.js"></script>   
+        <script>
+               $(document).ready(function() {
+    $('.datepicker').datepicker();
+});
+        </script>    
 
     </head>
     <body>
@@ -99,6 +106,12 @@
                                         <option value="Recomendaciones">Recomendaciones</option>
                                         <option value="Informacion de registro">Informacion de registro</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="motivo" class="col-lg-3 control-label" >Fecha</label>
+                              <div class="col-lg-3">
+                                    <input type="text" class="form-control datepicker" placeholder="Introduzca una fecha" required>
                                 </div>
                             </div>
                             <div class="form-group">    

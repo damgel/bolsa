@@ -201,11 +201,12 @@ html {
 }
 body {
 
-    font-family: 'Ubuntu','Droid Sans', 'Open Sans',"Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    font-family: 'Open Sans','Ubuntu','Droid Sans',"Helvetica Neue", "Helvetica", "Arial", "sans-serif";
     font-size: 16px;
     line-height: 1.428571429;
     color: #333;
     background-color: #e6e7e8;
+
 }
 input, button, select, textarea {
     font-family: inherit;
@@ -519,6 +520,7 @@ pre code {
     margin-top: 5px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 25px;
     background-color: white;    
     border:solid 1px #ccc;
     box-shadow: 0px 0px 5px 1px #ccc;
@@ -2808,13 +2810,13 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
     color: #777;
 }
 .navbar-default .navbar-nav>li>a {
-    
+
     color: #000;
-    
-        
+
+
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-    
+
     color: white;
     background-color: #31b0d5; //COLOR HOVER EN EL MENU PRINCIPAL
     font-weight: bold;

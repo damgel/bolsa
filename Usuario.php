@@ -10,27 +10,29 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="assets/css/datepicker.css">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="validacionStyle.css">
-        <link rel="stylesheet" href="assets/css/jqueryUI.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/bootstrap-datepicker.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.validate.js"></script>    
-        <script src="assets/js/modernizr2.6.2.js"></script>  
+        <script src="assets/js/modernizr2.6.2.js"></script>   
         <script>
-            // fallback para el datepicker con jquery
-            Modernizr.load({
-                test: Modernizr.inputtypes.date,
-                nope: ['http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js', 'jquery-ui.css'],
-                complete: function() {
-                    $('input[type=date]').datepicker({
-                        dateFormat: 'yy-mm-dd'
-                    });
-                }
-
+            $(document).ready(function() {
+                $('.datepicker').datepicker();
             });
-        </script>
+            function isNumberKey(evt)
+            {
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+                return true;
+            }
+        </script>    
+
 
     </head>
     <body>
@@ -60,13 +62,10 @@
                             </div>
                         </div>
 
-
-
-
                         <div class="form-group">
-                            <label for="Fecha_Nacimiento" class="col-lg-3 control-label">Fecha de Nacimiento</label>
-                            <div class="col-lg-4">
-                                <input type="date"  name="fecha_nac" min="1960-01-01" max="1996-01-01" class="form-control"  required>
+                            <label for="motivo" class="col-lg-3 control-label" >Fecha Nacimiento</label>
+                            <div class="col-lg-3">
+                                <input type="text" name="fecha_nac" class="form-control datepicker" placeholder="Introduzca una fecha" required onkeypress="return isNumberKey(this)">
                             </div>
                         </div>
 
