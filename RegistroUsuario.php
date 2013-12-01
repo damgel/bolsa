@@ -1,3 +1,28 @@
+<?php
+include('clases/db_connect.php');
+if (isset($_POST['Enviar'])) {
+    foreach ($_POST AS $key => $value) {
+        $_POST[$key] = mysql_real_escape_string($value);
+    }
+    $cyp_password = sha1($_POST['contrasenia']);
+    $sql = "INSERT INTO `perfilusuario` (`nombre_u` ,  `apellido_u` , `fecha_nac_u`, `direccion_u`, `telefono_u` , `carnet`, `correo`,  `contrasenia` ,  `genero`   ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' , '{$_POST['dieccion_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['correo']}',  '$cyp_password' , '{$_POST['genero']}'   ) ";
+    mysql_query($sql) or die(mysql_error());
+
+    $carnet = $_POST['carnet'];
+    if (($carnet) != "") {
+        $query = mysql_query("SELECT cod_u, nombre_u FROM perfilusuario WHERE carnet = '$carnet' LIMIT 1");
+        while ($row = mysql_fetch_array($query)) {
+            session_start();
+            $_SESSION['userid'] = $row{'idpefrilusuario'};
+            $_SESSION['username'] = $row{'nombre_u'};
+            header("Location: index.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
+        }
+    } else {
+        echo "<p>error al registrarse</p>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -102,6 +127,13 @@
                             <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
                                 <input type="tel" name="telefono_contacto" class="form-control" required pattern=".{7,15}">
+                            </div>
+                        </div>
+                        
+                            <div class="form-group">
+                            <label for="Numero_carnet" class="col-lg-3 control-label">Numero de Carnet </label>
+                            <div class="col-lg-4">
+                                <input type="text"  name="carnet" class="form-control"  required pattern=".{7,9}">
                             </div>
                         </div>
 
