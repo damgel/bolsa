@@ -32,8 +32,6 @@
                 return true;
             }
         </script>    
-
-
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
@@ -45,9 +43,6 @@
                 <div class="panel-heading">Perfil Usuario</div>
                 <div class="panel-body">
                     <form action="#" method="POST" class="form-horizontal">
-
-
-
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-3 control-label">Nombre</label>
                             <div class="col-lg-4">

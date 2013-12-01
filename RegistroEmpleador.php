@@ -45,6 +45,7 @@ if (isset($_POST['submitted'])) {
         <script src="assets/js/jquery.validate.js"></script>    
         <script src="assets/js/modernizr2.6.2.js"></script>    
         <script src="assets/js/validarRegEmpleador.js"></script>
+        <script src="assets/js/onlyNumbers.js"></script>
         <style>
             .container
             {
@@ -99,6 +100,7 @@ if (isset($_POST['submitted'])) {
                             border: solid 1px #05a8ff;
                         }
                     </style>
+                    <div class="alert alert-success">Usuario registrado correctamente!</div>
                     <form action="" id="registroEmpleador" method='POST' enctype="multipart/form-data" class="form-horizontal">
                         <fieldset>
                             <div class="sub-contenedor">
@@ -120,7 +122,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-4 control-label">Usuario</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="usuario_em" class="form-control" placeholder="Usuario" required>
+                                        <input type="text" name="usuario_em" class="form-control" placeholder="Usuario" required required pattern=".{6,20}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -147,7 +149,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-4 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_em" placeholder="Telefono" class="form-control"  required>
+                                        <input type="tel" name="telefono_em" class="form-control" required pattern=".{7,8}" onkeypress="return isNumberKey(this)">
                                     </div>
                                 </div>
 
