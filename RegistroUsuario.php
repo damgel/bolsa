@@ -21,6 +21,7 @@ if (isset($_POST['Enviar'])) {
         echo "<p>error al registrarse</p>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

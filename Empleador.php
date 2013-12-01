@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php
+include('config.php');
+if (isset($_POST['submitted'])) {
+    foreach ($_POST AS $key => $value) {
+        $_POST[$key] = mysql_real_escape_string($value);
+    }
+    $sql = "INSERT INTO `ofertas` ( `cod_oferta` ,  `cod_em` ,  `titulo_of` ,  `descripcion_of` ,  `area_of` ,  `cargo_of` ,  `vacantes_of` ,  `contratacion_of` ,  `anoexp_ofetas` ,  `edad` ,  `genero_of` ,  `vehiculo_ofetas` ,  `salariomax_of` ,  `salariomin_of` ,  `departamento_of` ,  `experiencia` ,  `tituloen_of` ,  `nivel_of` ,  `disponible_of` ,  `aprovacion_of`  ) VALUES(  '{$_POST['cod_oferta']}' ,  '{$_POST['cod_em']}' ,  '{$_POST['titulo_of']}' ,  '{$_POST['descripcion_of']}' ,  '{$_POST['area_of']}' ,  '{$_POST['cargo_of']}' ,  '{$_POST['vacantes_of']}' ,  '{$_POST['contratacion_of']}' ,  '{$_POST['anoexp_ofetas']}' ,  '{$_POST['edad']}' ,  '{$_POST['genero_of']}' ,  '{$_POST['vehiculo_ofetas']}' ,  '{$_POST['salariomax_of']}' ,  '{$_POST['salariomin_of']}' ,  '{$_POST['departamento_of']}' ,  '{$_POST['experiencia']}' ,  '{$_POST['tituloen_of']}' ,  '{$_POST['nivel_of']}' ,  '{$_POST['disponible_of']}' ,  '{$_POST['aprovacion_of']}'  ) ";
+    mysql_query($sql) or die(mysql_error());
+    echo "Added row.<br />";
+    echo "<a href='list.php'>Back To Listing</a>";
+}
+?>
+
+
+
+
+    <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -61,7 +77,7 @@
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
-            <?php include_once 'layout/header.php'; ?>
+<?php include_once 'layout/header.php'; ?>
         </div>
 
         <div id="contenedor" class="container">
@@ -443,7 +459,8 @@
                                 </div>
 
 
-                                <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button> </center>  
+                                <center><input type='submit' class="btn btn-primary btn-lg" value='Guardar Oferta' /><input type='hidden' value='1' name='submitted' /> </center>  
+                                
 
                             </form>
 
