@@ -73,13 +73,18 @@
 
 
                                 echo "<tr>";
-                                echo "<td valign='top'><img src='../" . nl2br($row['imagen_em']) . "' width='150' height='100' /></td>";   
+                                echo "<td valign='top'><img src='../" . nl2br($row['imagen_em']) . "' width='150' height='100' /></td>";
                                 echo "<td valign='top'>" . nl2br($row['nombre_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['email_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['telefono_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['descripcion_em']) . "</td>";
                                 echo "<td valign='top'>" . nl2br($row['actividad_em']) . "</td>";
-                                echo "<td valign='top' class='estado'>" . nl2br($row['activa_em']) . "</td>";
+                                if ($row['activa_em'] == "S") {
+                                    $var_activo = "<img src='img/success.png'></img>";
+                                } else {
+                                    $var_activo = "<img src='img/error.png'></img>";
+                                }
+                                echo "<td valign='top' class='estado'>$var_activo</td>";
                                 echo "<td valign='top'><a href=aempresa.php?id={$row['cod_em']}>Activar</a><br><a href=dempresa.php?id={$row['cod_em']}>Desactivar</a><br><a href=eliminarEmpresa.php?cod_em={$row['cod_em']}>Eliminar</a></td> ";
                                 echo "</tr>";
                             }
