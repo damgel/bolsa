@@ -1350,7 +1350,7 @@ textarea.input-lg {
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #3276b1;
+    background-color: #05a8ff;
     border-color: #285e8e;
 }
 .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
@@ -1461,7 +1461,7 @@ textarea.input-lg {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
-    border-radius: 3px;
+    border-radius: 0px;
 }
 .btn-xs {
     padding: 1px 5px;

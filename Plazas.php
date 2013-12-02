@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/jqueryUI.css">
-        <link rel="stylesheet" href="assets/css/oferta.min.css">
+        <link rel="stylesheet" href="assets/css/oferta.css">
         <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -25,45 +25,40 @@
             <?php include_once 'layout/header.php'; ?>
         </div>
         <div id="contenedor" class="container">
-
-            <hr class="featurette-divider">
-            <div class="panel panel-primary">
-                <div class="panel-heading">PLAZAS PUBLICADAS RECIENTEMENTE</div>
-                <div class="panel-body">
-                    <?php
-                    include_once 'clases/db_connect.php';
-                    $result = mysql_query("SELECT * FROM `ofertas` where disponible_of=1 and aprovacion_of=1 limit 0,10") or trigger_error(mysql_error());
-                    while ($row = mysql_fetch_array($result)) {
-                        foreach ($row AS $key => $value) {
-                            $row[$key] = stripslashes($value);
-                        }
-                        ?>
-                        <div class="oferta">
-                            <div class="sub">
-                                <hr class="featurette-divider">
-                                <h3><a href="#"><?php echo nl2br($row['titulo_of']) ?></a></h3>
-                                <h4><?php echo nl2br($row['descripcion_of']) ?></h4>
-                                <h6>Aplicaciones 0 , Visto 0 <?php echo "Publicado " . nl2br($row['fecha_of']) ?> </h6><br>
-                                <a href="#" class="btn btn-primary btn-sm">Ver Informacion</a>
-
-                            </div>
-                        </div>
-                        <?php
+            <?php
+            include_once 'clases/db_connect.php';
+            $result = mysql_query("SELECT * FROM `ofertas` where disponible_of=1 and aprovacion_of=1 limit 0,10") or trigger_error(mysql_error());
+            while ($row = mysql_fetch_array($result)) {
+                foreach ($row AS $key => $value) {
+                    $row[$key] = stripslashes($value);
+                }
+                ?>
+                <div class="oferta">
+                    <div class="sub">
+                        <hr class="featurette-divider">
+                        <h3><a href="#"><?php echo nl2br($row['titulo_of']) ?></a></h3>
+                        <h4><?php echo nl2br($row['descripcion_of']) ?></h4>
+                        <h6>Aplicaciones 0 , Visto 0 <?php echo "Publicado " . nl2br($row['fecha_of']) ?> </h6><br>
+                        <a href="#" class="btn btn-primary btn-sm">Ver Informacion</a>
+                        <hr class="featurette-divider">
+                    </div>
+                </div>
+                <?php
 //                            echo "<td valign='top'><a href=edit.php?id={$row['id']}>Aplicar</a></td><td><a href=delete.php?id={$row['id']}>Ver Detalles</a></td> ";
-                    }
-                    ?>
+            }
+            ?>
 
-                    <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div>       
-            </div>  
+            <ul class="pagination">
+                <li><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+
+
             <hr class="featurette-divider">
 
             <footer>
