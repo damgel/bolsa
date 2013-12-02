@@ -112,7 +112,7 @@ if (isset($_POST['action'])) {
 
     </head>
     <body>
-        <div id="header" class="navbar navbar-inverse navbar-static-top">
+        <div id="header" class="navbar navbar-default navbar-static-top">
             <?php include_once 'layout/header.php'; ?>
         </div>
         <div class="container">

@@ -26,17 +26,17 @@ if (isset($_POST['submitted'])) {
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css">
-        <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/jqueryUI.css">
-        <link rel="stylesheet" href="validacionStyle.css">
-        <script src="assets/js/jquery-v1.10.2.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery-ui.js"></script>
-        <script src="assets/js/jquery.validate.js"></script>   
-        <script src="assets/js/modernizr2.6.2.js"></script>
-        <script src="assets/js/holder.js"></script>
-        <script src="assets/js/validarRegEmpleador.js"></script>
+        <link rel="stylesheet" href="../assets/css/bootstrap.css">
+        <link rel="stylesheet" href="../assets/css/normalize.css">
+        <link rel="stylesheet" href="../assets/css/jqueryUI.css">
+        <link rel="stylesheet" href="../validacionStyle.css">
+        <script src="../assets/js/jquery-v1.10.2.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script src="../assets/js/jquery-ui.js"></script>
+        <script src="../assets/js/jquery.validate.js"></script>   
+        <script src="../assets/js/modernizr2.6.2.js"></script>
+        <script src="../assets/js/holder.js"></script>
+        <script src="../assets/js/validarRegEmpleador.js"></script>
 
         <script>
             // fallback para el datepicker con jquery
@@ -77,7 +77,7 @@ if (isset($_POST['submitted'])) {
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
-<?php include_once 'layout/header.php'; ?>
+<?php include_once 'layout/header-empleador.php'; ?>
         </div>
 
         <div id="contenedor" class="container">
