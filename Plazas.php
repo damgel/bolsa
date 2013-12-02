@@ -41,8 +41,8 @@
                         <div class="oferta">
                             <div class="sub">
                                 <hr class="featurette-divider">
-                                <h3><a href="#"><?php echo nl2br($row['titulo_of']) ?></a></h3><br>
-                                <h4><?php echo nl2br($row['descripcion_of']) ?></h4><br>
+                                <h3><a href="#"><?php echo nl2br($row['titulo_of']) ?></a></h3>
+                                <h4><?php echo nl2br($row['descripcion_of']) ?></h4>
                                 <h6>Aplicaciones 0 , Visto 0 <?php echo "Publicado " . nl2br($row['fecha_of']) ?> </h6><br>
                                 <a href="#" class="btn btn-primary btn-sm">Ver Informacion</a>
 
