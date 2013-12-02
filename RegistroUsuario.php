@@ -4,7 +4,8 @@ if (isset($_POST['submitted'])) {
     foreach ($_POST AS $key => $value) {
         $_POST[$key] = mysql_real_escape_string($value);
     }
-    $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u` ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}' ) ";
+    $encryp_password = sha1($_POST['password']);
+    $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u` ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '$encryp_password' ,  '{$_POST['sexo_u']}' ) ";
     mysql_query($sql) or die(mysql_error());
     echo "regitro guardado <br />";
 }
@@ -156,7 +157,7 @@ if (isset($_POST['submitted'])) {
                         </div>
 
                         <center><div><input type='submit' class="btn btn-primary btn-lg" value='Registrar' /><input type='hidden' value='1' name='submitted' /></div></center>
-                        
+
                         <br>
                     </form>
                 </div>       
