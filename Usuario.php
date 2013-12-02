@@ -1,18 +1,15 @@
-<?php
-include('config.php'); 
-if (isset($_POST['submitted'])) { 
-foreach($_POST AS $key => $value) { $_POST[$key] = mysql_real_escape_string($value); 
-
-} 
-$sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `email_u` ,  `password_u` ,  `sexo_u` ,  `carnet_u` ,  `subir_u`  ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}' ,  '{$_POST['carnet_u']}' ,  '{$_POST['subir_u']}'  ) "; 
-mysql_query($sql) or die(mysql_error()); 
-echo "Added row.<br />"; 
-echo "<a href='list.php'>Back To Listing</a>"; 
+<?php 
+include_once 'clases/db_connect.php'; 
+    if (isset($_POST['submitted'])) { 
+    foreach($_POST AS $key => $value) {
+        $_POST[$key] = mysql_real_escape_string($value);
+        } 
+   $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u` ,  `subir_u`  ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}' ,  '{$_POST['subir_u']}'  ) "; 
+  mysql_query($sql) or die(mysql_error()); 
+echo "registro agregado.<br />"; 
+echo "<a href='liset.php'>Back To Listing</a>"; 
 } 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -59,7 +56,7 @@ echo "<a href='list.php'>Back To Listing</a>";
             <div class="panel panel-primary">
                 <div class="panel-heading">Perfil Usuario</div>
                 <div class="panel-body">
-                    <form action="#" method="POST" class="form-horizontal">
+                    <form action="#" id="perfilusuario"  method="POST" class="form-horizontal">
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-3 control-label">Nombre</label>
                             <div class="col-lg-4">
@@ -93,7 +90,7 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
-                                <input type="tel" name="telefono_contacto_u" class="form-control" required pattern=".{7,15}">
+                                <input type="tel" name="telefono_u" class="form-control" required pattern=".{7,15}">
                             </div>
                         </div>
 
@@ -106,7 +103,7 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                           <label for="carnet" class="col-lg-3 control-label">Carnet</label>
                             <div class="col-lg-4">
-                                <input type="tex" name="carnet_u" class="form-control" placeholder="Escriba un correo aqui"  required>
+                                <input type="tex" name="carnet" class="form-control" placeholder="Escriba un correo aqui"  required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -136,7 +133,7 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Subir curriculum </label>
                             <div class="col-lg-3">
-                                <input type="file" id="exampleInputFile" name="subir">
+                                <input type="file" id="exampleInputFile" name="subir_u">
                                 <p class="help-block"></p>
                             </div>
                         </div>
