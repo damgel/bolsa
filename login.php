@@ -31,17 +31,17 @@ include_once "clases/db_connect.php";
 if (isset($_POST['action'])) {
     $usuario_em = $_POST['email_em'];
     $pass_em = $_POST['password_em'];
-
+    session_start();
     if (isset($usuario_em) && !empty($pass_em)) {
         $query = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa WHERE email_em='$usuario_em' AND password_em='$pass_em' LIMIT 1");
         while ($row = mysql_fetch_array($query)) {
-            session_start();
             $cod_em = $row{'cod_em'};
             $permiso_em = $row{'activa_em'};
             $nombre = $row{'nombre_em'};
+            $_SESSION['empresa'] = $nombre;
             echo $nombre;
             echo $permiso_em;
-            //header("Location: Empleador.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
+            header("Location: Empleador.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
         }
     } else {
         echo "<p class='error'>Por favor introduzca un usuario y contrasenia correctos<p>";
