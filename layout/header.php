@@ -19,7 +19,7 @@
             </ul>
         </li>
         <li><a href="Busqueda.php">Buscar Empleo</a></li>
-        <li><a href="Busqueda.php">Empleos Recientes</a></li>
+        <li><a href="Plazas.php">Plazas Recientes</a></li>
         <li><a href="Faq.php">FAQ</a></li>
         <li><a href="Contactenos.php">Contactanos</a></li>
     </ul>

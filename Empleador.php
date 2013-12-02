@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include_once 'clases/db_connect.php';
 if (isset($_POST['submitted'])) {
     foreach ($_POST AS $key => $value) {
         $_POST[$key] = mysql_real_escape_string($value);
@@ -289,38 +289,38 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label for="oferta" class="col-lg-3 control-label">Titulo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="titulo" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input type="text" name="titulo_of" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="nivelacademico" class="col-lg-3 control-label">Descripcion de la Oferta</label>
                                             <div class="col-lg-6">
-                                                <textarea name="descripcion" class="form-control" rows="3"> </textarea>
+                                                <textarea name="descripcion_of" class="form-control" rows="3"> </textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="area" class="col-lg-3 control-label">Area de la Empresa</label>
                                             <div class="col-lg-4">
-                                                <input name="area" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input name="area_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="cargo" class="col-lg-3 control-label">Cargo Solicitado</label>
                                             <div class="col-lg-4">
-                                                <input name="cargo" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input name="cargo_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group"> 
                                             <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                             <div class="col-lg-4">
-                                                <input name="vacantes" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
+                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">              
-                                            <label for="tipo contratacion" class="col-lg-3 control-label">Tipo de Contratacion</label>
+                                            <label for="contratacion" class="col-lg-3 control-label">Tipo de Contratacion</label>
                                             <div class="col-lg-4">
-                                                <select name="tipodecontratacion" class="form-control" id="focusedInput" required="">
+                                                <select name="contratacion_of" class="form-control" id="focusedInput" required="">
                                                     <option value="">Seleccione una opcion</option>
                                                     <option value="TC">Tiempo Completo</option> 
                                                     <option value="MT">Medio Tiempo</option>
@@ -334,7 +334,7 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">   
                                             <label for="nivel experiencia" class="col-lg-3 control-label">Experiencia en anos</label>
                                             <div class="col-lg-4">
-                                                <select name="anosexp" class="form-control" id="focusedInput" required="">
+                                                <select name="anoexp_ofertas" class="form-control" id="focusedInput" required="">
                                                     <option value="">Seleccione una opcion</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -357,9 +357,9 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Genero</label>
                                             <div class="col-lg-4">
-                                                <input type="radio" name="genero" value="M" id="focusedInput" checked="">
+                                                <input type="radio" name="genero_of" value="M" id="focusedInput" checked="">
                                                 Masculino
-                                                <input type="radio" name="genero" value="F" id="focusedInput">
+                                                <input type="radio" name="genero_of" value="F" id="focusedInput">
                                                 Femenino   
                                             </div>  
                                         </div>
@@ -367,24 +367,24 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Vehiculo</label>
                                             <div class="col-lg-4">
-                                                <input type="radio" name="vehiculo" value="Si" checked=""> 
+                                                <input type="radio" name="vehiculo_ofertas" value="Si" checked=""> 
                                                 Si
-                                                <input type="radio" name="vehiculo" value="No"> 
+                                                <input type="radio" name="vehiculo_ofertas" value="No"> 
                                                 No
                                             </div>
                                         </div>
 
                                         <div class="form-group">        
-                                            <label for="salariomax" class="col-lg-3 control-label">Salario Maximo</label>
+                                            <label for="salariomax_of" class="col-lg-3 control-label">Salario Maximo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="form-control" id="focusedInput" placeholder="salariom" required>
+                                                <input type="text" name="salariomax_of" class="form-control" id="focusedInput" placeholder="salariom" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group"> 
                                             <label for="salariomi" class="col-lg-3 control-label">Salario Minimo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" class="form-control" id="focusedInput" placeholder="salariomi" required>
+                                                <input type="text" name="salariomin_of" class="form-control" id="focusedInput" placeholder="salariomi" required>
                                             </div>
                                         </div>
 
@@ -393,7 +393,7 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label for="departamento" class="col-lg-3 control-label">departamento</label>
                                             <div class="col-lg-4">
-                                                <select name="departamento" class="form-control valid" required="">
+                                                <select name="departamento_of" class="form-control valid" required="">
 
                                                     <option value="">- Seleccione -</option>
                                                     <option value="San Salvador">San Salvador</option>
@@ -426,7 +426,7 @@ if (isset($_POST['submitted'])) {
                                     <div class="form-group">    
                                         <label for="indispensable" class="col-lg-3 control-label">Indispensable</label>
                                         <div class="col-lg-6">
-                                            <textarea name="exp" class="form-control" rows="3"> </textarea>
+                                            <textarea name="experiencia" class="form-control" rows="3"> </textarea>
                                         </div>
                                     </div>         
 
@@ -439,14 +439,14 @@ if (isset($_POST['submitted'])) {
                                     <div class="form-group">
                                         <label for="Titulo" class="col-lg-3 control-label">Titulo en</label>
                                         <div class="col-lg-4">
-                                            <input type="text" name="tituloen" class="form-control" id="focusedInput" placeholder="Detalle " required>
+                                            <input type="text" name="tituloen_of" class="form-control" id="focusedInput" placeholder="Detalle " required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="nivel academico" class="col-lg-3 control-label">Nivel Academico </label>
                                         <div class="col-lg-4">
-                                            <select name="nivel" id="nivel" class="form-control" required="">
+                                            <select name="nivel_of" id="nivel" class="form-control" required="">
                                                 <option value="">Seleccione una opcion </option>
                                                 <option value="Estudiante Universitario-Graduado">Estudiante Universitario-Graduado</option>
                                                 <option value="Estudiante Universitario-mitad de sus estudios">Estudiante Universitario-mitad de sus estudios </option>
