@@ -41,6 +41,31 @@ LOCK TABLES `actividad_empresa` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `departamentos`
+--
+
+DROP TABLE IF EXISTS `departamentos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `departamentos` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `departamento` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `departamentoscol_UNIQUE` (`departamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `departamentos`
+--
+
+LOCK TABLES `departamentos` WRITE;
+/*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
+INSERT INTO `departamentos` VALUES (3,'Ahuachapán'),(4,'Cabañas'),(5,'Chalatenango'),(6,'Cuscatlán'),(7,'La Libertad'),(8,'La Paz'),(9,'La Unión'),(10,'Morazán'),(11,'San Miguel'),(12,'San Salvador'),(13,'San Vicente'),(14,'Santa Ana'),(15,'Sonsonate'),(16,'Usulután');
+/*!40000 ALTER TABLE `departamentos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `empresa`
 --
 
@@ -100,63 +125,6 @@ INSERT INTO `genero` VALUES (1,'Masculino'),(2,'Femenino');
 UNLOCK TABLES;
 
 --
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(50) DEFAULT NULL,
-  `lastname` varchar(50) DEFAULT NULL,
-  `phone` varchar(200) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users`
---
-
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'fname1','lname1','(000)000-0000','name1@gmail.com'),(4,'fname2','lname2','(000)000-0000','name2@gmail.com'),(5,'fname3','lname3','(000)000-0000','name3@gmail.com'),(7,'fname4','lname4','(000)000-0000','name4@gmail.com'),(8,'fname5','lname5','(000)000-0000','name5@gmail.com'),(9,'fname6','lname6','(000)000-0000','name6@gmail.com'),(10,'fname7','lname7','(000)000-0000','name7@gmail.com'),(11,'fname8','lname8','(000)000-0000','name8@gmail.com'),(12,'fname9','lname9','(000)000-0000','name9@gmail.com'),(13,'fname10','lname10','(000)000-0000','name10@gmail.com'),(14,'jose','manuel','guillen','damgel@outlook.com'),(15,'jose','manuel','guillen','damgel@outlook.com'),(16,'jose','manuel','guillen','damgel@outlook.com'),(17,'jose','manuel','guillen','damgel@outlook.com'),(18,'jose','manuel','guillen','damgel@outlook.com');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `usuario`
---
-
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuario` (
-  `cod_u` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_u` varchar(20) DEFAULT NULL,
-  `apellido_u` varchar(20) DEFAULT NULL,
-  `fecha_nac_u` date DEFAULT NULL,
-  `direccion_u` varchar(20) DEFAULT NULL,
-  `telefono_u` varchar(20) DEFAULT NULL,
-  `email_u` varchar(20) DEFAULT NULL,
-  `password_u` varchar(20) DEFAULT NULL,
-  `sexo_u` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`cod_u`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuario`
---
-
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `ofertas`
 --
 
@@ -201,28 +169,63 @@ INSERT INTO `ofertas` VALUES (1,1,'DESARROLLADOR JAVA','se necesita programador 
 UNLOCK TABLES;
 
 --
--- Table structure for table `departamentos`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `departamentos`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `departamentos` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `departamento` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `departamentoscol_UNIQUE` (`departamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `phone` varchar(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `departamentos`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `departamentos` WRITE;
-/*!40000 ALTER TABLE `departamentos` DISABLE KEYS */;
-INSERT INTO `departamentos` VALUES (3,'Ahuachapán'),(4,'Cabañas'),(5,'Chalatenango'),(6,'Cuscatlán'),(7,'La Libertad'),(8,'La Paz'),(9,'La Unión'),(10,'Morazán'),(11,'San Miguel'),(12,'San Salvador'),(13,'San Vicente'),(14,'Santa Ana'),(15,'Sonsonate'),(16,'Usulután');
-/*!40000 ALTER TABLE `departamentos` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (3,'fname1','lname1','(000)000-0000','name1@gmail.com'),(4,'fname2','lname2','(000)000-0000','name2@gmail.com'),(5,'fname3','lname3','(000)000-0000','name3@gmail.com'),(7,'fname4','lname4','(000)000-0000','name4@gmail.com'),(8,'fname5','lname5','(000)000-0000','name5@gmail.com'),(9,'fname6','lname6','(000)000-0000','name6@gmail.com'),(10,'fname7','lname7','(000)000-0000','name7@gmail.com'),(11,'fname8','lname8','(000)000-0000','name8@gmail.com'),(12,'fname9','lname9','(000)000-0000','name9@gmail.com'),(13,'fname10','lname10','(000)000-0000','name10@gmail.com'),(14,'jose','manuel','guillen','damgel@outlook.com'),(15,'jose','manuel','guillen','damgel@outlook.com'),(16,'jose','manuel','guillen','damgel@outlook.com'),(17,'jose','manuel','guillen','damgel@outlook.com'),(18,'jose','manuel','guillen','damgel@outlook.com');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuario` (
+  `cod_u` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_u` varchar(20) DEFAULT NULL,
+  `apellido_u` varchar(20) DEFAULT NULL,
+  `fecha_nac_u` date DEFAULT NULL,
+  `direccion_u` varchar(20) DEFAULT NULL,
+  `telefono_u` varchar(20) DEFAULT NULL,
+  `email_u` varchar(20) DEFAULT NULL,
+  `password_u` varchar(20) DEFAULT NULL,
+  `sexo_u` varchar(20) DEFAULT NULL,
+  `carnet` varchar(60) DEFAULT NULL,
+  `fecha_registro` datetime DEFAULT NULL,
+  PRIMARY KEY (`cod_u`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario`
+--
+
+LOCK TABLES `usuario` WRITE;
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'JOSE MANUEL','GUILLEN RAMIREZ','1991-04-14','FINAL 4A CALLE PONIE','79263019','damgel@outlook.com','destiny132002','Masculino','gr102909',NULL),(2,'JOSE MANUEL','GUILLEN','1991-04-14','FINAL 4A CALLE PONIE','79263019','damgel@outlook.com','da39a3ee5e6b4b0d3255','Masculino','gr102909',NULL),(3,'JMANUEL','GRAMIREZ','1991-04-14','FINAL 4A CALLE PONIE','79263019','damgel@outlook.com','da39a3ee5e6b4b0d3255','Masculino','gr102909','2013-12-02 10:21:34');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -238,4 +241,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-01 22:43:30
+-- Dump completed on 2013-12-02 10:23:36
