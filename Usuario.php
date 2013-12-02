@@ -1,15 +1,19 @@
-<?php 
-include_once 'clases/db_connect.php'; 
-    if (isset($_POST['submitted'])) { 
-    foreach($_POST AS $key => $value) {
-        $_POST[$key] = mysql_real_escape_string($value);
-        } 
-   $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u` ,  `subir_u`  ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}' ,  '{$_POST['subir_u']}'  ) "; 
-  mysql_query($sql) or die(mysql_error()); 
-echo "registro agregado.<br />"; 
-echo "<a href='liset.php'>Back To Listing</a>"; 
-} 
-?>
+   <?php
+   include_once 'clases/db_connect.php';
+   if (isset($_GET['cod_u']) )
+       { 
+   $cod_u = (int) $_GET['cod_u']; 
+   if (isset($_POST['submitted'])) 
+       { 
+   }
+   foreach($_POST AS $key => $value) { $_POST[$key] = mysql_real_escape_string($value); } 
+   $sql = "UPDATE `usuario` SET  `nombre_u` =  '{$_POST['nombre_u']}' ,  `apellido_u` =  '{$_POST['apellido_u']}' ,  `fecha_nac_u` =  '{$_POST['fecha_nac_u']}' ,  `direccion_u` =  '{$_POST['direccion_u']}' ,  `telefono_u` =  '{$_POST['telefono_u']}' ,  `email_u` =  '{$_POST['email_u']}' ,  `password_u` =  '{$_POST['password_u']}' ,  `sexo_u` =  '{$_POST['sexo_u']}' ,  `carnet` =  '{$_POST['carnet']}' ,  `fecha_registro` =  '{$_POST['fecha_registro']}'   WHERE `cod_u` = '$cod_u' "; 
+   mysql_query($sql) or die(mysql_error()); 
+   echo (mysql_affected_rows()) ? "Edited row.<br />" : "Nothing changed. <br />"; 
+   echo "Location: RegistroUsuario.php"; 
+   } 
+   $row = mysql_fetch_array ( mysql_query("SELECT * FROM `usuario` WHERE `cod_u` = '$cod_u' ")); 
+   ?>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -138,7 +142,7 @@ echo "<a href='liset.php'>Back To Listing</a>";
                             </div>
                         </div>
                         <br>
-                        <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button></center>
+                       <center><div><input type='submit' class="btn btn-primary btn-lg" value='Modificar' /><input type='hidden' value='1' name='submitted' /></div></center>
 
 
                     </form>
