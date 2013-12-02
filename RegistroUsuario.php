@@ -1,14 +1,13 @@
- <?php 
-include_once 'clases/db_connect.php'; 
-    if (isset($_POST['submitted'])) { 
-    foreach($_POST AS $key => $value) {
+<?php
+include_once 'clases/db_connect.php';
+if (isset($_POST['submitted'])) {
+    foreach ($_POST AS $key => $value) {
         $_POST[$key] = mysql_real_escape_string($value);
-        } 
-   $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u` ,  `subir_u`  ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}' ,  '{$_POST['subir_u']}'  ) "; 
-  mysql_query($sql) or die(mysql_error()); 
-echo "regitro guardado <br />"; 
-echo "<a href='list.php'>Back To Listing</a>"; 
-} 
+    }
+    $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u` ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}' ) ";
+    mysql_query($sql) or die(mysql_error());
+    echo "regitro guardado <br />";
+}
 ?>
 
 
@@ -72,7 +71,7 @@ echo "<a href='list.php'>Back To Listing</a>";
 
     </head>
     <body>
-  
+
         <div id="header" class="navbar navbar-inverse navbar-static-top">
             <?php include_once 'layout/header.php'; ?>
         </div>
@@ -86,21 +85,21 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-3 control-label">Nombre</label>
                             <div class="col-lg-4">
-                                <input type="text" name="nombre" class="form-control" placeholder="Escriba un nombre"  required pattern=.{4,25} >
+                                <input type="text" name="nombre_u" class="form-control" placeholder="Escriba un nombre"  required pattern=.{4,25} >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Apellido" class="col-lg-3 control-label">Apellido</label>
                             <div class="col-lg-4">
-                                <input type="text" name="apellido" class="form-control" placeholder="Escriba un apellido"  required pattern=.{4,25}>
+                                <input type="text" name="apellido_u" class="form-control" placeholder="Escriba un apellido"  required pattern=.{4,25}>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Fecha_Nacimiento" class="col-lg-3 control-label">Fecha de Nacimiento</label>
                             <div class="col-lg-4">
-                                <input type="date"  name="fecha_nac" min="1960-01-01" max="1996-01-01" class="form-control"  required>
+                                <input type="date"  name="fecha_nac_u" min="1960-01-01" max="1996-01-01" class="form-control"  required>
                             </div>
                         </div>
 
@@ -108,7 +107,7 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label for="Direccion" class="col-lg-3 control-label">Direccion</label>
                             <div class="col-lg-4">
-                                <input type="text" name="direccion" placeholder="Escriba su Direccion" class="form-control"  required pattern=".{25,250}">
+                                <input type="text" name="direccion_u" placeholder="Escriba su Direccion" class="form-control"  required pattern=".{25,250}">
                             </div>
                         </div>                      
 
@@ -116,11 +115,11 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
-                                <input type="tel" name="telefono_contacto" class="form-control" required pattern=".{7,15}">
+                                <input type="tel" name="telefono_u" class="form-control" required pattern=".{7,15}">
                             </div>
                         </div>
-                        
-                            <div class="form-group">
+
+                        <div class="form-group">
                             <label for="Numero_carnet" class="col-lg-3 control-label">Numero de Carnet </label>
                             <div class="col-lg-4">
                                 <input type="text"  name="carnet" class="form-control"  required pattern=".{7,9}">
@@ -130,13 +129,13 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label for="Email" class="col-lg-3 control-label">Correo</label>
                             <div class="col-lg-4">
-                                <input type="email" name="email" class="form-control" placeholder="Escriba un correo aqui"  required>
+                                <input type="email" name="email_u" class="form-control" placeholder="Escriba un correo aqui"  required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Password</label>
                             <div class="col-lg-4">
-                                <input type="password" name="password" class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
+                                <input type="password" name="password_u" class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">
@@ -148,15 +147,16 @@ echo "<a href='list.php'>Back To Listing</a>";
                         <div class="form-group">
                             <label for="genero" class="col-lg-3 control-label">Genero</label>
                             <div class="col-lg-4">
-                                <select name="genero" class="form-control" required>
+                                <select name="sexo_u" class="form-control" required>
                                     <option value="">Seleccione una opcion: </option> 
-                                    <option value="M">Masculino</option>    
-                                    <option value="F">Femenino</option>
+                                    <option value="Masculino">Masculino</option>    
+                                    <option value="Femenino">Femenino</option>
                                 </select>
                             </div>
                         </div>
 
-                        <center><button type="submit" class="btn btn-primary btn-lg">Enviar</button></center>
+                        <center><div><input type='submit' class="btn btn-primary btn-lg" value='Registrar' /><input type='hidden' value='1' name='submitted' /></div></center>
+                        
                         <br>
                     </form>
                 </div>       
