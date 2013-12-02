@@ -25,6 +25,16 @@
     </ul>
 
     <form class="navbar-form navbar-right" role="search">
+        <?php
+        session_start();
+        if ($_SESSION['empresa'] != "") {
+            echo "Bienvenido <b>" . $_SESSION['empresa'] . "</b>";
+        } elseif ($_SESSION['estudiante'] != "") {
+            echo "Bienvenido <b>" . $_SESSION['estudiante'] . "</b>";
+        } else {
+            echo "Invitado";
+        }
+        ?>
         <a class="btn btn-info btn-large" href="login.php" role="button">Entrar</a>
     </form>
 </div>
