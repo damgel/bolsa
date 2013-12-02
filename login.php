@@ -1,25 +1,50 @@
 <?php
-if ($_POST['action'] === 'Entrar') {
+//
+//if ($_POST['action'] === 'Entrar') {
+//    $usuario_em = $_POST['email_em'];
+//    $pass_em = $_POST['password_em'];
+//
+//    session_start();
+//    if (isset($email_em) && !empty($password_em)) {
+//        include "clases/db_connect.php";
+//        $cod_em;
+//        $permiso_em;
+//        $nombre;
+//        $result = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa where email_em='$usuario_em' and password_em='$pass_em'");
+//        while ($row = mysql_fetch_array($result)) {
+//            $cod_em = $row{'cod_em'};
+//            $permiso_em = $row{'activa_em'};
+//            $nombre = $row{'nombre_em'};
+//        }
+//        if ($permiso_em === "S") {
+//            header("Location: Empleador.php"); /* Redirect browser */
+//        } else {
+//            echo '<p class="loginError">La empresa aun no esta aprovada!.</p>';
+//        }
+//    } else {
+//        echo "Por favor introduzca un usuario y contrasenia correctos";
+//    }
+//}
+?>
+<?php
+include_once "clases/db_connect.php";
+if (isset($_POST['action'])) {
     $usuario_em = $_POST['email_em'];
     $pass_em = $_POST['password_em'];
 
-    if (isset($email_em) && !empty($password_em)) {
-        include "clases/db_connect.php";
-        $result = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa 
-                    where email_em='$usuario_em' and password_em='$pass_em'");
-        while ($row = mysql_fetch_array($result)) {
-            $cod_em = $row{'cod_em'};
-            $nombre = $row{'nombre_em'};
-            $permiso_em = $row{'activa_em'};
+    if (isset($usuario_em) && !empty($pass_em)) {
+        $query = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa WHERE email_em='$usuario_em' AND password_em='$pass_em' LIMIT 1");
+        while ($row = mysql_fetch_array($query)) {
             session_start();
-//            if ($permiso_em === "S") {
-            header("Location: http://localhost:8000/Empleador.php"); /* Redirect browser */
-//            } else {
-//                echo '<p class="loginError">La empresa aun no esta aprovada por el momento!.</p>';
-//            }
+            $cod_em = $row{'cod_em'};
+            $permiso_em = $row{'activa_em'};
+            $nombre = $row{'nombre_em'};
+            echo $nombre;
+            echo $permiso_em;
+            //header("Location: Empleador.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
         }
     } else {
-        echo "Por favor introduzca un usuario y contrasenia correctos";
+        echo "<p class='error'>Por favor introduzca un usuario y contrasenia correctos<p>";
     }
 }
 ?>
@@ -125,6 +150,7 @@ if ($_POST['action'] === 'Entrar') {
                                     <label class="checkbox-inline">
                                         <input type="checkbox"> Recordarme
                                     </label>
+
 
                                     <input type='submit' name='action' value="Entrar" class="btn btn-success">
                                 </center>
