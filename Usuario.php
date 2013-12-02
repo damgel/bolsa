@@ -1,3 +1,19 @@
+<?php 
+include('config.php'); 
+if (isset($_POST['submitted'])) { 
+foreach($_POST AS $key => $value) { $_POST[$key] = mysql_real_escape_string($value);
+} 
+$sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `email_u` ,  `password_u` ,  `sexo_u`  ) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['email_u']}' ,  '{$_POST['password_u']}' ,  '{$_POST['sexo_u']}'  ) "; 
+mysql_query($sql) or die(mysql_error()); 
+echo "Added row.<br />"; 
+echo "<a href='list.php'>Back To Listing</a>"; 
+} 
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -46,21 +62,21 @@
                         <div class="form-group">
                             <label for="Nombre" class="col-lg-3 control-label">Nombre</label>
                             <div class="col-lg-4">
-                                <input type="text" name="nombre" class="form-control" placeholder="Escriba un nombre"  required pattern=.{4,25} >
+                                <input type="text" name="nombre_u" class="form-control" placeholder="Escriba un nombre"  required pattern=.{4,25} >
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Apellido" class="col-lg-3 control-label">Apellido</label>
                             <div class="col-lg-4">
-                                <input type="text" name="apellido" class="form-control" placeholder="Escriba un apellido"  required pattern=.{4,25}>
+                                <input type="text" name="apellido_u" class="form-control" placeholder="Escriba un apellido"  required pattern=.{4,25}>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="motivo" class="col-lg-3 control-label" >Fecha Nacimiento</label>
                             <div class="col-lg-3">
-                                <input type="text" name="fecha_nac" class="form-control datepicker" placeholder="Introduzca una fecha" required onkeypress="return isNumberKey(this)">
+                                <input type="text" name="fecha_nac_u" class="form-control datepicker" placeholder="Introduzca una fecha" required onkeypress="return isNumberKey(this)">
                             </div>
                         </div>
 
@@ -68,7 +84,7 @@
                         <div class="form-group">
                             <label for="Direccion" class="col-lg-3 control-label">Direccion</label>
                             <div class="col-lg-4">
-                                <input type="text" name="direccion" placeholder="Escriba su Direccion" class="form-control"  required pattern=".{25,250}">
+                                <input type="text" name="direccion_u" placeholder="Escriba su Direccion" class="form-control"  required pattern=".{25,250}">
                             </div>
                         </div>                      
 
@@ -76,20 +92,20 @@
                         <div class="form-group">
                             <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
-                                <input type="tel" name="telefono_contacto" class="form-control" required pattern=".{7,15}">
+                                <input type="tel" name="telefono_contacto_u" class="form-control" required pattern=".{7,15}">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Email" class="col-lg-3 control-label">Correo</label>
                             <div class="col-lg-4">
-                                <input type="email" name="email" class="form-control" placeholder="Escriba un correo aqui"  required>
+                                <input type="email" name="email_u" class="form-control" placeholder="Escriba un correo aqui"  required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Password</label>
                             <div class="col-lg-4">
-                                <input type="password" name="password" class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
+                                <input type="password" name="password_u" class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">
@@ -99,9 +115,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="genero" class="col-lg-3 control-label">Genero</label>
+                            <label for="sexo" class="col-lg-3 control-label">Genero</label>
                             <div class="col-lg-4">
-                                <select name="genero" class="form-control" required>
+                                <select name="sexo_u" class="form-control" required>
                                     <option value="">Seleccione una opcion: </option> 
                                     <option value="M">Masculino</option>    
                                     <option value="F">Femenino</option>
@@ -109,63 +125,6 @@
                             </div>
                         </div>
 
-
-
-
-                        <br>
-
-
-
-                        <div class="form-group">
-
-                            <label  class="col-lg-3 control-label"> Referencias Laborales </label>
-                        </div>
-
-                        <br>
-
-                        <div class="form-group">
-                            <label for="Nombre" class="col-lg-1 control-label" >Nombre</label>
-                            <div class="col-lg-3">
-                                <input type="text" name="nombrereferencia1" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required> 
-                            </div>
-                            <label for="Apellido" class="col-lg-1 control-label" name="apellidoreferencia1">Apellido</label> 
-                            <div class="col-lg-3">
-                                <input type="text" name="apellidoreferencia1" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required>
-                            </div>
-                            <label for="telefono" class="col-lg-1 control-label" name="telreferencia1">Telefono</label>
-                            <div class="col-lg-3">
-                                <input type="tel" class="form-control" pattern=.{7,12} id="focusedInput" name="telreferencia1"required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="Nombre" class="col-lg-1 control-label"> Nombre </label>
-                            <div class="col-lg-3">
-                                <input type="text" name="nombrereferencia2" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required> 
-                            </div>                                                
-                            <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
-                            <div class="col-lg-3">
-                                <input type="text" name="apellidoreferencia2" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required>
-                            </div>        
-                            <label for="telefono" class="col-lg-1 control-label">Telefono </label>
-                            <div class="col-lg-3">
-                                <input type="tel" class="form-control" pattern=.{7,12} required id="focusedInput" name="telreferencia2"> 
-                            </div>
-                        </div>
-                        <div class="form-group"> 
-                            <label for="Nombre" class="col-lg-1 control-label">Nombre</label>
-                            <div class="col-lg-3">
-                                <input type="text" name="nombrereferencia3" class="form-control" placeholder="Escriba un nombre" id="focusedInput" required>
-                            </div>       
-                            <label for="Apellido" class="col-lg-1 control-label">Apellido</label>
-                            <div class="col-lg-3">
-                                <input type="text" name="apellidoreferencia3" class="form-control" placeholder="Escriba un apellido" id="focusedInput" required> 
-                            </div>                                      
-                            <label for="telefono" class="col-lg-1 control-label">Telefono </label>
-                            <div class="col-lg-3">
-                                <input type="tel" name="telreferencia3" class="form-control" pattern=.{7,12} required id="focusedInput">  
-                            </div>
-                        </div>
-                        <br>
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Subir curriculum </label>
                             <div class="col-lg-3">
