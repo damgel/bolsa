@@ -1,19 +1,50 @@
-   <?php
-   include_once 'clases/db_connect.php';
-   if (isset($_GET['cod_u']) )
-       { 
-   $cod_u = (int) $_GET['cod_u']; 
-   if (isset($_POST['submitted'])) 
-       { 
-   }
-   foreach($_POST AS $key => $value) { $_POST[$key] = mysql_real_escape_string($value); } 
-   $sql = "UPDATE `usuario` SET  `nombre_u` =  '{$_POST['nombre_u']}' ,  `apellido_u` =  '{$_POST['apellido_u']}' ,  `fecha_nac_u` =  '{$_POST['fecha_nac_u']}' ,  `direccion_u` =  '{$_POST['direccion_u']}' ,  `telefono_u` =  '{$_POST['telefono_u']}' ,  `email_u` =  '{$_POST['email_u']}' ,  `password_u` =  '{$_POST['password_u']}' ,  `sexo_u` =  '{$_POST['sexo_u']}' ,  `carnet` =  '{$_POST['carnet']}' ,  `fecha_registro` =  '{$_POST['fecha_registro']}'   WHERE `cod_u` = '$cod_u' "; 
-   mysql_query($sql) or die(mysql_error()); 
-   echo (mysql_affected_rows()) ? "Edited row.<br />" : "Nothing changed. <br />"; 
-   echo "Location: RegistroUsuario.php"; 
-   } 
-   $row = mysql_fetch_array ( mysql_query("SELECT * FROM `usuario` WHERE `cod_u` = '$cod_u' ")); 
-   ?>
+<?php
+include_once 'clases/db_connect.php';
+if (isset($_POST['submitted'])) {
+    /* ------------------------------------BEGIN FILE UPLOADER-------------------------------------------- */
+    $output_dir = "assets/doc/";
+    $name_ok;
+    if (isset($_FILES["myfile"])) {
+        //Filter the file types , if you want.
+        if ($_FILES["myfile"]["error"] > 0) {
+            echo "<p class='error'>Por favor seleccione un archivo</p><br>";
+        } else {
+            //move the uploaded file to uploads folder;
+            $id_unico = uniqid();
+            move_uploaded_file($_FILES["myfile"]["tmp_name"], $output_dir . $id_unico . $_FILES["myfile"]["name"]);
+            $name_ok = $output_dir . $id_unico . $_FILES["myfile"]["name"];
+            foreach ($_POST AS $key => $value) {
+                $_POST[$key] = mysql_real_escape_string($value);
+            }
+               $sql = "INSERT INTO `usuario` (   `subir_u`  ) VALUES( '{$_POST['subir_u']}'  ) "; 
+            mysql_query($sql) or die(mysql_error());
+            echo "Registro Agregado.<br />";
+            echo "<a href='index.php'>Regresar</a>";
+        }
+    }
+    /* ------------------------------------END FILE UPLOADER-------------------------------------------- */
+}
+?>
+
+
+      <?php 
+         include_once 'clases/db_connect.php';
+           if (isset($_GET['cod_u']) ) { 
+           $cod_u = (int) $_GET['cod_u']; 
+           if (isset($_POST['submitted']))
+               { 
+           foreach($_POST AS $key => $value) {
+               
+               $_POST[$key] = mysql_real_escape_string($value); } 
+           }
+           $sql = "UPDATE `usuario` SET  `nombre_u` =  '{$_POST['nombre_u']}' ,  `apellido_u` =  '{$_POST['apellido_u']}' ,  `fecha_nac_u` =  '{$_POST['fecha_nac_u']}' ,  `direccion_u` =  '{$_POST['direccion_u']}' ,  `telefono_u` =  '{$_POST['telefono_u']}' ,  `email_u` =  '{$_POST['email_u']}' ,  `password_u` =  '{$_POST['password_u']}' ,  `sexo_u` =  '{$_POST['sexo_u']}' ,  `carnet` =  '{$_POST['carnet']}' ,  `fecha_registro` =  '{$_POST['fecha_registro']}' ,  `subir_u` =  '{$_POST['subir_u']}'   WHERE `cod_u` = '$cod_u' "; 
+           mysql_query($sql) or die(mysql_error()); 
+           echo (mysql_affected_rows()) ? "Edited row.<br />" : "Nothing changed. <br />"; 
+           echo "<a href='list.php'>Back To Listing</a>"; 
+           } 
+          $row = mysql_fetch_array ( mysql_query("SELECT * FROM `usuario` WHERE `cod_u` = '$cod_u' ")); 
+
+      ?>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -142,7 +173,7 @@
                             </div>
                         </div>
                         <br>
-                       <center><div><input type='submit' class="btn btn-primary btn-lg" value='Modificar' /><input type='hidden' value='1' name='submitted' /></div></center>
+                       <center><div><input type='submit' class="btn btn-primary btn-lg" value='Guardar' /><input type='hidden' value='1' name='submitted' /></div></center>
 
 
                     </form>
