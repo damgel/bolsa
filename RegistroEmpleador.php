@@ -63,6 +63,26 @@ if (isset($_POST['submitted'])) {
                 text-align: center;
             }
         </style>
+        
+                <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+		}
+</script>
     </head>
     <body>
         <div id="header" class="navbar navbar-inverse navbar-static-top">
@@ -100,6 +120,8 @@ if (isset($_POST['submitted'])) {
                             border: solid 1px #05a8ff;
                         }
                     </style>
+                    
+                    
                     <div class="alert alert-success">Usuario registrado correctamente!</div>
                     <form action="" id="registroEmpleador" method='POST' enctype="multipart/form-data" class="form-horizontal">
                         <fieldset>
@@ -149,7 +171,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-4 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_em" class="form-control" required pattern=".{7,8}" onkeypress="return isNumberKey(this)">
+                                        <input type="tel" name="telefono_em" class="form-control" required pattern=".{7,8}" onkeypress="return numeros(event)">
                                     </div>
                                 </div>
 
