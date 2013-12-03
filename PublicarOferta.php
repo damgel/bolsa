@@ -184,7 +184,7 @@
                      <select name="nivel" id="nivel" class="form-control" id = "focusedInput" required>
                      <option value="1">Estudiante Universitario-Graduado</option>
                      <option value="2">Estudiante Universitario-mitad de sus estudios</option>
-                     <option value="3">Estudiante Universitario-empesando sus estudios</option>
+                     <option value="3">Estudiante Universitario-empezando sus estudios</option>
                      <option value="4">Bachiller</option>
                      </select>
                      </div>
