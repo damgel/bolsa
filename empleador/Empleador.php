@@ -10,11 +10,7 @@ if (isset($_POST['submitted'])) {
     echo "<a href='list.php'>Back To Listing</a>";
 }
 ?>
-
-
-
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -22,7 +18,7 @@ if (isset($_POST['submitted'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Perfil Empleador</title>
+        <title>Empleador</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -77,7 +73,7 @@ if (isset($_POST['submitted'])) {
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
-<?php include_once 'layout/header-empleador.php'; ?>
+            <?php include_once 'layout/header-empleador.php'; ?>
         </div>
 
         <div id="contenedor" class="container">
@@ -89,6 +85,23 @@ if (isset($_POST['submitted'])) {
                 <li class=""><a href="#Aplicacion">Ver Aplicaciones</a></li>
                 <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
             </ul>
+            <?php
+            /// CODIGO QUE EN TIEMPO REAL, CUANDO SE ACTUALIZA LA PAGINA VERIFICA SI LA EMPRESA ESTA ACTIVA O NO
+            include_once '../clases/db_connect.php';
+            $cod_em = $_SESSION['cod_empresa'];
+            $estado;
+            $getestado = mysql_query("SELECT activa_em FROM `empresa` where cod_em=$cod_em") or trigger_error(mysql_error());
+            while ($row = mysql_fetch_array($getestado)) {
+                $estado = $row['activa_em'];
+            }
+            if ($estado === "S") {
+                //echo $_SESSION['cod_empresa'] . "<br>";
+                echo "<div class='alert alert-success'>TENES PERMISOS PARA CREAR OFERTAS</div>";
+            } elseif ($estado === "N") {
+                //echo $_SESSION['cod_empresa'] . "<br>";
+                echo "<div class='alert alert-danger'>NO TENES PERMISOS PARA CREAR OFERTAS</div>";
+            }
+            ?>
 
             <div class="tab-content">
                 <div class="tab-pane active" id="Perfil">
@@ -460,7 +473,7 @@ if (isset($_POST['submitted'])) {
 
 
                                 <center><input type='submit' class="btn btn-primary btn-lg" value='Guardar Oferta' /><input type='hidden' value='1' name='submitted' /> </center>  
-                                
+
 
                             </form>
 

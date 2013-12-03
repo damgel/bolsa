@@ -30,6 +30,7 @@
         if ($_SESSION['empresa'] != "") {
             echo "Bienvenido <b><a href='empleador/Empleador.php' class='logout'>" . $_SESSION['empresa'] . "</a></b>";
             echo '<a href="logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
+            header("Location: empleador/Empleador.php"); /* redireccionar navegador */
         } elseif ($_SESSION['estudiante'] != "") {
             echo "Bienvenido <b>" . $_SESSION['estudiante'] . "</b>";
             echo '<a href="logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';

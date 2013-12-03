@@ -12,8 +12,7 @@
     <ul class="nav navbar-nav">
         <li><a href="../index.php">Inicio</a></li>
         <li><a href="Empleador.php">Perfil Empleador</a></li>
-        <li><a href="../Plazas.php">Plazas Recientes</a></li>
-        <li><a href="../Faq.php">FAQ</a></li>
+        
         <li><a href="../Contactenos.php">Contactanos</a></li>
     </ul>
 
@@ -22,7 +21,7 @@
         session_start();
         if ($_SESSION['empresa'] != "") {
             echo "Bienvenido <b><a href='Empleador.php' class='logout'>" . $_SESSION['empresa'] . "</a></b>";
-            echo '<a href="logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
+            echo '<a href="../logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
         } elseif ($_SESSION['estudiante'] != "") {
             echo "Bienvenido <b>" . $_SESSION['estudiante'] . "</b>";
             echo '<a href="logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
