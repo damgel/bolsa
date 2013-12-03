@@ -96,10 +96,12 @@ if (isset($_POST['submitted'])) {
             }
             if ($estado === "S") {
                 //echo $_SESSION['cod_empresa'] . "<br>";
-                echo "<div class='alert alert-success'>TENES PERMISOS PARA CREAR OFERTAS</div>";
+                echo "<div class='alert alert-success alert-dismissable'>TENES PERMISOS PARA CREAR OFERTAS";
+                echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
             } elseif ($estado === "N") {
                 //echo $_SESSION['cod_empresa'] . "<br>";
-                echo "<div class='alert alert-danger'>NO TENES PERMISOS PARA CREAR OFERTAS</div>";
+                echo "<div class='alert alert-danger'>NO TENES PERMISOS PARA CREAR OFERTAS";
+                echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
             }
             ?>
 
