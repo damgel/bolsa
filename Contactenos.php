@@ -54,17 +54,22 @@
                     die();
                 }
 
+
                 $email_message = "Detalles del formulario de contacto:\n\n";
                 $email_message .= "Nombre: " . $_POST['nombre'] . "\n";
                 $email_message .= "Telefono: " . $_POST['telefono'] . "\n";
                 $email_message .= "E-mail: " . $_POST['email'] . "\n";
+				$email_message .= "fecha: " . $_POST['fecha'] . "\n";
                 $email_message .= "Mensaje: " . $_POST['mensaje'] . "\n\n";
                 $email_from = $_POST['email'];
 
 // Ahora se envía el e-mail usando la función mail() de PHP
                 $headers = 'From: <' . $email_from . '>' . "\r\n" .
                         'Reply-To: <' . $email_from . '>' . "\r\n" .
+						'MIME-Version: 1.0' . "\r\n";
+						'Content-type: text/html; charset=iso-8859-1' . "\r\n";
                         'X-Mailer: PHP/' . phpversion();
+						
                 @mail($email_to, $email_subject, $email_message, $headers);
 
                 echo "¡El formulario se ha enviado con éxito!";
@@ -111,7 +116,7 @@
                             <div class="form-group">
                                 <label for="motivo" class="col-lg-3 control-label" >Fecha</label>
                               <div class="col-lg-3">
-                                    <input type="text" class="form-control datepicker" placeholder="Introduzca una fecha" required>
+                                    <input type="text" name="fecha" class="form-control datepicker" placeholder="Introduzca una fecha" required>
                                 </div>
                             </div>
                             <div class="form-group">    
