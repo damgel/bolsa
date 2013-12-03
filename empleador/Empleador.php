@@ -70,6 +70,26 @@ if (isset($_POST['submitted'])) {
 
             }
         </style>
+        
+                <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+		}
+</script>
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
@@ -151,7 +171,8 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-3 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" required>
+                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" 
+onkeypress="return numeros(event)"  required pattern=".{7,11}">
                                     </div>
                                 </div>
 
@@ -329,7 +350,8 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group"> 
                                             <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                             <div class="col-lg-4">
-                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
+                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" 
+onkeypress="return numeros(event)"  class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">              
@@ -365,7 +387,8 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">        
                                             <label for="edad" class="col-lg-3 control-label">Edad</label>
                                             <div class="col-lg-4">
-                                                <input type="number" name="edad" min="18" max="65" class="form-control" id="focusedInput" required>
+                                                <input type="number" name="edad" min="18" max="65" class="form-control" 
+onkeypress="return numeros(event)"  id="focusedInput" required>
                                             </div>
                                         </div>
 
@@ -392,14 +415,16 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">        
                                             <label for="salariomax_of" class="col-lg-3 control-label">Salario Maximo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="salariomax_of" class="form-control" id="focusedInput" placeholder="salariom" required>
+                                                <input type="text" name="salariomax_of" class="form-control" 
+onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariom" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group"> 
                                             <label for="salariomi" class="col-lg-3 control-label">Salario Minimo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="salariomin_of" class="form-control" id="focusedInput" placeholder="salariomi" required>
+                                                <input type="text" name="salariomin_of" class="form-control" 
+onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariomi" required>
                                             </div>
                                         </div>
 
