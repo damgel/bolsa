@@ -70,6 +70,26 @@ if (isset($_POST['submitted'])) {
 
         </style>
 
+             <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+		}
+</script>
+
     </head>
     <body>
 
@@ -116,14 +136,14 @@ if (isset($_POST['submitted'])) {
                         <div class="form-group">
                             <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
-                                <input type="tel" name="telefono_u" class="form-control" required pattern=".{7,15}">
+                                <input type="tel" name="telefono_u" class="form-control" required pattern=".{7,11}" onkeypress="return numeros(event)">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="Numero_carnet" class="col-lg-3 control-label">Numero de Carnet </label>
                             <div class="col-lg-4">
-                                <input type="text"  name="carnet" class="form-control"  required pattern=".{7,9}">
+                                <input type="text"  name="carnet" class="form-control"  required pattern=".{8,9}">
                             </div>
                         </div>
 
