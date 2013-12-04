@@ -25,6 +25,15 @@
     </ul>
 
     <form class="navbar-form navbar-right" role="search">
+        <ul>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Entrar <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="login.php"><span class="glyphicon glyphicon-star"></span> Acceso Empresa</a></li>
+                    <li><a href="Loginu.php"><span class="glyphicon glyphicon-user"></span> Acceso Estudiante</a></li>
+                </ul> 
+            </li> 
+        </ul>
         <?php
         session_start();
         if ($_SESSION['empresa'] != "") {
@@ -36,7 +45,6 @@
             echo '<a href="logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
         } else {
             //echo "Invitado";
-            echo "<a class='btn btn-info btn-large' href='login.php' role='button'>Entrar</a>";
         }
         ?>
 
