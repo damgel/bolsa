@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-dic-2013, 18:18:55
+    Author     : daMgeL
+*/
+
+.oferta
+{
+    float: left;
+    overflow: hidden;
+    width: 50%;
+}
+.sub
+{
+    
+    background-color: #f8f8f8;
+    /* border-left: solid 8px #dff0d8; */
+    
+    border-left: solid 8px #05a8ff;
+    padding-left: 10px;
+    margin-left: 20px;
+    
+}
+.sub h1,h2,h3,h4,h5,h6
+{
+    margin: 0px;
+
+}

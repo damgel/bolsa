@@ -28,7 +28,7 @@ CREATE TABLE `actividad_empresa` (
   `idac_empresa` int(20) NOT NULL AUTO_INCREMENT,
   `nombre_actividad` varchar(120) DEFAULT NULL,
   PRIMARY KEY (`idac_empresa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `actividad_empresa` (
 
 LOCK TABLES `actividad_empresa` WRITE;
 /*!40000 ALTER TABLE `actividad_empresa` DISABLE KEYS */;
+INSERT INTO `actividad_empresa` VALUES (1,'Aeronaves'),(2,'Agencia de reclutamiento'),(3,'Agrícola | Ganadera'),(4,'Agroindustria'),(5,'Arquitectura | Diseño | Decoración'),(6,'Automotriz'),(7,'Bancos | Financieras'),(8,'Bebidas | Alimentos'),(9,'Bienes Raíces'),(10,'Bufete de Abogados'),(11,'Call Center'),(12,'Carpintería|Muebles'),(13,'Científica'),(14,'Combustible |(Gas | Petroleo)'),(15,'Comercial'),(16,'Comercio Mayorista'),(17,'Comercio Minorista'),(18,'Confecciones'),(19,'Construcción'),(20,'Consultoría | Asesoría'),(21,'Defensa'),(22,'Educación | Capacitación'),(23,'Electricidad Distribución | Generación'),(24,'Entretenimiento'),(25,'Estudios Jurídicos'),(26,'Exportación | Importación'),(27,'Farmaceutica'),(28,'Forestal | Papel | Celulosa'),(29,'Gobierno'),(30,'Hotelera | Turismo | Restaurantes'),(31,'Imprenta | Editoriales'),(32,'Industrial'),(33,'Ingeniería'),(34,'Internet'),(35,'Inmobiliaria | Propiedades'),(36,'Inversiones'),(37,'Logística | Distribución'),(38,'Manufacturas varias'),(39,'Maquila'),(40,'Materiales de consrucción'),(41,'Medicina | Salud'),(42,'Medios de Comunicación'),(43,'Metalmecánica; Minería'),(44,'Naviera'),(45,'Operaciones Portuarias'),(46,'Organizaciones sin Fines de Lucro'),(47,'Pesquera'),(48,'Publicidad | Marketing'),(49,'Química'),(50,'Seguros | Previsión Servicios'),(51,'Servicios Financieros varios'),(52,'Tecnologías de Información'),(53,'Telecomunicaciones'),(54,'Textil | Maquila'),(55,'Transporte'),(56,'Otros');
 /*!40000 ALTER TABLE `actividad_empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +97,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (3,'S','assets/images/empresa/528699d2405d6emp.jpg','blogger and partnerds','dn@hotmail.com','destiny132002','bloogger1234@mails.com','700000003','www.somethinwild.com',' empresa muy cool','internet',NULL,NULL),(4,'S','assets/images/empresa/52869c4687992emp.jpg','blogger','blog402','alumina132002','bloogger@mails.com','700000003','www.somethinwild.com',' ','internet',NULL,NULL),(5,'S','assets/images/empresa/529a425b9d34e528b919259dd5descarga.jpg','empresa01','empresa01','persecuta','empresa01@emp.com','81214789','http://www.somethinwild.com',' empresa muy exitosa con 4 anios de experiencia realizando trabajo a nivel empresarial, dentro y fuera del pais.','Bienes RaÃ­ces',NULL,NULL);
+INSERT INTO `empresa` VALUES (3,'S','assets/images/empresa/528699d2405d6emp.jpg','blogger and partnerds','dn@hotmail.com','destiny132002','bloogger1234@mails.com','700000003','www.somethinwild.com',' empresa muy cool','internet',NULL,NULL),(4,'N','assets/images/empresa/52869c4687992emp.jpg','blogger','blog402','alumina132002','bloogger@mails.com','700000003','www.somethinwild.com',' ','internet',NULL,NULL),(5,'N','assets/images/empresa/529a425b9d34e528b919259dd5descarga.jpg','empresa01','empresa01','persecuta','empresa01@emp.com','81214789','http://www.somethinwild.com',' empresa muy exitosa con 4 anios de experiencia realizando trabajo a nivel empresarial, dentro y fuera del pais.','Bienes RaÃ­ces',NULL,NULL);
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,6 +123,32 @@ LOCK TABLES `genero` WRITE;
 /*!40000 ALTER TABLE `genero` DISABLE KEYS */;
 INSERT INTO `genero` VALUES (1,'Masculino'),(2,'Femenino');
 /*!40000 ALTER TABLE `genero` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oferta_aplicaciones`
+--
+
+DROP TABLE IF EXISTS `oferta_aplicaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oferta_aplicaciones` (
+  `cod_detalleOferta` int(20) NOT NULL,
+  `cod_em` int(20) DEFAULT NULL,
+  `cod_u` int(20) DEFAULT NULL,
+  `cod_oferta` int(20) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  PRIMARY KEY (`cod_detalleOferta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oferta_aplicaciones`
+--
+
+LOCK TABLES `oferta_aplicaciones` WRITE;
+/*!40000 ALTER TABLE `oferta_aplicaciones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `oferta_aplicaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -153,6 +180,7 @@ CREATE TABLE `ofertas` (
   `disponible_of` int(1) DEFAULT '0',
   `aprovacion_of` int(1) DEFAULT '0',
   `fecha_of` datetime DEFAULT NULL,
+  `fechaFin_of` datetime DEFAULT NULL,
   PRIMARY KEY (`cod_oferta`) USING BTREE,
   UNIQUE KEY `cod_oferta_UNIQUE` (`cod_oferta`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
@@ -164,7 +192,7 @@ CREATE TABLE `ofertas` (
 
 LOCK TABLES `ofertas` WRITE;
 /*!40000 ALTER TABLE `ofertas` DISABLE KEYS */;
-INSERT INTO `ofertas` VALUES (1,1,'DESARROLLADOR JAVA','se necesita programador Java.',0,'',0,'',0,26,'','',0,0,'','','','',0,1,'2013-12-01 17:40:40'),(2,1,'DESARROLLADOR PHP','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,1,'2013-12-01 17:40:45'),(3,1,'Aplicacion 1','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:50'),(4,1,'Aplicacion 2','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:53'),(5,1,'Aplicacion 3','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:54'),(6,1,'Aplicacion 4','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:56'),(7,1,'Aplicacion 5','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:57'),(8,1,'Aplicacion 6','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:59'),(9,1,'Aplicacion 7','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:00'),(10,1,'Aplicacion 8','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:02'),(11,1,'Aplicacion 10','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:03'),(12,1,'Aplicacion 11','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:04'),(13,1,'Aplicacion 12','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:06'),(14,1,'Aplicacion 13','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:07'),(15,1,'Aplicacion 14','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:08'),(16,1,'Aplicacion 15','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:10');
+INSERT INTO `ofertas` VALUES (2,1,'DESARROLLADOR PHP','se necesita desarrollador php con experiencia en mvc y template engines. Tambien se requiren conocimientos avanzados en el desarrollo de plugins con javascript y uso avanzado de jquey. Tambien debe poseer solidos conocimientos con bases de datos.',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,1,'2013-12-01 17:40:45',NULL),(3,1,'Aplicacion 1','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,1,'2013-12-01 17:40:50',NULL),(4,1,'Aplicacion 2','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,1,'2013-12-01 17:40:53',NULL),(5,1,'Aplicacion 3','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:40:54',NULL),(6,1,'Aplicacion 4','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,1,'2013-12-01 17:40:56',NULL),(7,1,'Aplicacion 5','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:40:57',NULL),(8,1,'Aplicacion 6','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,1,'2013-12-01 17:40:59',NULL),(9,1,'Aplicacion 7','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:00',NULL),(10,1,'Aplicacion 8','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:02',NULL),(11,1,'Aplicacion 10','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:03',NULL),(12,1,'Aplicacion 11','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:04',NULL),(13,1,'Aplicacion 12','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:06',NULL),(14,1,'Aplicacion 13','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:07',NULL),(15,1,'Aplicacion 14','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:08',NULL),(16,1,'Aplicacion 15','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:10',NULL);
 /*!40000 ALTER TABLE `ofertas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -241,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-02 10:23:36
+-- Dump completed on 2013-12-04  2:12:49
