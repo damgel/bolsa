@@ -26,6 +26,26 @@
         <script src="assets/js/jquery.validate.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
 
+         <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+		}
+</script>
+
     </head>
     <body>
         <div id="header" class="navbar navbar-inverse navbar-static-top">
@@ -45,26 +65,26 @@
                                     <div class="form-group">
                                         <label for="oferta" class="col-lg-3 control-label">Nombre de la Oferta</label>
                                         <div class="col-lg-4">
-                                            <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required>
+                                            <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required pattern=".{6,30}">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="area" class="col-lg-3 control-label">Area de la Empresa</label>
                                         <div class="col-lg-4">
-                                            <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required>
+                                            <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required pattern=".{6,30}" >
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="cargo" class="col-lg-3 control-label">Cargo Solicitado</label>
                                         <div class="col-lg-4">
-                                            <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required>
+                                            <input type="text" placeholder="Detalle su oferta" class="form-control" id = "focusedInput" required pattern=".{6,30}">
                                         </div>
                                     </div>
                                     <div class="form-group"> 
                                         <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                         <div class="col-lg-4">
-                                            <input type="number" name="num" min="1" max="10" class="form-control" id = "focusedInput" required>
+                                            <input type="number" name="num" min="1" max="15" class="form-control" id = "focusedInput" required>
                                         </div>
                                     </div>
                                     <div class="form-group">              
@@ -98,7 +118,7 @@
                                     <div class="form-group">        
                                         <label for="edad" class="col-lg-3 control-label">Edad</label>
                                         <div class="col-lg-4">
-                                            <input type="number" name="num" min="18" max="65" class="form-control" id = "focusedInput" required>
+                                            <input type="number" name="num" min="18" max="50" class="form-control" id = "focusedInput" required>
                                         </div>
                                     </div>
 
@@ -125,28 +145,28 @@
                                     <div class="form-group">        
                                         <label for="salariom" class="col-lg-3 control-label">Salario Maximo</label>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="salariom" required>
+                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="salariom" onkeypress="return numeros(event)">
                                         </div>
                                     </div>
 
                                     <div class="form-group"> 
                                         <label for="salariomi" class="col-lg-3 control-label">Salario Minimo</label>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="salariomi" required>
+                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="salariomi" onkeypress="return numeros(event)">
                                         </div>
                                     </div>
 
                                     <div class="form-group"> 
                                         <label for="pais" class="col-lg-3 control-label">Pais</label>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="Pais" required>
+                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="Pais" required pattern=".{6,20}">
                                         </div>
                                     </div>
 
                                     <div class="form-group"> 
                                         <label for="departamento" class="col-lg-3 control-label">Departamento</label>
                                         <div class="col-lg-4">
-                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="Departamento" required>
+                                            <input type="text" class="form-control"  id = "focusedInput" placeholder="Departamento" required pattern=".{6,15}">
                                         </div>
                                     </div>
 
@@ -174,7 +194,7 @@
                      <div class="form-group">
                      <label for="Titulo" class="col-lg-3 control-label">Titulo en</label>
                      <div class="col-lg-4">
-                     <input type="text" class="form-control" id = "focusedInput" placeholder="Detalle " required>
+                     <input type="text" class="form-control" id = "focusedInput" placeholder="Detalle " required pattern=".{6,30}">
                      </div>
                      </div>
                      
