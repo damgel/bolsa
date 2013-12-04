@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="stylesheet" href="assets/css/datepicker.css">
+        <link rel="stylesheet" href="assets/css/datepicker.css">
         <link rel="stylesheet" href="assets/css/bootstrap.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="validacionStyle.css">
@@ -21,30 +21,30 @@
         <script src="assets/js/jquery.validate.js"></script>    
         <script src="assets/js/modernizr2.6.2.js"></script>   
         <script>
-               $(document).ready(function() {
-    $('.datepicker').datepicker();
-});
+            $(document).ready(function() {
+                $('.datepicker').datepicker();
+            });
         </script>   
-        
-           <script>
-function numeros(e){
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " 0123456789";
-    especiales = [8,37,39,46];
- 
-    tecla_especial = false
-    for(var i in especiales){
- if(key == especiales[i]){
-     tecla_especial = true;
-     break;
-        } 
-    }
- 
-    if(letras.indexOf(tecla)==-1 && !tecla_especial)
-        return false;
-		}
-</script>
+
+        <script>
+            function numeros(e) {
+                key = e.keyCode || e.which;
+                tecla = String.fromCharCode(key).toLowerCase();
+                letras = " 0123456789";
+                especiales = [8, 37, 39, 46];
+
+                tecla_especial = false
+                for (var i in especiales) {
+                    if (key == especiales[i]) {
+                        tecla_especial = true;
+                        break;
+                    }
+                }
+
+                if (letras.indexOf(tecla) == -1 && !tecla_especial)
+                    return false;
+            }
+        </script>
 
 
     </head>
@@ -70,8 +70,9 @@ function numeros(e){
                         !isset($_POST['email']) ||
                         !isset($_POST['mensaje'])) {
 
-                    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-                    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+                    echo "<div class='alert alert-danger'>Algo salio mal al enviar el mensaje, por favor intenta de nuevo!";
+                    echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
+
                     die();
                 }
 
@@ -80,20 +81,21 @@ function numeros(e){
                 $email_message .= "Nombre: " . $_POST['nombre'] . "\n";
                 $email_message .= "Telefono: " . $_POST['telefono'] . "\n";
                 $email_message .= "E-mail: " . $_POST['email'] . "\n";
-				$email_message .= "fecha: " . $_POST['fecha'] . "\n";
+                $email_message .= "fecha: " . $_POST['fecha'] . "\n";
                 $email_message .= "Mensaje: " . $_POST['mensaje'] . "\n\n";
                 $email_from = $_POST['email'];
 
 // Ahora se envía el e-mail usando la función mail() de PHP
                 $headers = 'From: <' . $email_from . '>' . "\r\n" .
                         'Reply-To: <' . $email_from . '>' . "\r\n" .
-						'MIME-Version: 1.0' . "\r\n";
-						'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                        'X-Mailer: PHP/' . phpversion();
-						
+                        'MIME-Version: 1.0' . "\r\n";
+                'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                'X-Mailer: PHP/' . phpversion();
+
                 @mail($email_to, $email_subject, $email_message, $headers);
 
-                echo "¡El formulario se ha enviado con éxito!";
+                echo "<div class='alert alert-success alert-dismissable'>El mensaje se envio correctamente!";
+                echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
             }
             ?>
 
@@ -127,6 +129,7 @@ function numeros(e){
                                 <label for="motivo" class="col-lg-3 control-label" >Motivo</label>
                                 <div class="col-lg-4">
                                     <select name="motivo" class="form-control" required="">
+                                        <option value="">Seleccione</option>
                                         <option value="Dudas en general">Dudas en general</option>
                                         <option value="Problemas con el sistema">Problemas con el sistema</option>
                                         <option value="Recomendaciones">Recomendaciones</option>
@@ -136,7 +139,7 @@ function numeros(e){
                             </div>
                             <div class="form-group">
                                 <label for="motivo" class="col-lg-3 control-label" >Fecha</label>
-                              <div class="col-lg-3">
+                                <div class="col-lg-3">
                                     <input type="text" name="fecha" class="form-control datepicker" placeholder="Introduzca una fecha" onkeypress="return numeros(event)">
                                 </div>
                             </div>
