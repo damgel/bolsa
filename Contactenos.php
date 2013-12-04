@@ -115,7 +115,7 @@
                             <div class="form-group">
                                 <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                                 <div class="col-lg-4">
-                                    <input type="tel" name="telefono" class="form-control" onkeypress="return numeros(event)"  required pattern=".{8,11}">
+                                    <input type="tel" name="telefono" class="form-control" min="8" max="11" onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                 </div>
                             </div>
 
@@ -140,7 +140,7 @@
                             <div class="form-group">
                                 <label for="motivo" class="col-lg-3 control-label" >Fecha</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="fecha" class="form-control datepicker" placeholder="Introduzca una fecha" onkeypress="return numeros(event)">
+                                    <input type="text" name="fecha" class="form-control datepicker" placeholder="Introduzca una fecha" onkeypress="return numeros(event)" required>
                                 </div>
                             </div>
                             <div class="form-group">    
