@@ -95,9 +95,9 @@ $envia =  mail($para,$email_subject,$mensaje,$headers);
 
 // Envia un e-mail para el remitente, agradeciendo la visita en el sitio, y diciendo que en breve el e-mail sera respondido. 
 
-$mensaje2  = "<p >Hola <strong>" . $recibenombre . "</strong>. Agradecemos su visita y la oportunidad de recibir su contacto. Antes de 48 horas usted recibira un e-mail con la respuesta a su duda o pedido..</p>"; 
+$mensaje2  = "<p style='font-size:14xp' >Hola <strong>" . $recibenombre . "</strong>. Agradecemos su visita y la oportunidad de recibir su contacto. Antes de 48 horas usted recibira un e-mail con la respuesta a su duda o pedido..</p>"; 
 
-$mensaje2 .= "<p  >Observacion - No es necesario responder este mensaje.</p>"; 
+$mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>"; 
 
 $envia =  mail($recibemail,"Su mensaje fué recibido!",$mensaje2,$headers); 
 
