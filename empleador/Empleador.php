@@ -164,15 +164,14 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="correo" class="col-lg-3 control-label">Correo</label>
                                     <div class="col-lg-4">
-                                        <input type="email" name="email_perfilemp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control" id="focusedInput" required>
+                                        <input type="email" name="email_perfilemp" placeholder="Ejemplo: ejemplo@dominio.com" class="form-control"  id="focusedInput" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-3 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" 
-onkeypress="return numeros(event)"  required pattern=".{8,11}">
+                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                     </div>
                                 </div>
 

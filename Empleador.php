@@ -51,6 +51,26 @@ if (isset($_POST['submitted'])) {
 
             });
         </script>
+        
+                     <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+		}
+</script>
 
         <style>
             .container
@@ -102,26 +122,26 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
                                     <div class="col-lg-4">
-                                        <input type="text" name="nombre_perfilemp" class="form-control" placeholder="Escriba un nombre" required>
+                                        <input type="text" name="nombre_perfilemp" class="form-control" placeholder="Escriba un nombre" required pattern=".{6,20}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-3 control-label">Usuario</label>
                                     <div class="col-lg-4">
-                                        <input type="text" name="usuario_em" class="form-control" placeholder="Escriba un nombre de usuario" required>
+                                        <input type="text" name="usuario_em" class="form-control" placeholder="Escriba un nombre de usuario" required pattern=".{6,20}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" required>
+                                        <input type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" autocomplete="off"  required pattern=".{8,25}">
                                     </div>  
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ConfirmContrasenia" class="col-lg-3 control-label">Confirme contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="confirm_password_perfilemp" class="form-control" placeholder="Confirme su contraseña" required>
+                                        <input type="password" name="confirm_password_perfilemp" class="form-control" placeholder="Confirme su contraseña" autocomplete="off"  required pattern=".{8,25}">
                                     </div>  
                                 </div>    
 
@@ -136,7 +156,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-3 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" required>
+                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                     </div>
                                 </div>
 
@@ -223,7 +243,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="form-group">    
                                     <label for="direccionEmpresa" class="col-lg-3 control-label">Direccion de la Empresa</label>
                                     <div class="col-lg-6">
-                                        <input type="text" name="direc_perfilemp" class="form-control" placeholder="Escriba la direccion" required>
+                                        <input type="text" name="direc_perfilemp" class="form-control" placeholder="Escriba la direccion" required pattern=".{4,250}">
 
                                     </div>
                                 </div>
@@ -289,7 +309,7 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label for="oferta" class="col-lg-3 control-label">Titulo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="titulo_of" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input type="text" name="titulo_of" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required pattern=".{4,25}">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -302,19 +322,19 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label for="area" class="col-lg-3 control-label">Area de la Empresa</label>
                                             <div class="col-lg-4">
-                                                <input name="area_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input name="area_of" type="text" placeholder="Detalle su oferta" class="form-control" required pattern=".{4,25}" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="cargo" class="col-lg-3 control-label">Cargo Solicitado</label>
                                             <div class="col-lg-4">
-                                                <input name="cargo_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
+                                                <input name="cargo_of" type="text" placeholder="Detalle su oferta" class="form-control" required pattern=".{4,25}" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group"> 
                                             <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                             <div class="col-lg-4">
-                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
+                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" onkeypress="return numeros(event)">
                                             </div>
                                         </div>
                                         <div class="form-group">              
@@ -350,7 +370,7 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">        
                                             <label for="edad" class="col-lg-3 control-label">Edad</label>
                                             <div class="col-lg-4">
-                                                <input type="number" name="edad" min="18" max="65" class="form-control" id="focusedInput" required>
+                                                <input type="number" name="edad" min="18" max="65" class="form-control" id="focusedInput" onkeypress="return numeros(event)">
                                             </div>
                                         </div>
 
@@ -377,14 +397,14 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">        
                                             <label for="salariomax_of" class="col-lg-3 control-label">Salario Maximo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="salariomax_of" class="form-control" id="focusedInput" placeholder="salariom" required>
+                                                <input type="text" name="salariomax_of" class="form-control" id="focusedInput" placeholder="salariom" onkeypress="return numeros(event)">
                                             </div>
                                         </div>
 
                                         <div class="form-group"> 
                                             <label for="salariomi" class="col-lg-3 control-label">Salario Minimo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="salariomin_of" class="form-control" id="focusedInput" placeholder="salariomi" required>
+                                                <input type="text" name="salariomin_of" class="form-control" id="focusedInput" placeholder="salariomi" onkeypress="return numeros(event)">
                                             </div>
                                         </div>
 
@@ -439,7 +459,7 @@ if (isset($_POST['submitted'])) {
                                     <div class="form-group">
                                         <label for="Titulo" class="col-lg-3 control-label">Titulo en</label>
                                         <div class="col-lg-4">
-                                            <input type="text" name="tituloen_of" class="form-control" id="focusedInput" placeholder="Detalle " required>
+                                            <input type="text" name="tituloen_of" class="form-control" id="focusedInput" placeholder="Detalle " required pattern=".{6,30}">
                                         </div>
                                     </div>
 
