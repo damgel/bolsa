@@ -120,7 +120,7 @@ function numeros(e){
                         <div class="form-group">
                             <label for="Fecha_Nacimiento" class="col-lg-3 control-label">Fecha de Nacimiento</label>
                             <div class="col-lg-4">
-                                <input type="date"  name="fecha_nac_u" min="1960-01-01" max="1996-01-01" class="form-control"  required>
+                                <input type="date"  name="fecha_nac_u" min="1960-01-01" max="1996-01-01" class="form-control" onkeypress="return numeros(event)" >
                             </div>
                         </div>
 
@@ -136,7 +136,7 @@ function numeros(e){
                         <div class="form-group">
                             <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                             <div class="col-lg-4">
-                                <input type="tel" name="telefono_u" class="form-control" required pattern=".{7,11}" onkeypress="return numeros(event)">
+                                <input type="tel" name="telefono_u" class="form-control" required pattern=".{8,11}" onkeypress="return numeros(event)">
                             </div>
                         </div>
 
@@ -156,13 +156,13 @@ function numeros(e){
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Password</label>
                             <div class="col-lg-4">
-                                <input type="password" name="password_u" class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
+                                <input type="password" name="password_u" class="form-control" placeholder="Escriba una contrasenia"  autocomplete="off" required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Confirmar Password</label>
                             <div class="col-lg-4">
-                                <input type="password" name="password2" class="form-control" placeholder="Confirmar Password"  required pattern=.{8,25}>
+                                <input type="password" name="password2" class="form-control" placeholder="Confirmar Password" autocomplete="off" required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">

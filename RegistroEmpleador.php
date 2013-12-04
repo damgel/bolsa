@@ -138,7 +138,7 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-4 control-label">Nombre de la Empresa</label>
                                     <div class="col-sm-6">
-                                        <input type="text" name="nombre_em" class="form-control" placeholder="Nombre" required>
+                                        <input type="text" name="nombre_em" class="form-control" placeholder="Nombre" required pattern=".{6,20}">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -150,14 +150,14 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="Contrasenia" class="col-lg-4 control-label">Contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" id="password_em" name="password_em" class="form-control" autocomplete="off" placeholder="Contraseña" required>
+                                        <input type="password" id="password_em" name="password_em" class="form-control" autocomplete="off" placeholder="Contraseña" required pattern=".{8,25}">
                                     </div>  
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ConfirmContrasenia"class="col-lg-4 control-label">Confirme contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required>
+                                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required pattern=".{8,25}">
                                     </div>  
                                 </div>    
 
@@ -171,7 +171,7 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-4 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_em" class="form-control" required pattern=".{7,8}" onkeypress="return numeros(event)">
+                                        <input type="tel" name="telefono_em" class="form-control" required pattern=".{8,11}" onkeypress="return numeros(event)">
                                     </div>
                                 </div>
 

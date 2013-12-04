@@ -52,16 +52,55 @@ function numeros(e){
 
         <div id="header" class="navbar navbar-default navbar-static-top">
             <?php include_once 'layout/header.php'; ?>
-            
         </div>
 
         <div id="contenedor" class="container">
-            
+            <?php
+            if (isset($_POST['email'])) {
+
+// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
+
+                $email_to = "monteshernandez6@hotmail.com";
+                $email_subject = "Contacto desde el sitio web";
+
+
+// Aquí se deberían validar los datos ingresados por el usuario
+                if (!isset($_POST['nombre']) ||
+                        !isset($_POST['telefono']) ||
+                        !isset($_POST['email']) ||
+                        !isset($_POST['mensaje'])) {
+
+                    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+                    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+                    die();
+                }
+
+
+                $email_message = "Detalles del formulario de contacto:\n\n";
+                $email_message .= "Nombre: " . $_POST['nombre'] . "\n";
+                $email_message .= "Telefono: " . $_POST['telefono'] . "\n";
+                $email_message .= "E-mail: " . $_POST['email'] . "\n";
+				$email_message .= "fecha: " . $_POST['fecha'] . "\n";
+                $email_message .= "Mensaje: " . $_POST['mensaje'] . "\n\n";
+                $email_from = $_POST['email'];
+
+// Ahora se envía el e-mail usando la función mail() de PHP
+                $headers = 'From: <' . $email_from . '>' . "\r\n" .
+                        'Reply-To: <' . $email_from . '>' . "\r\n" .
+						'MIME-Version: 1.0' . "\r\n";
+						'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                        'X-Mailer: PHP/' . phpversion();
+						
+                @mail($email_to, $email_subject, $email_message, $headers);
+
+                echo "¡El formulario se ha enviado con éxito!";
+            }
+            ?>
 
             <div class="panel panel-primary">
                 <div class="panel-heading">Contactenos</div>
                 <div class="panel-body">
-                    <form action="email.php" id="Contactenos" method="POST" class="form-horizontal" >
+                    <form action="#" id="registroUsuario" method="POST" class="form-horizontal" >
                         <div class="form-group">
 
 
@@ -74,7 +113,7 @@ function numeros(e){
                             <div class="form-group">
                                 <label for="Telefono_Contacto" class="col-lg-3 control-label"> Telefono de Contacto </label>
                                 <div class="col-lg-4">
-                                    <input type="tel" name="telefono" class="form-control" onkeypress="return numeros(event)"  required pattern=".{7,11}">
+                                    <input type="tel" name="telefono" class="form-control" onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                 </div>
                             </div>
 
@@ -98,7 +137,7 @@ function numeros(e){
                             <div class="form-group">
                                 <label for="motivo" class="col-lg-3 control-label" >Fecha</label>
                               <div class="col-lg-3">
-                                    <input type="text" name="fecha" class="form-control datepicker" placeholder="Introduzca una fecha" required>
+                                    <input type="text" name="fecha" class="form-control datepicker" placeholder="Introduzca una fecha" onkeypress="return numeros(event)">
                                 </div>
                             </div>
                             <div class="form-group">    

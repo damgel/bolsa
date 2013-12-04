@@ -10,7 +10,11 @@ if (isset($_POST['submitted'])) {
     echo "<a href='list.php'>Back To Listing</a>";
 }
 ?>
-<!DOCTYPE html>
+
+
+
+
+    <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -18,21 +22,21 @@ if (isset($_POST['submitted'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Empleador</title>
+        <title>Perfil Empleador</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.css">
-        <link rel="stylesheet" href="../assets/css/normalize.css">
-        <link rel="stylesheet" href="../assets/css/jqueryUI.css">
-        <link rel="stylesheet" href="../validacionStyle.css">
-        <script src="../assets/js/jquery-v1.10.2.js"></script>
-        <script src="../assets/js/bootstrap.min.js"></script>
-        <script src="../assets/js/jquery-ui.js"></script>
-        <script src="../assets/js/jquery.validate.js"></script>   
-        <script src="../assets/js/modernizr2.6.2.js"></script>
-        <script src="../assets/js/holder.js"></script>
-        <script src="../assets/js/validarRegEmpleador.js"></script>
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/jqueryUI.css">
+        <link rel="stylesheet" href="validacionStyle.css">
+        <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery-ui.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>   
+        <script src="assets/js/modernizr2.6.2.js"></script>
+        <script src="assets/js/holder.js"></script>
+        <script src="assets/js/validarRegEmpleador.js"></script>
 
         <script>
             // fallback para el datepicker con jquery
@@ -70,30 +74,10 @@ if (isset($_POST['submitted'])) {
 
             }
         </style>
-        
-                <script>
-function numeros(e){
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " 0123456789";
-    especiales = [8,37,39,46];
- 
-    tecla_especial = false
-    for(var i in especiales){
- if(key == especiales[i]){
-     tecla_especial = true;
-     break;
-        } 
-    }
- 
-    if(letras.indexOf(tecla)==-1 && !tecla_especial)
-        return false;
-		}
-</script>
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
-            <?php include_once 'layout/header-empleador.php'; ?>
+<?php include_once 'layout/header.php'; ?>
         </div>
 
         <div id="contenedor" class="container">
@@ -105,25 +89,6 @@ function numeros(e){
                 <li class=""><a href="#Aplicacion">Ver Aplicaciones</a></li>
                 <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
             </ul>
-            <?php
-            /// CODIGO QUE EN TIEMPO REAL, CUANDO SE ACTUALIZA LA PAGINA VERIFICA SI LA EMPRESA ESTA ACTIVA O NO
-            include_once '../clases/db_connect.php';
-            $cod_em = $_SESSION['cod_empresa'];
-            $estado;
-            $getestado = mysql_query("SELECT activa_em FROM `empresa` where cod_em=$cod_em") or trigger_error(mysql_error());
-            while ($row = mysql_fetch_array($getestado)) {
-                $estado = $row['activa_em'];
-            }
-            if ($estado === "S") {
-                //echo $_SESSION['cod_empresa'] . "<br>";
-                echo "<div class='alert alert-success alert-dismissable'>TENES PERMISOS PARA CREAR OFERTAS";
-                echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
-            } elseif ($estado === "N") {
-                //echo $_SESSION['cod_empresa'] . "<br>";
-                echo "<div class='alert alert-danger'>NO TENES PERMISOS PARA CREAR OFERTAS";
-                echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
-            }
-            ?>
 
             <div class="tab-content">
                 <div class="tab-pane active" id="Perfil">
@@ -137,7 +102,7 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
                                     <div class="col-lg-4">
-                                        <input type="text" name="nombre_perfilemp" class="form-control" placeholder="Escriba un nombre" required pattern=".{6,20}">
+                                        <input type="text" name="nombre_perfilemp" class="form-control" placeholder="Escriba un nombre" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -149,14 +114,14 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" autocomplete="off" required pattern=".{8,25}">
+                                        <input type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" required>
                                     </div>  
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ConfirmContrasenia" class="col-lg-3 control-label">Confirme contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="confirm_password_perfilemp" class="form-control" autocomplete="off" placeholder="Confirme su contraseña" required pattern=".{8,25}">
+                                        <input type="password" name="confirm_password_perfilemp" class="form-control" placeholder="Confirme su contraseña" required>
                                     </div>  
                                 </div>    
 
@@ -171,8 +136,7 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="telefono" class="col-lg-3 control-label">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" 
-onkeypress="return numeros(event)"  required pattern=".{8,11}">
+                                        <input type="tel" name="telefono_perfilemp" placeholder="Escriba un numero de telefono" class="form-control" required>
                                     </div>
                                 </div>
 
@@ -185,7 +149,7 @@ onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                 <div class="form-group">    
                                     <label for="descripcionEmpresa" class="col-lg-3 control-label">Descripcion de la Empresa</label>
                                     <div class="col-lg-6">
-                                        <textarea name="textarea" class="form-control col-lg-6" rows="2" > </textarea>
+                                        <textarea name="textarea" class="form-control col-lg-6" rows="2"> </textarea>
 
                                     </div>
                                 </div>         
@@ -259,7 +223,7 @@ onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                 <div class="form-group">    
                                     <label for="direccionEmpresa" class="col-lg-3 control-label">Direccion de la Empresa</label>
                                     <div class="col-lg-6">
-                                        <input type="text" name="direc_perfilemp" class="form-control" placeholder="Escriba la direccion" required pattern=".{6,250}">
+                                        <input type="text" name="direc_perfilemp" class="form-control" placeholder="Escriba la direccion" required>
 
                                     </div>
                                 </div>
@@ -325,33 +289,32 @@ onkeypress="return numeros(event)"  required pattern=".{8,11}">
                                         <div class="form-group">
                                             <label for="oferta" class="col-lg-3 control-label">Titulo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="titulo_of" placeholder="Detalle su oferta" class="form-control" required pattern=".{6,30}" id="focusedInput" required>
+                                                <input type="text" name="titulo_of" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="nivelacademico" class="col-lg-3 control-label">Descripcion de la Oferta</label>
                                             <div class="col-lg-6">
-                                                <textarea name="descripcion_of"  class="form-control" rows="3"> </textarea>
+                                                <textarea name="descripcion_of" class="form-control" rows="3"> </textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="area" class="col-lg-3 control-label">Area de la Empresa</label>
                                             <div class="col-lg-4">
-                                                <input name="area_of" type="text"  placeholder="Detalle su oferta" class="form-control" id="focusedInput" required pattern=".{6,30}" >
+                                                <input name="area_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="cargo" class="col-lg-3 control-label">Cargo Solicitado</label>
                                             <div class="col-lg-4">
-                                                <input name="cargo_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required pattern=".{6,30}">
+                                                <input name="cargo_of" type="text" placeholder="Detalle su oferta" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group"> 
                                             <label for="puesto vacantes" class="col-lg-3 control-label">Puestos Vacantes</label>
                                             <div class="col-lg-4">
-                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" 
-onkeypress="return numeros(event)"  class="form-control" id="focusedInput" required>
+                                                <input name="vacantes_of" type="number" name="num" min="1" max="10" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
                                         <div class="form-group">              
@@ -387,8 +350,7 @@ onkeypress="return numeros(event)"  class="form-control" id="focusedInput" requi
                                         <div class="form-group">        
                                             <label for="edad" class="col-lg-3 control-label">Edad</label>
                                             <div class="col-lg-4">
-                                                <input type="number" name="edad" min="18" max="65" class="form-control" 
-onkeypress="return numeros(event)"  id="focusedInput" required>
+                                                <input type="number" name="edad" min="18" max="65" class="form-control" id="focusedInput" required>
                                             </div>
                                         </div>
 
@@ -415,16 +377,14 @@ onkeypress="return numeros(event)"  id="focusedInput" required>
                                         <div class="form-group">        
                                             <label for="salariomax_of" class="col-lg-3 control-label">Salario Maximo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="salariomax_of" class="form-control" 
-onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariom" required>
+                                                <input type="text" name="salariomax_of" class="form-control" id="focusedInput" placeholder="salariom" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group"> 
                                             <label for="salariomi" class="col-lg-3 control-label">Salario Minimo</label>
                                             <div class="col-lg-4">
-                                                <input type="text" name="salariomin_of" class="form-control" 
-onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariomi" required>
+                                                <input type="text" name="salariomin_of" class="form-control" id="focusedInput" placeholder="salariomi" required>
                                             </div>
                                         </div>
 
@@ -479,7 +439,7 @@ onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariomi" re
                                     <div class="form-group">
                                         <label for="Titulo" class="col-lg-3 control-label">Titulo en</label>
                                         <div class="col-lg-4">
-                                            <input type="text" name="tituloen_of" class="form-control" id="focusedInput" placeholder="Detalle " required pattern=".{7,30}">
+                                            <input type="text" name="tituloen_of" class="form-control" id="focusedInput" placeholder="Detalle " required>
                                         </div>
                                     </div>
 
@@ -500,7 +460,7 @@ onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariomi" re
 
 
                                 <center><input type='submit' class="btn btn-primary btn-lg" value='Guardar Oferta' /><input type='hidden' value='1' name='submitted' /> </center>  
-
+                                
 
                             </form>
 
