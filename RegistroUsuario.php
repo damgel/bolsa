@@ -70,30 +70,30 @@ if (isset($_POST['submitted'])) {
 
         </style>
 
-             <script>
-function numeros(e){
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " 0123456789";
-    especiales = [8,37,39,46];
- 
-    tecla_especial = false
-    for(var i in especiales){
- if(key == especiales[i]){
-     tecla_especial = true;
-     break;
-        } 
-    }
- 
-    if(letras.indexOf(tecla)==-1 && !tecla_especial)
-        return false;
-		}
-</script>
+        <script>
+            function numeros(e) {
+                key = e.keyCode || e.which;
+                tecla = String.fromCharCode(key).toLowerCase();
+                letras = " 0123456789";
+                especiales = [8, 37, 39, 46];
+
+                tecla_especial = false
+                for (var i in especiales) {
+                    if (key == especiales[i]) {
+                        tecla_especial = true;
+                        break;
+                    }
+                }
+
+                if (letras.indexOf(tecla) == -1 && !tecla_especial)
+                    return false;
+            }
+        </script>
 
     </head>
     <body>
 
-        <div id="header" class="navbar navbar-inverse navbar-static-top">
+        <div id="header" class="navbar navbar-default navbar-static-top">
             <?php include_once 'layout/header.php'; ?>
         </div>
 
