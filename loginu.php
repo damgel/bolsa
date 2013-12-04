@@ -3,7 +3,6 @@ include_once "clases/db_connect.php";
 if (isset($_POST['action'])) {
     $usuario_em = $_POST['email_em'];
     $pass_em = $_POST['password_em'];
-    $error;
     session_start();
     if (isset($usuario_em) && !empty($pass_em)) {
         $query = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa WHERE email_em='$usuario_em' AND password_em='$pass_em' LIMIT 1");
@@ -14,13 +13,12 @@ if (isset($_POST['action'])) {
             $_SESSION['cod_empresa'] = $cod_em;
             $_SESSION['permiso'] = $permiso_em;
             $_SESSION['empresa'] = $nombre;
-            header("Location: empleador/Empleador.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
+            echo $nombre;
+            echo $permiso_em;
+            header("Location: Empleador.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
         }
-        $error = 1;
-    }
-    if ($error == 1) {
-        echo "<div class='alert alert-danger'>Por favor introduzca un usuario y contrasenia correctos!";
-        echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
+    } else {
+        echo "<p class='error'>Por favor introduzca un usuario y contrasenia correctos<p>";
     }
 }
 ?>
