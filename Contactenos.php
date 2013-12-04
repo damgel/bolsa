@@ -70,7 +70,7 @@
                         !isset($_POST['email']) ||
                         !isset($_POST['mensaje'])) {
 
-                    echo "<div class='alert alert-danger'>Algo salio mal al enviar el mensaje, por favor intenta de nuevo";
+                    echo "<div class='alert alert-danger'>Algo salio mal al enviar el mensaje, por favor intenta de nuevo!";
                     echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
 
                     die();
@@ -94,7 +94,7 @@
 
                 @mail($email_to, $email_subject, $email_message, $headers);
 
-                echo "<div class='alert alert-success alert-dismissable'>El mensaje se envio correctamente";
+                echo "<div class='alert alert-success alert-dismissable'>El mensaje se envio correctamente!";
                 echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
             }
             ?>
@@ -129,6 +129,7 @@
                                 <label for="motivo" class="col-lg-3 control-label" >Motivo</label>
                                 <div class="col-lg-4">
                                     <select name="motivo" class="form-control" required="">
+                                        <option value="">Seleccione</option>
                                         <option value="Dudas en general">Dudas en general</option>
                                         <option value="Problemas con el sistema">Problemas con el sistema</option>
                                         <option value="Recomendaciones">Recomendaciones</option>
