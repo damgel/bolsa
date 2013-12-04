@@ -26,6 +26,7 @@ if (isset($_POST['submitted'])) {
         <link rel="stylesheet" href="../assets/css/normalize.css">
         <link rel="stylesheet" href="../assets/css/jqueryUI.css">
         <link rel="stylesheet" href="../validacionStyle.css">
+        <link rel="stylesheet" href="../assets/css/contenido.css">
         <script src="../assets/js/jquery-v1.10.2.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
         <script src="../assets/js/jquery-ui.js"></script>
@@ -48,58 +49,7 @@ if (isset($_POST['submitted'])) {
             });
         </script>
 
-        <style>
-            .container
-            {
-                margin-top: 1%;
-                max-width: 90%;
-            }
-            .panel panel-primary
-            {
-                margin-top: 1%;
-                display: center;
-                max-width: 1034px;
-            }
-            h2
-            {
-                text-align: center;
-            }
-            #publicarOferta
-            {
-                text-align: right;
 
-            }
-            .lista-enlaces
-            {
-
-
-                margin-top: 30px;
-                margin-bottom: 30px;
-                text-shadow: 0 1px 0 #fff;
-                background-color: #f7f5fa;
-                border:solid 1px #eee;
-
-            }
-            .lista-enlaces ul
-            {
-                margin:0px;
-                padding-left: 0px;
-                display: block;
-                list-style: none;
-            }
-            .lista-enlaces a
-            {
-
-                font-size: 18px;
-                display:block;
-                padding: 10px;
-            }
-            .lista-enlaces a:hover
-            {
-                text-decoration: none;
-                background-color: #eee;
-            }
-        </style>
 
         <script>
             function numeros(e) {
