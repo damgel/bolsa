@@ -71,10 +71,10 @@ if (isset($_POST['submitted'])) {
             }
             .lista-enlaces
             {
-                
+
+
                 margin-top: 30px;
                 margin-bottom: 30px;
-                padding: 10px;
                 text-shadow: 0 1px 0 #fff;
                 background-color: #f7f5fa;
                 border:solid 1px #eee;
@@ -82,10 +82,14 @@ if (isset($_POST['submitted'])) {
             }
             .lista-enlaces ul
             {
-                list-style:none;
+                margin:0px;
+                padding-left: 0px;
+                display: block;
+                list-style: none;
             }
             .lista-enlaces a
             {
+
                 font-size: 18px;
                 display:block;
                 padding: 10px;
@@ -128,16 +132,16 @@ if (isset($_POST['submitted'])) {
 
                 <div class="col-md-2">
                     <div class="lista-enlaces">
-                       <ul id="myTab">
-                        <li class="active"><a href="#Perfil">Perfil</a></li>
-                        <li class=""><a href="#Ofertas">Publicar Ofertas</a></li>
-                        <li class=""><a href="#Aplicacion">Ver Aplicaciones</a></li>
-                        <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
-                    </ul>
+                        <ul id="myTab">
+                            <li class="active"><a href="#Perfil">Perfil</a></li>
+                            <li class=""><a href="#Ofertas">Publicar Ofertas</a></li>
+                            <li class=""><a href="#Aplicacion">Ver Aplicaciones</a></li>
+                            <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-10">
-                   
+
                     <?php
                     /// CODIGO QUE EN TIEMPO REAL, CUANDO SE ACTUALIZA LA PAGINA VERIFICA SI LA EMPRESA ESTA ACTIVA O NO
                     include_once '../clases/db_connect.php';
@@ -162,7 +166,7 @@ if (isset($_POST['submitted'])) {
                         <div class="tab-pane active" id="Perfil">
 
                             <div class="panel panel-primary">
-
+                                <div class="panel-heading">Perfil</div>
                                 <div class="panel-body">
 
                                     <form action="#" id="perfilEmpleador" method="POST" class="form-horizontal">
