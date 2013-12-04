@@ -14,6 +14,8 @@
         <link rel="stylesheet" href="assets/css/oferta.css">
         <link rel="stylesheet" href="validacionStyle.css">
         <script src="assets/js/jquery-v1.10.2.js"></script>
+        <script src="assets/js/momments.js"></script>
+        <script src="assets/js/timeago.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery-ui.js"></script>
         <script src="assets/js/jquery.validate.js"></script>   
@@ -38,8 +40,10 @@
                         <hr class="featurette-divider">
                         <h3><a href="#"><?php echo nl2br($row['titulo_of']) ?></a></h3>
                         <h4><?php echo nl2br($row['descripcion_of']) ?></h4>
-                        <h6>Aplicaciones 0 , Visto 0 <?php echo "Publicado " . nl2br($row['fecha_of']) ?> </h6><br>
-                        <a href="detallesOferta.php?id=<?php echo $row['cod_oferta'] ?>" class="btn btn-primary btn-sm">Ver Informacion</a>
+                        <h4><?php $fecha_ago = ($row['fecha_of']) ?></h4>
+                        <?php echo "Publicado: <span id='timeagos' data-livestamp='$fecha_ago'></span><br>" ?>
+                        <br>
+                        <a href="detallesOferta.php?id=<?php echo $row['cod_oferta'] ?>" class="btn btn-success btn-sm">Ver Informacion</a>
                         <hr class="featurette-divider">
                     </div>
                 </div>

@@ -9,7 +9,7 @@
         <title> Panel Administrativo </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../assets/css/contenido.css">
+
         <link rel="stylesheet" href="../assets/css/bootstrap.css">
         <link rel="stylesheet" href="../assets/css/normalize.css">
 
@@ -30,11 +30,11 @@
             {
                 border:solid 1px #CCC;
                 border-left: solid 8px #05a8ff;
-
+                margin-top: 0px;
                 margin: 25px;
                 padding: 10px;
                 overflow: hidden;
-                width: 95%;
+                width: 100%;
 
             }
             .well
@@ -54,8 +54,6 @@
             }
             #wellinfo
             {
-
-
                 padding-left: 5px;
                 padding-right: 5px;
             }
@@ -63,6 +61,10 @@
             {
                 padding: 5px;
                 margin: 5px;
+            }
+            .col-md-12
+            {
+                border:solid 1px black;
             }
         </style>
 
@@ -76,7 +78,7 @@
 
         <div id="contenedor" class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-11">
                     <div class="tab-content">
                         <div class="tab-pane active" id="plazas">
                             <?php
@@ -121,14 +123,7 @@
                                                     <h4>Departamento: <?php echo nl2br($row['departamento_of']) ?></h4>
                                                     <h4>Experiencia requerida: <?php echo nl2br($row['experiencia_of']) ?></h4>
 
-                                                    <form method="POST" action="">
-                                                        <input type="hidden" name="cod_em" value="<?php echo nl2br($row['cod_em']) ?>">
-                                                        <input type="hidden" name="cod_oferta" value="<?php echo nl2br($row['cod_oferta']) ?>">
-                                                        <input type="hidden" name="cod_u" value="<?php echo nl2br($row['cod_oferta']) ?>">
 
-
-
-                                                    </form>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -137,20 +132,57 @@
 
                                                 </div>
                                                 <div class="well" id="wellinfo">
-                                                    <?PHP
-                                                    if ($row['disponible_of'] == 1) {
-                                                        echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>";
-                                                        echo "<input type='submit' class='btn btn-block btn-success' name='Aplicar' value='Aplicar a esta Oferta'>";
-                                                    } else {
-                                                        echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
-                                                    }
-                                                    ?>
+                                                    <form method="POST" action="oferta_aplicar.php">
+                                                        <input type="hidden" name="cod_em" value="<?php echo nl2br($row['cod_em']) ?>">
+                                                        <input type="hidden" name="cod_oferta" value="<?php
+                                                        $cod_oferta = $row['cod_oferta'];
+                                                        echo $cod_oferta
+                                                        ?>">
+                                                        <input type="hidden" name="cod_u" value="<?php
+                                                        $cod_usuario = $_SESSION['cod_estudiante'];
+                                                        echo $cod_usuario
+                                                        ?>">
+                                                               <?PHP
+                                                               if ($row['disponible_of'] == 1) {
+                                                                   echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>";
+                                                                   echo "<p><input type='submit' class='btn btn-block btn-success' value='Aplicar a esta oferta' /><input type='hidden' value='1' name='submitted' /> ";
+                                                               } else {
+                                                                   echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
+                                                               }
+                                                               ?>
+                                                    </form>
                                                 </div>
 
 
                                             </div>
                                         </div>
+                                        <div class="col-md-12">
+                                            <?
+                                            echo "<table class='table-bordered' >";
+                                            echo "<tr>";
+                                            echo "<td><b>Cod Em</b></td>";
+                                            echo "<td><b>Cod U</b></td>";
+                                            echo "<td><b>Cod Oferta</b></td>";
+                                            echo "<td><b>Fecha</b></td>";
+                                            echo "</tr>";
+                                            $result = mysql_query("select cod_em as idEmpresa,cod_oferta as idOferta, nombre_u, fecha from oferta_aplicaciones inner join usuario on oferta_aplicaciones.cod_u=usuario.cod_u where cod_em=$cod_em and cod_oferta=$cod_oferta ") or trigger_error(mysql_error());
+                                            while ($row = mysql_fetch_array($result)) {
+                                                foreach ($row AS $key => $value) {
+                                                    $row[$key] = stripslashes($value);
+                                                }
+                                                $fecha_aplicacion = ($row['fecha']);
+                                                echo "<tr>";
+                                                echo "<td valign='top'>" . nl2br($row['idEmpresa']) . "</td>";
+                                                echo "<div>" . nl2br($row['nombre_u']) . " aplico a esta oferta " . "<span id='timeagos' data-livestamp='$fecha_aplicacion'></span></div>";
+                                                echo "<td valign='top'>" . nl2br($row['nombre_u']) . "</td>";
+                                                echo "<td valign='top'>" . nl2br($row['idOferta']) . "</td>";
 
+                                                echo "<td valign='top'><span id='timeagos' data-livestamp='$fecha_aplicacion'></span></td><br>";
+                                                echo "</tr>";
+                                            }
+                                            echo "</table>";
+                                            ?>
+                                        </div>
                                     </div>
 
                                     <?php
@@ -160,8 +192,8 @@
 
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
