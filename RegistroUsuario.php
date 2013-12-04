@@ -120,7 +120,7 @@ function numeros(e){
                         <div class="form-group">
                             <label for="Fecha_Nacimiento" class="col-lg-3 control-label">Fecha de Nacimiento</label>
                             <div class="col-lg-4">
-                                <input type="date"  name="fecha_nac_u" min="1960-01-01" max="1996-01-01" class="form-control"  required>
+                                <input type="date"  name="fecha_nac_u" min="1963-01-01" max="1996-01-01" class="form-control"  required>
                             </div>
                         </div>
 

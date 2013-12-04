@@ -131,7 +131,7 @@ function numeros(e){
                         <div class="form-group">
                             <label for="motivo" class="col-lg-3 control-label" >Fecha Nacimiento</label>
                             <div class="col-lg-3">
-                                <input type="text" name="fecha_nac_u" class="form-control datepicker" placeholder="Introduzca una fecha" required onkeypress="return isNumberKey(this)">
+                                <input type="text" name="fecha_nac_u" class="form-control datepicker" min="1963-01-01" max="1996-01-01" placeholder="Introduzca una fecha" required onkeypress="return isNumberKey(this)">
                             </div>
                         </div>
 
