@@ -35,7 +35,7 @@ if (isset($_POST['action'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login Form</title>
+        <title>Acceso Empresa</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,7 +101,7 @@ if (isset($_POST['action'])) {
                         <fieldset>
                             <div class="form-group">
 
-                                <legend><center><h3>Login Empresa</h3></center></legend>
+                                <legend><center><h3>Acceso Empresa</h3></center></legend>
                                 <br>
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="email">Correo</label>
