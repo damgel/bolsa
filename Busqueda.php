@@ -18,7 +18,25 @@
         <script src="assets/js/jquery.validate.js"></script>   
         <script src="assets/js/modernizr2.6.2.js"></script>
         <script src="assets/js/holder.js"></script>
-
+              <script>
+function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+		}
+</script>
         <script>
             // fallback para el datepicker con jquery
             Modernizr.load({
@@ -52,7 +70,7 @@
                         <div class="form-group">
                             <label for="Busqueda" class="col-lg-2 control-label">Busqueda:</label>
                             <div class="col-lg-6">
-                                <input type="text" name="buscar" class="form-control "   placeholder="Seleccione un filtro para hacer una busqueda" required>
+                                <input type="text" name="buscar" class="form-control " required pattern=".{5,20}"  placeholder="Seleccione un filtro para hacer una busqueda" required>
                             </div>
                             <input type="submit" class="btn btn-primary btn-toolbar" value="Buscar"></input>
                         </div> 
@@ -142,7 +160,7 @@
                             <input type="date"  class="form-control">
                             <label for="sueldo" class="col-lg-3 control-label">Sueldo:</label><br>
                             <div class="col-lg-6">
-                                <input type="number" class="form-control" value="100" min="100" max="10000" required>  
+                                <input type="number" class="form-control" value="100" min="100" max="10000" onkeypress="return numeros(event)">  
                             </div>
                         </div>
                     </form>
