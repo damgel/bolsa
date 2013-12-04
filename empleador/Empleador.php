@@ -70,6 +70,8 @@ if (isset($_POST['submitted'])) {
                     return false;
             }
         </script>
+
+        
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
@@ -119,7 +121,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="panel-heading">Perfil</div>
                                 <div class="panel-body">
 
-                                    <form action="#" id="perfilEmpleador" method="POST" class="form-horizontal">
+                                    <form action="#" id="perfilEmpleador" name="f1" method="POST" class="form-horizontal">
 
                                         <div class="form-group">
                                             <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
@@ -281,7 +283,7 @@ if (isset($_POST['submitted'])) {
                                                 <p class="help-block"></p>
                                             </div>
                                         </div>
-                                        <center><button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button> </center> 
+                                        <center><button type="submit" class="btn btn-primary btn-lg"   >Actualizar Datos</button> </center> 
                                         <br>
                                     </form>
 
@@ -373,7 +375,7 @@ if (isset($_POST['submitted'])) {
                                                 <div class="form-group">        
                                                     <label for="edad" class="col-lg-3 control-label">Edad</label>
                                                     <div class="col-lg-4">
-                                                        <input type="number" name="edad" min="18" max="65" class="form-control" 
+                                                        <input type="number" name="edad" min="18" max="50" class="form-control" 
                                                                onkeypress="return numeros(event)"  id="focusedInput" required>
                                                     </div>
                                                 </div>
