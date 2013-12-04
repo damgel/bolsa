@@ -23,6 +23,7 @@ while ($row = mysql_fetch_array($result)) {
     echo "<tr>";
    
     echo "<td valign='top'>" . nl2br($row['cod_em']) . "</td>";
+    
     echo "<td valign='top'>" . nl2br($row['titulo_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['cargo_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['anoexp_ofetas']) . "</td>";

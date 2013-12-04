@@ -27,7 +27,7 @@
         <div id="contenedor" class="container">
             <?php
             include_once 'clases/db_connect.php';
-            $result = mysql_query("SELECT * FROM `ofertas` where disponible_of=1 and aprovacion_of=1 limit 0,10") or trigger_error(mysql_error());
+            $result = mysql_query("SELECT * FROM `ofertas` where disponible_of=1 and aprovacion_of=1") or trigger_error(mysql_error());
             while ($row = mysql_fetch_array($result)) {
                 foreach ($row AS $key => $value) {
                     $row[$key] = stripslashes($value);

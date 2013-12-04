@@ -90,6 +90,7 @@
                                         <h3><a><?php echo nl2br($row['titulo_of']) ?></a></h3>
                                         <hr>
                                         <h4><?php echo nl2br($row['descripcion_of']) ?></h4><br>
+                                        <h6>Publicado por: <?php //echo nl2br($row2['nombre_em']) ?></h6><br>
 
                                         <div class="well">
                                             <h4>Area de la empresa:<?php echo nl2br($row['area_of']) ?></h4>

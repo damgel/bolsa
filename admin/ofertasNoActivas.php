@@ -13,7 +13,6 @@ echo "<td><b>SalarioMin</b></td>";
 echo "<td><b>SalarioMax</b></td>";
 echo "<td><b>Departamento</b></td>";
 echo "<td><b>Aprovada</b></td>";
-echo "<td><b>Acciones</b></td>";
 echo "</tr>";
 $result = mysql_query("SELECT * FROM `ofertas` where aprovacion_of=0") or trigger_error(mysql_error());
 while ($row = mysql_fetch_array($result)) {

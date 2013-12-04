@@ -12,8 +12,11 @@
         foreach ($_POST AS $key => $value) {
             $_POST[$key] = mysql_real_escape_string($value);
         }
+        /// QUERY PARA ACTIVAR LAS EMPRESAS
         $sql = "UPDATE `empresa` SET  `activa_em` =  'S'   WHERE `cod_em` = '$cod_em' ";
         mysql_query($sql) or die(mysql_error());
+        
+        
         header("Location: http://localhost:8000/admin/panel.php"); /* Redirect browser */
         ?>
 
