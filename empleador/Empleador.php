@@ -27,6 +27,8 @@ if (isset($_POST['submitted'])) {
         <link rel="stylesheet" href="../validacionStyle.css">
         <link rel="stylesheet" href="../assets/css/contenido.css">
         <script src="../assets/js/jquery-v1.10.2.js"></script>
+        <script src="../assets/js/momments.js"></script>
+        <script src="../assets/js/timeago.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
         <script src="../assets/js/jquery-ui.js"></script>
         <script src="../assets/js/jquery.validate.js"></script>   
@@ -69,8 +71,17 @@ if (isset($_POST['submitted'])) {
                     return false;
             }
         </script>
+        <style>
+            .col-md-12 ul
+            {
+                list-style-image: url("../assets/img/success.png"); 
+            }
+            .col-md-12 ul li
+            {
+                border-bottom: solid 1px #05a8ff;
+            }
+        </style>
 
-        
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
@@ -497,22 +508,50 @@ if (isset($_POST['submitted'])) {
                             </div>
 
                         </div>
-                        <div class="tab-pane" id="Aplicacion">...</div>
-                        <div class="tab-pane" id="Quitar">...</div>
+                        <div class="tab-pane" id="Aplicacion">
+                            <div class="panel panel-primary">
+
+                                <div class="panel-heading">APLICACIONES</div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <?
+                                        include_once '../clases/db_connect.php';
+                                        echo "<table class='table-bordered' >";
+                                        $result = mysql_query("select cod_em as idEmpresa,cod_oferta as idOferta, nombre_u, fecha from oferta_aplicaciones inner join usuario on oferta_aplicaciones.cod_u=usuario.cod_u where cod_em=$cod_em") or trigger_error(mysql_error());
+                                        while ($row = mysql_fetch_array($result)) {
+                                            foreach ($row AS $key => $value) {
+                                                $row[$key] = stripslashes($value);
+                                            }
+                                            $fecha_aplicacion = ($row['fecha']);
+                                            echo "<tr>";
+                                            echo "<ul>";
+                                            echo "<li>" . "Oferta #" . $row['idOferta'] . "<br>" . nl2br($row['nombre_u']) . " aplico a esta oferta " . "<span id='timeagos' data-livestamp='$fecha_aplicacion'></span></li>";
+                                            echo "</ul>";
+                                            echo "</tr>";
+                                        }
+                                        echo "</table>";
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <script>
-                        $('#myTab a').click(function(e) {
-                            e.preventDefault();
-                            $(this).tab('show');
-                        });
-                    </script>
-
                 </div>
+
             </div>
+
+            <script>
+                $('#myTab a').click(function(e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+            </script>
+
         </div>
+    </div>
+</div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
-    </body>
+</body>
 </html>

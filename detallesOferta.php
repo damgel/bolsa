@@ -64,7 +64,18 @@
             }
             .col-md-12
             {
-                border:solid 1px black;
+
+                border:solid 1px #ccc;
+                padding-left: 60px;
+
+            }
+            .col-md-12 ul
+            {
+                list-style-image: url("assets/img/success.png"); 
+            }
+            .col-md-12 ul li
+            {
+                border-bottom: solid 1px #05a8ff;
             }
         </style>
 
@@ -159,12 +170,6 @@
                                         <div class="col-md-12">
                                             <?
                                             echo "<table class='table-bordered' >";
-                                            echo "<tr>";
-                                            echo "<td><b>Cod Em</b></td>";
-                                            echo "<td><b>Cod U</b></td>";
-                                            echo "<td><b>Cod Oferta</b></td>";
-                                            echo "<td><b>Fecha</b></td>";
-                                            echo "</tr>";
                                             $result = mysql_query("select cod_em as idEmpresa,cod_oferta as idOferta, nombre_u, fecha from oferta_aplicaciones inner join usuario on oferta_aplicaciones.cod_u=usuario.cod_u where cod_em=$cod_em and cod_oferta=$cod_oferta ") or trigger_error(mysql_error());
                                             while ($row = mysql_fetch_array($result)) {
                                                 foreach ($row AS $key => $value) {
@@ -172,12 +177,9 @@
                                                 }
                                                 $fecha_aplicacion = ($row['fecha']);
                                                 echo "<tr>";
-                                                echo "<td valign='top'>" . nl2br($row['idEmpresa']) . "</td>";
-                                                echo "<div>" . nl2br($row['nombre_u']) . " aplico a esta oferta " . "<span id='timeagos' data-livestamp='$fecha_aplicacion'></span></div>";
-                                                echo "<td valign='top'>" . nl2br($row['nombre_u']) . "</td>";
-                                                echo "<td valign='top'>" . nl2br($row['idOferta']) . "</td>";
-
-                                                echo "<td valign='top'><span id='timeagos' data-livestamp='$fecha_aplicacion'></span></td><br>";
+                                                echo "<ul>";
+                                                echo "<li>" . nl2br($row['nombre_u']) . " aplico a esta oferta " . "<span id='timeagos' data-livestamp='$fecha_aplicacion'></span></li>";
+                                                echo "</ul>";
                                                 echo "</tr>";
                                             }
                                             echo "</table>";
