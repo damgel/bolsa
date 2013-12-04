@@ -16,17 +16,11 @@ and open the template in the editor.
 }
 .sub
 {
-    
+
     background-color: #f8f8f8;
     /* border-left: solid 8px #dff0d8; */
-    
+
     border-left: solid 8px #05a8ff;
     padding-left: 10px;
     margin-left: 20px;
-    
-}
-.sub h1,h2,h3,h4,h5,h6
-{
-    margin: 0px;
-
 }
