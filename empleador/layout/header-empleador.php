@@ -10,9 +10,7 @@
 </div>
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-        <li><a href="../index.php">Inicio</a></li>
-        <li><a href="Empleador.php">Perfil Empleador</a></li>
-        
+        <li><a href="Empleador.php">Inicio</a></li>
         <li><a href="../Contactenos.php">Contactanos</a></li>
     </ul>
 
@@ -25,9 +23,6 @@
         } elseif ($_SESSION['estudiante'] != "") {
             echo "Bienvenido <b>" . $_SESSION['estudiante'] . "</b>";
             echo '<a href="logout.php" class="logout"><span class="glyphicon glyphicon-log-out"></span> Cerra Sesion</a>';
-        } else {
-            //echo "Invitado";
-            echo "<a class='btn btn-info btn-large' href='login.php' role='button'>Entrar</a>";
         }
         ?>
 
