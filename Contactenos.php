@@ -70,8 +70,9 @@
                         !isset($_POST['email']) ||
                         !isset($_POST['mensaje'])) {
 
-                    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-                    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+                    echo "<div class='alert alert-danger'>Algo salio mal al enviar el mensaje, por favor intenta de nuevo";
+                    echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
+
                     die();
                 }
 
