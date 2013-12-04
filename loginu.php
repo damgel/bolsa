@@ -1,20 +1,18 @@
 <?php
 include_once "clases/db_connect.php";
 if (isset($_POST['action'])) {
-    $usuario_em = $_POST['email_em'];
-    $pass_em = $_POST['password_em'];
+    $usuario = $_POST['carnet'];
+    $pass = $_POST['password'];
     $error;
     session_start();
-    if (isset($usuario_em) && !empty($pass_em)) {
-        $query = mysql_query("SELECT cod_em, activa_em, nombre_em FROM empresa WHERE email_em='$usuario_em' AND password_em='$pass_em' LIMIT 1");
+    if (isset($usuario) && !empty($pass)) {
+        $query = mysql_query("SELECT cod_u,nombre_u, apellido_u,carnet FROM usuario WHERE carnet='$usuario' AND password_u='$pass' LIMIT 1");
         while ($row = mysql_fetch_array($query)) {
-            $cod_em = $row{'cod_em'};
-            $permiso_em = $row{'activa_em'};
-            $nombre = $row{'nombre_em'};
-            $_SESSION['cod_empresa'] = $cod_em;
-            $_SESSION['permiso'] = $permiso_em;
-            $_SESSION['empresa'] = $nombre;
-            header("Location: empleador/Empleador.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
+            $cod_usuario = $row{'cod_u'};
+            $nombre_usuario = $row{'nombre_u'} . " " . $row{'apellido_u'};
+            $_SESSION['cod_estudiante'] = $cod_usuario;
+            $_SESSION['estudiante'] = $nombre_usuario;
+            header("Location: index.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
         }
         $error = 1;
     }
@@ -35,7 +33,7 @@ if (isset($_POST['action'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login Form</title>
+        <title>Acceso Estudiantes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -101,20 +99,20 @@ if (isset($_POST['action'])) {
                         <fieldset>
                             <div class="form-group">
 
-                                <legend><center><h3>Login Empresa</h3></center></legend>
+                                <legend><center><h3>Acceso Estudiantes</h3></center></legend>
                                 <br>
                                 <div class="form-group">
-                                    <label  class="col-lg-3 control-label" for="email">Correo</label>
+                                    <label  class="col-lg-3 control-label" for="email">Carnet UFG</label>
                                     <div class="col-lg-8">
-                                        <input type="email" name="email_em" class="form-control"  placeholder="Escriba un correo" required>
+                                        <input type="text" name="carnet" class="form-control"  placeholder="Escribe tu carnet" required>
 
                                     </div>
                                 </div>  
 
                                 <div class="form-group">
-                                    <label  class="col-lg-3 control-label" for="passwordm">Password</label>
+                                    <label  class="col-lg-3 control-label" for="passwordu">Contraseña</label>
                                     <div class="col-lg-8">
-                                        <input type="password" name="password_em" class="form-control" autocomplete="off" placeholder="Escriba una contrasenia" pattern=".{8,25}">
+                                        <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Escriba una contrasenia" pattern=".{8,25}">
 
                                     </div>
                                 </div>
