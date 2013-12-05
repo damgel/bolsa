@@ -7,62 +7,60 @@ if (isset($_POST['submitted'])) {
     $encryp_password = sha1($_POST['password']);
     $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u`, `fecha_registro`) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '$encryp_password' ,  '{$_POST['sexo_u']}', now() ) ";
     mysql_query($sql) or die(mysql_error());
-    echo "regitro guardado <br />";
 }
 ?>
 
-<?php  
-
+<?php
 if (isset($_POST['submitted'])) {
 
 
-                if (!isset($_POST['nombre_u']) ||
-                        !isset($_POST['telefono_u']) ||
-                        !isset($_POST['email_u'])) {
+    if (!isset($_POST['nombre_u']) ||
+            !isset($_POST['telefono_u']) ||
+            !isset($_POST['email_u'])) {
 
-                    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-                    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-                    die();
-                }
+        echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+        echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+        die();
+    }
 
 // Recibiendo los datos pasados por la pagina "RegistroUsuario.php" 
 
 
-$recibenombre =$_POST["nombre_u"]; 
+    $recibenombre = $_POST["nombre_u"];
 
-$tel = $_POST['telefono_u'];
- 
-$recibemail = $_POST["email_u"]; 
+    $tel = $_POST['telefono_u'];
+
+    $recibemail = $_POST["email_u"];
 
 
 // Definiendo las cabeceras del e-mail 
 
-$headers = "Content-type:text/html; charset=iso-8859-1"; 
+    $headers = "Content-type:text/html; charset=iso-8859-1";
 
 // Vamos a definir ahora el destinatario de e-mail, ya sea el de usted o el de su cliente. 
 
 
-$para = "deakill@hotmail.com"; 
+    $para = "deakill@hotmail.com";
 
-$email_subject = "Nueva alumno/a se ha registrado";
+    $email_subject = "Nueva alumno/a se ha registrado";
 
 // Definiendo el aspecto del mensaje 
 
 
 
 
-$mensaje   = "<h3>Mensaje de la Bolsa de Trabajo</h3> "; 
+    $mensaje = "<h3>Mensaje de la Bolsa de Trabajo</h3> ";
 
 
-$mensaje  .= "Nombre: ". $recibenombre;
+    $mensaje .= "Nombre: " . $recibenombre;
 
-$mensaje  .= "<br>"; 
+    $mensaje .= "<br>";
 
-$mensaje  .="Telefono: " .$tel;
+    $mensaje .="Telefono: " . $tel;
 
-$mensaje  .= "<br>"; 
+    $mensaje .= "<br>";
 
-$mensaje  .="E-mail: " .$recibemail ;
+    $mensaje .="E-mail: " . $recibemail;
 
 
 
@@ -70,21 +68,19 @@ $mensaje  .="E-mail: " .$recibemail ;
 
 // Enviando el mensaje para el Administrador
 
-$envia =  mail($para,$email_subject,$mensaje,$headers); 
+    $envia = mail($para, $email_subject, $mensaje, $headers);
 
 // Envia un e-mail para el remitente, agradeciendo la visita en el sitio, y diciendo que en breve el e-mail sera respondido. 
 
-$mensaje2  = "<p style='font-size:14xp' >Alumno/a<strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail o llamada telefonica con la respuesta a su solicitud de registro.</p>"; 
+    $mensaje2 = "<p style='font-size:14xp' >Alumno/a<strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail o llamada telefonica con la respuesta a su solicitud de registro.</p>";
 
-$mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>"; 
+    $mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>";
 
-$envia =  mail($recibemail,"Su mensaje fue recibido!",$mensaje2,$headers); 
+    $envia = mail($recibemail, "Su mensaje fue recibido!", $mensaje2, $headers);
 
 // Muestra en la pantalla el mensaje de éxito, y después redirecciona de vuelta para la pagina del contacto. 
 
-echo "Mensaje recibido con exito!"; 
-
-echo "<meta http-equiv='refresh' content='2;URL=RegistroUsuario.php'>"; 
+    echo "<meta http-equiv='refresh' content='2;URL=loginu.php'>";
 }
 ?> 
 
@@ -165,32 +161,32 @@ echo "<meta http-equiv='refresh' content='2;URL=RegistroUsuario.php'>";
                     return false;
             }
         </script>
-        
-        
-        <script>
-function myFunction() {
-    var pw1 = document.getElementById("pw1").value;
-    var pw2 = document.getElementById("pw2").value;
-    var ok = true;
-    if (pw1 != pw2) {
-        //alert("Passwords Do not match");
-        document.getElementById("pw1").style.borderColor = "#E34234";
-        document.getElementById("pw2").style.borderColor = "#E34234";
-        ok = false;
-    }
-    else {
-        alert("Passwords Match!!!");
-    }
-    return ok;
-       
-}
 
-    </script>
+
+        <script>
+            function myFunction() {
+                var pw1 = document.getElementById("pw1").value;
+                var pw2 = document.getElementById("pw2").value;
+                var ok = true;
+                if (pw1 != pw2) {
+                    //alert("Passwords Do not match");
+                    document.getElementById("pw1").style.borderColor = "#E34234";
+                    document.getElementById("pw2").style.borderColor = "#E34234";
+                    ok = false;
+                }
+                else {
+                    alert("Passwords Match!!!");
+                }
+                return ok;
+
+            }
+
+        </script>
     </head>
     <body>
 
         <div id="header" class="navbar navbar-default navbar-static-top">
-            <?php include_once 'layout/header.php'; ?>
+<?php include_once 'layout/header.php'; ?>
         </div>
 
         <div id="contenedor" class="container">
