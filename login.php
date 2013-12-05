@@ -93,7 +93,7 @@ if (isset($_POST['action'])) {
         </div>
         <div class="container">
             <div class="panel panel-primary">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Acceso empresa</div>
                 <div class="panel-body">
 
                     <form id="frm-login" action="" method="POST" class="form-horizontal" autocomplete="off">
