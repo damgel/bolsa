@@ -1,10 +1,10 @@
 <?php
-include_once 'clases/db_connect.php';
+include_once '../clases/db_connect.php';
 if (isset($_POST['submitted'])) {
     foreach ($_POST AS $key => $value) {
         $_POST[$key] = mysql_real_escape_string($value);
     }
-    $sql = "INSERT INTO `ofertas` ( `cod_oferta` ,  `cod_em` ,  `titulo_of` ,  `descripcion_of` ,  `area_of` ,  `cargo_of` ,  `vacantes_of` ,  `contratacion_of` ,  `anoexp_ofetas` ,  `edad` ,  `genero_of` ,  `vehiculo_ofetas` ,  `salariomax_of` ,  `salariomin_of` ,  `departamento_of` ,  `experiencia` ,  `tituloen_of` ,  `nivel_of` ,  `disponible_of` ,  `aprovacion_of`  ) VALUES(  '{$_POST['cod_oferta']}' ,  '{$_POST['cod_em']}' ,  '{$_POST['titulo_of']}' ,  '{$_POST['descripcion_of']}' ,  '{$_POST['area_of']}' ,  '{$_POST['cargo_of']}' ,  '{$_POST['vacantes_of']}' ,  '{$_POST['contratacion_of']}' ,  '{$_POST['anoexp_ofetas']}' ,  '{$_POST['edad']}' ,  '{$_POST['genero_of']}' ,  '{$_POST['vehiculo_ofetas']}' ,  '{$_POST['salariomax_of']}' ,  '{$_POST['salariomin_of']}' ,  '{$_POST['departamento_of']}' ,  '{$_POST['experiencia']}' ,  '{$_POST['tituloen_of']}' ,  '{$_POST['nivel_of']}' ,  '{$_POST['disponible_of']}' ,  '{$_POST['aprovacion_of']}'  ) ";
+    $sql = "INSERT INTO `ofertas` (`cod_em` ,  `titulo_of` ,  `descripcion_of` ,  `area_of` ,  `cargo_of` ,  `vacantes_of` ,  `contratacion_of` ,  `anoexp_ofetas` ,  `edad` ,  `genero_of` ,  `vehiculo_ofetas` ,  `salariomax_of` ,  `salariomin_of` ,  `departamento_of` , `disponible_of` ,  `aprovacion_of`,`fecha_of`  ) VALUES( '{$_POST['cod_em']}' ,  '{$_POST['titulo_of']}' ,  '{$_POST['descripcion_of']}' ,  '{$_POST['area_of']}' ,  '{$_POST['cargo_of']}' ,  '{$_POST['vacantes_of']}' ,  '{$_POST['contratacion_of']}' ,  '{$_POST['anoexp_ofetas']}' ,  '{$_POST['edad']}' ,  '{$_POST['genero_of']}' ,  '{$_POST['vehiculo_ofetas']}' ,  '{$_POST['salariomax_of']}' ,  '{$_POST['salariomin_of']}' ,  '{$_POST['departamento_of']}' , 1 ,  '{$_POST['aprovacion_of']}',now()  ) ";
     mysql_query($sql) or die(mysql_error());
     echo "Added row.<br />";
 }
@@ -81,27 +81,27 @@ if (isset($_POST['submitted'])) {
                 border-bottom: solid 1px #05a8ff;
             }
         </style>
-             <script>
-function myFunction() {
-    var pw1 = document.getElementById("pw1").value;
-    var pw2 = document.getElementById("pw2").value;
-    var ok = true;
-    if (pw1 != pw2) {
-        //alert("Passwords Do not match");
-        document.getElementById("pw1").style.borderColor = "#E34234";
-        document.getElementById("pw2").style.borderColor = "#E34234";
-        ok = false;
-    }
-    else {
-        alert("Passwords Match!!!");
-    }
-    return ok;
-       
-}
+        <script>
+            function myFunction() {
+                var pw1 = document.getElementById("pw1").value;
+                var pw2 = document.getElementById("pw2").value;
+                var ok = true;
+                if (pw1 != pw2) {
+                    //alert("Passwords Do not match");
+                    document.getElementById("pw1").style.borderColor = "#E34234";
+                    document.getElementById("pw2").style.borderColor = "#E34234";
+                    ok = false;
+                }
+                else {
+                    alert("Passwords Match!!!");
+                }
+                return ok;
 
-    </script>
-        
-        
+            }
+
+        </script>
+
+
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
@@ -117,6 +117,7 @@ function myFunction() {
                         <ul id="myTab">
                             <li class="active"><a href="#Perfil">Perfil</a></li>
                             <li class=""><a href="#Ofertas">Publicar Ofertas</a></li>
+                            <li class=""><a href="#OfertasPublicadas">Ver Ofertas Publicadas</a></li>
                             <li class=""><a href="#Aplicacion">Ver Aplicaciones</a></li>
                             <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
                         </ul>
@@ -135,11 +136,11 @@ function myFunction() {
                     }
                     if ($estado === "S") {
                         //echo $_SESSION['cod_empresa'] . "<br>";
-                        echo "<div class='alert alert-success alert-dismissable'>TENES PERMISOS PARA CREAR OFERTAS";
+                        echo "<div class='alert alert-success alert-dismissable'>Su empresa ha sido validada exitosamente!";
                         echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
                     } elseif ($estado === "N") {
                         //echo $_SESSION['cod_empresa'] . "<br>";
-                        echo "<div class='alert alert-danger'>NO TENES PERMISOS PARA CREAR OFERTAS";
+                        echo "<div class='alert alert-danger'>Su empresa aun no se encuentra ACTIVADA, espere 24 horas.";
                         echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
                     }
                     ?>
@@ -387,7 +388,7 @@ function myFunction() {
 
                                                 <center><legend>Nivel de Experiencia</legend></center>
                                                 <div class="form-group">   
-                                                    <label for="nivel experiencia" class="col-lg-3 control-label">Experiencia en anos</label>
+                                                    <label for="nivel experiencia" class="col-lg-3 control-label">Experiencia en años</label>
                                                     <div class="col-lg-4">
                                                         <select name="anoexp_ofertas" class="form-control" id="focusedInput" required="">
                                                             <option value="">Seleccione una opcion</option>
@@ -423,9 +424,9 @@ function myFunction() {
                                                 <div class="form-group">
                                                     <label class="col-lg-3 control-label">Vehiculo</label>
                                                     <div class="col-lg-4">
-                                                        <input type="radio" name="vehiculo_ofertas" value="Si" checked=""> 
+                                                        <input type="radio" name="vehiculo_ofetas" value="Si" checked=""> 
                                                         Si
-                                                        <input type="radio" name="vehiculo_ofertas" value="No"> 
+                                                        <input type="radio" name="vehiculo_ofetas" value="No"> 
                                                         No
                                                     </div>
                                                 </div>
@@ -449,7 +450,7 @@ function myFunction() {
 
 
                                                 <div class="form-group">
-                                                    <label for="departamento" class="col-lg-3 control-label">departamento</label>
+                                                    <label for="departamento" class="col-lg-3 control-label">Departamento</label>
                                                     <div class="col-lg-4">
                                                         <select name="departamento_of" class="form-control valid" required="">
 
@@ -477,49 +478,14 @@ function myFunction() {
 
                                         </div>
 
-                                        <div class="form-group"> 
-
-                                            <center><legend> Experiencias Requeridas </legend></center>
-
-                                            <div class="form-group">    
-                                                <label for="indispensable" class="col-lg-3 control-label">Indispensable</label>
-                                                <div class="col-lg-6">
-                                                    <textarea name="experiencia" class="form-control" rows="3"> </textarea>
-                                                </div>
-                                            </div>         
-
-                                        </div> 
-
-                                        <div class="form-group">
-
-                                            <center><legend> Educacion Superior </legend></center>
-
-                                            <div class="form-group">
-                                                <label for="Titulo" class="col-lg-3 control-label">Titulo en</label>
-                                                <div class="col-lg-4">
-                                                    <input type="text" name="tituloen_of" class="form-control" id="focusedInput" placeholder="Detalle " required pattern=".{7,30}">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="nivel academico" class="col-lg-3 control-label">Nivel Academico </label>
-                                                <div class="col-lg-4">
-                                                    <select name="nivel_of" id="nivel" class="form-control" required="">
-                                                        <option value="">Seleccione una opcion </option>
-                                                        <option value="Estudiante Universitario-Graduado">Estudiante Universitario-Graduado</option>
-                                                        <option value="Estudiante Universitario-mitad de sus estudios">Estudiante Universitario-mitad de sus estudios </option>
-                                                        <option value="Estudiante Universitario-empesando sus estudios">Estudiante Universitario-empesando sus estudios  </option>
-                                                        <option value="Bachiller">Bachiller</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                        <center><input type='submit' class="btn btn-primary btn-lg" value='Guardar Oferta' /><input type='hidden' value='1' name='submitted' /> </center>  
-
-
+                                        <?php
+                                        if ($estado === "S") {
+                                            echo "<center><input type='submit' class='btn btn-primary btn-lg' value='Guardar Oferta' /><input type='hidden' value='1' name='submitted' /> </center>";
+                                        } elseif ($estado === "N") {
+                                            echo "<div class='alert alert-danger'>Su empresa aun no se encuentra VALIDADA, espere 24 horas.";
+                                            echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
+                                        }
+                                        ?>
                                     </form>
 
 
