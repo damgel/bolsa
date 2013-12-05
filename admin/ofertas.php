@@ -42,7 +42,7 @@
                             <li class="active"><a href="ofertas.php">Todas las Ofertas</a></li>
                             <li class=""><a href="ofertas.php?id=activas">Ofertas Activas</a></li>
                             <li class=""><a href="ofertas.php?id=pendientes">Ofertas Pendientes</a></li>
-                            <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
+                            
                         </ul>
                     </div>
                 </div>

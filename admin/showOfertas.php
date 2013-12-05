@@ -23,7 +23,6 @@ while ($row = mysql_fetch_array($result)) {
     echo "<tr>";
 
     echo "<td valign='top'>" . nl2br($row['cod_em']) . "</td>";
-
     echo "<td valign='top'>" . nl2br($row['titulo_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['cargo_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['anoexp_ofetas']) . "</td>";
@@ -40,7 +39,8 @@ while ($row = mysql_fetch_array($result)) {
         $estado_show = "<h5 class='alert alert-success'>Si</h5>";
     }
     echo "<td valign='top' >" . $estado_show . "</td>";
-    echo "<td valign='top'><a class='btn btn-default btn-sm' href=detallesOferta.php?id={$row['cod_oferta']}>Detalles</a> <a class='btn btn-danger btn-sm' href=delete.php?id={$row['id']}>Eliminar</a></td> ";
+    echo "<td valign='top'><a class='btn btn-default btn-sm' href=detallesOferta.php?id={$row['cod_oferta']}>Detalles</a><a class='btn btn-success' href=ofertas_controller.php?activar={$row['cod_oferta']}>Activar</a><a class='btn btn-danger' href=ofertas_controller.php?desactivar={$row['cod_oferta']}>Desactivar</a></td>";
+    
     echo "</tr>";
 }
 echo "</table>";

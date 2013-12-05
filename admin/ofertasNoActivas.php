@@ -13,6 +13,7 @@ echo "<td><b>SalarioMin</b></td>";
 echo "<td><b>SalarioMax</b></td>";
 echo "<td><b>Departamento</b></td>";
 echo "<td><b>Aprovada</b></td>";
+echo "<td><b>Acciones</b></td>";
 echo "</tr>";
 $result = mysql_query("SELECT * FROM `ofertas` where aprovacion_of=0") or trigger_error(mysql_error());
 while ($row = mysql_fetch_array($result)) {
@@ -38,7 +39,7 @@ while ($row = mysql_fetch_array($result)) {
         $estado_show = "<h5 class='alert alert-success'>Si</h5>";
     }
     echo "<td valign='top'>" . $estado_show . "</td>";
-    echo "<td valign='top'><a href=edit.php?id={$row['id']}>Edit</a> <a href=delete.php?id={$row['id']}>Delete</a></td> ";
+    echo "<td valign='top'><a class='btn btn-default btn-sm' href=detallesOferta.php?id={$row['cod_oferta']}>Detalles</a><a class='btn btn-success' href=ofertas_controller.php?activar={$row['cod_oferta']}>Activar</a><a class='btn btn-danger' href=ofertas_controller.php?desactivar={$row['cod_oferta']}>Desactivar</a></td>";
     echo "</tr>";
 }
 echo "</table>";
