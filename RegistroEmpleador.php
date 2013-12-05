@@ -7,7 +7,7 @@ if (isset($_POST['submitted'])) {
     if (isset($_FILES["myfile"])) {
         //Filter the file types , if you want.
         if ($_FILES["myfile"]["error"] > 0) {
-            echo "<p class='error'>Por favor seleccione una imagen</p><br>";
+            echo "<div class='alert alert-danger'>Por favor seleccione una imagen</div><br>";
         } else {
             //move the uploaded file to uploads folder;
             $id_unico = uniqid();
