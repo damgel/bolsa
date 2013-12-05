@@ -2,7 +2,7 @@
 include_once "clases/db_connect.php";
 if (isset($_POST['action'])) {
     $usuario = $_POST['carnet'];
-    $pass = $_POST['password'];
+    $pass = sha1($_POST['password']);
     $error;
     session_start();
     if (isset($usuario) && !empty($pass)) {
@@ -104,7 +104,7 @@ if (isset($_POST['action'])) {
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="email">Carnet UFG</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="carnet" class="form-control"  placeholder="Escribe tu carnet" required>
+                                        <input type="text" name="carnet" class="form-control"  placeholder="Escribe tu carnet" required pattern=".{6,10}">
 
                                     </div>
                                 </div>  
