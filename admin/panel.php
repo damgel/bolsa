@@ -89,7 +89,7 @@
                                             $var_activo = "<img src='img/error.png'></img>";
                                         }
                                         echo "<td valign='top' class='estado'>$var_activo</td>";
-                                        echo "<td valign='top'><a class='btn btn-success btn-xs' href=aempresa.php?id={$row['cod_em']}>Activar</a><br><a class='btn btn-warning btn-xs' href=dempresa.php?id={$row['cod_em']}>Desactivar</a><br><a class='btn btn-danger btn-xs' href=eliminarEmpresa.php?cod_em={$row['cod_em']}>Eliminar</a></td> ";
+                                        echo "<td valign='top'><a class='btn btn-success btn-xs' href=aempresa.php?id={$row['cod_em']}>Activar</a><br><a class='btn btn-warning btn-xs' href=dempresa.php?id={$row['cod_em']}>Desactivar</a></td> ";
                                         echo "</tr>";
                                     }
                                     echo "</table>";
