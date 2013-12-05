@@ -30,7 +30,14 @@ while ($row = mysql_fetch_array($result)) {
     echo "<td valign='top'>" . nl2br($row['salariomax_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['salariomin_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['departamento_of']) . "</td>";
-    echo "<td valign='top'>" . nl2br($row['aprovacion_of']) . "</td>";
+    $estado = $row['aprovacion_of'];
+    $estado_show;
+    if ($estado == 0) {
+        $estado_show = "<h5 class='alert alert-danger'>No</h5>";
+    } elseif ($estado == 1) {
+        $estado_show = "<h5 class='alert alert-success'>Si</h5>";
+    }
+    echo "<td valign='top'>" . $estado_show . "</td>";
     echo "<td valign='top'><a href=edit.php?id={$row['id']}>Edit</a> <a href=delete.php?id={$row['id']}>Delete</a></td> ";
     echo "</tr>";
 }

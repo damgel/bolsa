@@ -105,6 +105,7 @@
                                         $row[$key] = stripslashes($value);
                                     }
                                     $cod_em = $row['cod_em'];
+                                    $cod_oferta = $row['cod_oferta'];
                                     ?>
 
                                     <div class="oferta-contenedor">
@@ -142,6 +143,12 @@
                                                 <div class="well">
                                                     VALIDA HASTA:<br><?php echo nl2br($row['fechaFin_of']) ?>
                                                 </div>
+                                                <div class="well">
+                                                    <a class="btn btn-block btn-success" href="ofertas_controller.php.php?activar=<?php echo $cod_oferta ?>">Activar</a>
+                                                    <a class="btn btn-block btn-danger" href="ofertas_controller.php.php?desactivar=<?php echo $cod_oferta ?>">Desactivar</a>
+
+
+                                                </div>
                                                 <div class="well" id="wellinfo">
                                                     <form method="POST" action="">
                                                         <input type="hidden" name="cod_em" value="<?php echo nl2br($row['cod_em']) ?>">
@@ -150,7 +157,6 @@
                                                         <?PHP
                                                         if ($row['disponible_of'] == 1) {
                                                             echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>";
-                                                            echo "<input type='submit' class='btn btn-block btn-success' name='Aplicar' value='Aplicar a esta Oferta'>";
                                                         } else {
                                                             echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
                                                         }

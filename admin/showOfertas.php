@@ -21,9 +21,9 @@ while ($row = mysql_fetch_array($result)) {
         $row[$key] = stripslashes($value);
     }
     echo "<tr>";
-   
+
     echo "<td valign='top'>" . nl2br($row['cod_em']) . "</td>";
-    
+
     echo "<td valign='top'>" . nl2br($row['titulo_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['cargo_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['anoexp_ofetas']) . "</td>";
@@ -32,8 +32,15 @@ while ($row = mysql_fetch_array($result)) {
     echo "<td valign='top'>" . nl2br($row['salariomax_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['salariomin_of']) . "</td>";
     echo "<td valign='top'>" . nl2br($row['departamento_of']) . "</td>";
-    echo "<td valign='top'>" . nl2br($row['aprovacion_of']) . "</td>";
-    echo "<td valign='top'><a class='btn btn-info btn-sm' href=detallesOferta.php?id={$row['cod_oferta']}>Detalles</a> <a class='btn btn-danger btn-sm' href=delete.php?id={$row['id']}>Delete</a></td> ";
+    $estado = $row['aprovacion_of'];
+    $estado_show;
+    if ($estado == 0) {
+        $estado_show = "<h5 class='alert alert-danger'>No</h5>";
+    } elseif ($estado == 1) {
+        $estado_show = "<h5 class='alert alert-success'>Si</h5>";
+    }
+    echo "<td valign='top' >" . $estado_show . "</td>";
+    echo "<td valign='top'><a class='btn btn-default btn-sm' href=detallesOferta.php?id={$row['cod_oferta']}>Detalles</a> <a class='btn btn-danger btn-sm' href=delete.php?id={$row['id']}>Eliminar</a></td> ";
     echo "</tr>";
 }
 echo "</table>";
