@@ -43,7 +43,18 @@
                         <h4><?php $fecha_ago = ($row['fecha_of']) ?></h4>
                         <?php echo "Publicado: <span id='timeagos' data-livestamp='$fecha_ago'></span><br>" ?>
                         <br>
-                        <a href="detallesOferta.php?id=<?php echo $row['cod_oferta'] ?>" class="btn btn-success btn-sm">Ver Informacion</a>
+                        <?php
+                        session_start();
+                        $cod_oferta = $row['cod_oferta'];
+                        $_usuario = $_SESSION['estudiante'];
+                        if ($_usuario != "") {
+                            echo "<a href=detallesOferta.php?id=$cod_oferta class='btn btn-success btn-sm'>Ver Informacion</a>";
+                        } else {
+                            echo "<div class='alert alert-danger'>Debes registrarte para poder aplicar a las ofertas!";
+                            echo " <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button> </div>";
+                            echo "<h2><a href='RegistroUsuario.php'>Clic aqui para registrarte</a></h2>";
+                        }
+                        ?>
                         <hr class="featurette-divider">
                     </div>
                 </div>
