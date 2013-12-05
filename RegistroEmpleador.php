@@ -26,6 +26,83 @@ if (isset($_POST['submitted'])) {
 }
 ?>
 
+<?php  
+
+if (isset($_POST['submitted'])) {
+
+
+                if (!isset($_POST['nombre_em']) ||
+                        !isset($_POST['telefono_em']) ||
+                        !isset($_POST['email_em'])) {
+
+                    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+                    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+                    die();
+                }
+
+// Recibiendo los datos pasados por la pagina "contactenos.php" 
+
+
+$recibenombre =$_POST["nombre_em"]; 
+
+$tel = $_POST['telefono_em'];
+ 
+$recibemail = $_POST["email_em"]; 
+
+
+// Definiendo las cabeceras del e-mail 
+
+$headers = "Content-type:text/html; charset=iso-8859-1"; 
+
+// Vamos a definir ahora el destinatario de e-mail, ya sea el de usted o el de su cliente. 
+
+
+$para = "monteshernandez6@hotmail.com"; 
+
+$email_subject = "Nueva empresa se ha registrado";
+
+// Definiendo el aspecto del mensaje 
+
+
+
+
+$mensaje   = "<h3>Mensaje de la Bolsa de Trabajo</h3> "; 
+
+
+$mensaje  .= "Nombre: ". $recibenombre;
+
+$mensaje  .= "<br>"; 
+
+$mensaje  .="Telefono: " .$tel;
+
+$mensaje  .= "<br>"; 
+
+$mensaje  .="E-mail: " .$recibemail ;
+
+
+
+
+
+// Enviando el mensaje para el Administrador
+
+$envia =  mail($para,$email_subject,$mensaje,$headers); 
+
+// Envia un e-mail para el remitente, agradeciendo la visita en el sitio, y diciendo que en breve el e-mail sera respondido. 
+
+$mensaje2  = "<p style='font-size:14xp' > <strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail o llamada telefonica con la respuesta a su solicitud de registro.</p>"; 
+
+$mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>"; 
+
+$envia =  mail($recibemail,"Su mensaje fue recibido!",$mensaje2,$headers); 
+
+// Muestra en la pantalla el mensaje de éxito, y después redirecciona de vuelta para la pagina del contacto. 
+
+echo "Mensaje recibido con exito!"; 
+
+echo "<meta http-equiv='refresh' content='2;URL=Contactenos.php'>"; 
+}
+?> 
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
