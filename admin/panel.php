@@ -23,7 +23,7 @@
                 width: 98%;
                 max-width: 100%;
             }
-     
+
         </style>
 
 
@@ -52,10 +52,57 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">Empresas</div>
                             <div class="panel-body">
-                                <form action="">
+                                <form id="form1"  name="form1" method="POST" action="">
+                                    <label for="buscar" class="lbl-buscar"><a href="index.php">Buscar:</a></label>
+                                    <input type="text" name="buscar" id="buscar" /></td>
+                                    <input type="submit"  id="btn-buscar" name="Aceptar" id="Aceptar" value="Buscar" /><br>
+                                </form>
+                                <?php
+                                include_once '../clases/db_connect.php';
+                                if (isset($_POST['buscar'])) {
+                                    $SetPermiso;
+                                    $tabla = 'table-bordered';
+                                    echo "<table class=" . $tabla . ">";
+                                    echo "<tr>";
+                                    echo "<td><b>Imagen</b></td>";
+                                    echo "<td><b>Nombre</b></td>";
+                                    echo "<td><b>Email</b></td>";
+                                    echo "<td><b>Telefono</b></td>";
+                                    echo "<td><b>Descripcion</b></td>";
+                                    echo "<td><b>Actividad</b></td>";
+                                    echo "<td><b>Aprobada</b></td>";
+                                    echo "<td><b>Acciones</b></td>";
+                                    echo "</tr>";
 
-                                    <?php
-                                    include_once '../clases/db_connect.php';
+                                    $result = mysql_query("SELECT * FROM `empresa` where nombre_em like '%" . $_POST['buscar'] . "%'");
+                                    while ($row = mysql_fetch_array($result)) {
+                                        foreach ($row AS $key => $value) {
+                                            $row[$key] = stripslashes($value);
+                                        }
+
+
+                                        echo "<tr>";
+                                        echo "<td valign='top'><img src='../" . nl2br($row['imagen_em']) . "' width='150' height='100' /></td>";
+                                        echo "<td valign='top'>" . nl2br($row['nombre_em']) . "</td>";
+                                        echo "<td valign='top'>" . nl2br($row['email_em']) . "</td>";
+                                        echo "<td valign='top'>" . nl2br($row['telefono_em']) . "</td>";
+                                        echo "<td valign='top'>" . nl2br($row ['descripcion_em']) . "</td>";
+                                        echo "<td valign='top'>" . nl2br($row ['actividad_em']) . "</td>";
+                                        if ($row ['activa_em'] == "S") {
+                                            $var_activo = "<img src='img/success.png'></img>";
+                                        } else {
+                                            $var_activo = "<img src='img/error.png'></img>";
+                                        }
+                                        echo "<td valign='top' class='estado'>$var_activo</td>";
+                                        echo "<td valign='top'><a class='btn btn-success btn-xs' href=aempresa.php?id= {$row['cod_em']}>Activar</a><br><a class='btn btn-warning btn-xs' href=dempresa.php?id={$row['cod_em']
+                                        }>Desactivar</a></td> ";
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
+                                } else {
+
+
+
                                     $SetPermiso;
                                     $tabla = 'table-bordered';
                                     echo "<table class=" . $tabla . ">";
@@ -92,10 +139,10 @@
                                         echo "<td valign='top'><a class='btn btn-success btn-xs' href=aempresa.php?id={$row['cod_em']}>Activar</a><br><a class='btn btn-warning btn-xs' href=dempresa.php?id={$row['cod_em']}>Desactivar</a></td> ";
                                         echo "</tr>";
                                     }
-                                    echo "</table>";
-                                    ?>
+                                }
+                                echo "</table>";
+                                ?>
 
-                                </form>
                             </div>       
                         </div>
                     </div>

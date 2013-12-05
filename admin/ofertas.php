@@ -34,19 +34,7 @@
         </div>
 
         <div id="contenedor" class="container">
-            <form id="form1"  name="form1" method="POST" action="">
-                <label for="buscar" class="lbl-buscar"><a href="index.php">Buscar:</a></label>
-                <input type="text" name="buscar" id="buscar" /></td>
-                <input type="submit"  id="btn-buscar" name="Aceptar" id="Aceptar" value="Buscar" /><br>
-            </form>
-            <?php
-            if (isset($_POST['buscar'])) {
-            
-                $result = mysql_query("SELECT * FROM `ofertas` where disponible_of=1 and aprovacion_of=1") or trigger_error(mysql_error());
-                $consulta = mysql_query("select * from ofertas where activo_p = 'S' and (nombre_p like '%" . $_POST['buscar'] . "%' ) or (precio_p between '0' and '" . $_POST['buscar'] . "') or (categoria_p like '%" . $_POST['buscar'] . "%') or (marca_p like '%" . $_POST['buscar'] . "%')");
-                
-            }
-            ?>
+         
             <div class="row">
                 <div class="col-md-2">
                     <div class="lista-enlaces">
@@ -61,21 +49,21 @@
                 <div class="col-md-10">
                     <div class="tab-content">
                         <div class="tab-pane active" id="plazas">
-<?php
-$set_load;
-if (isset($_GET["id"])) {
-    $controlador = $_GET['id'];
-    if ($controlador === "activas") {
-        include_once 'ofertasActivas.php';
-    } elseif ($controlador === "pendientes") {
-        include_once 'ofertasNoActivas.php';
-    } else {
-        include_once 'showOfertas.php';
-    }
-} else {
-    include_once 'showOfertas.php';
-}
-?>
+                            <?php
+                            $set_load;
+                            if (isset($_GET["id"])) {
+                                $controlador = $_GET['id'];
+                                if ($controlador === "activas") {
+                                    include_once 'ofertasActivas.php';
+                                } elseif ($controlador === "pendientes") {
+                                    include_once 'ofertasNoActivas.php';
+                                } else {
+                                    include_once 'showOfertas.php';
+                                }
+                            } else {
+                                include_once 'showOfertas.php';
+                            }
+                            ?>
 
                         </div>
                     </div>
