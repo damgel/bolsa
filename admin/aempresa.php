@@ -15,9 +15,16 @@
         /// QUERY PARA ACTIVAR LAS EMPRESAS
         $sql = "UPDATE `empresa` SET  `activa_em` =  'S'   WHERE `cod_em` = '$cod_em' ";
         mysql_query($sql) or die(mysql_error());
-        
-        
-        header("Location: http://localhost:8000/admin/panel.php"); /* Redirect browser */
+
+        $getemailEM = "select email_em from  `empresa` WHERE `cod_em` = '$cod_em' ";
+        $emailEmpresa;
+        while ($row = mysql_fetch_array($getemailEM)) {
+            $emailEmpresa = $row['email_em'];
+        }
+
+        // LA VARIABLE CON EL EMAIL ES "$emailEmpresa"
+
+        header("Location: http://localhost:8000/admin/panel.php"); /* CUANDO TODO ESTE OK, REDIRECCIONAR A EL PANEL */
         ?>
 
 
