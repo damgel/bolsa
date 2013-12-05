@@ -133,6 +133,7 @@ if (isset($_POST['submitted'])) {
                     $getestado = mysql_query("SELECT activa_em FROM `empresa` where cod_em=$cod_em") or trigger_error(mysql_error());
                     while ($row = mysql_fetch_array($getestado)) {
                         $estado = $row['activa_em'];
+                        $esValida = $row['activa_em'];
                     }
                     if ($estado === "S") {
                         //echo $_SESSION['cod_empresa'] . "<br>";
@@ -546,9 +547,10 @@ if (isset($_POST['submitted'])) {
                                             if ($estado == 0) {
                                                 $estado_show = "<h5 class='alert alert-danger'>Cerrada</h5>";
                                             } elseif ($estado == 1) {
-                                                echo "<a class='btn btn-danger' href='ofertas_controller.php?desactivar=$cod_oferta'>Desactivar</a>";
-                                                $estado_show = "<h5 class='alert alert-success'>Disponible</h5>";
-                                                
+                                                if ($esValida == "S") {
+                                                    echo "<a class='btn btn-danger' href='ofertas_controller.php?desactivar=$cod_oferta'>Desactivar</a>";
+                                                    $estado_show = "<h5 class='alert alert-success'>Disponible</h5>";
+                                                }
                                             }
                                             echo $estado_show;
 
