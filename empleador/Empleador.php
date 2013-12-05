@@ -6,7 +6,7 @@ if (isset($_POST['submitted'])) {
     }
     $sql = "INSERT INTO `ofertas` (`cod_em` ,  `titulo_of` ,  `descripcion_of` ,  `area_of` ,  `cargo_of` ,  `vacantes_of` ,  `contratacion_of` ,  `anoexp_ofetas` ,  `edad` ,  `genero_of` ,  `vehiculo_ofetas` ,  `salariomax_of` ,  `salariomin_of` ,  `departamento_of` , `disponible_of` ,  `aprovacion_of`,`fecha_of`  ) VALUES( '{$_POST['cod_em']}' ,  '{$_POST['titulo_of']}' ,  '{$_POST['descripcion_of']}' ,  '{$_POST['area_of']}' ,  '{$_POST['cargo_of']}' ,  '{$_POST['vacantes_of']}' ,  '{$_POST['contratacion_of']}' ,  '{$_POST['anoexp_ofetas']}' ,  '{$_POST['edad']}' ,  '{$_POST['genero_of']}' ,  '{$_POST['vehiculo_ofetas']}' ,  '{$_POST['salariomax_of']}' ,  '{$_POST['salariomin_of']}' ,  '{$_POST['departamento_of']}' , 1 ,  '{$_POST['aprovacion_of']}',now()  ) ";
     mysql_query($sql) or die(mysql_error());
-    echo "Added row.<br />";
+    header("Location: Empleador.php"); /* Redirect browser */
 }
 ?>
 <!DOCTYPE html>
@@ -512,6 +512,46 @@ if (isset($_POST['submitted'])) {
                                             echo "<tr>";
                                             echo "<ul>";
                                             echo "<li>" . "Oferta #" . $row['idOferta'] . "<br>" . nl2br($row['nombre_u']) . " aplico a esta oferta " . "<span id='timeagos' data-livestamp='$fecha_aplicacion'></span></li>";
+                                            echo "</ul>";
+                                            echo "</tr>";
+                                        }
+                                        echo "</table>";
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="OfertasPublicadas">
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">Ofertas Publicadas</div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <?
+                                        include_once '../clases/db_connect.php';
+                                        echo "<table class='table-bordered' >";
+                                        $result = mysql_query("select cod_oferta, titulo_of,descripcion_of,disponible_of, fecha_of from ofertas where cod_em=$cod_em") or trigger_error(mysql_error());
+                                        while ($row = mysql_fetch_array($result)) {
+                                            foreach ($row AS $key => $value) {
+                                                $row[$key] = stripslashes($value);
+                                            }
+                                            $fecha_aplicacion = ($row['fecha_of']);
+                                            $cod_oferta = $row['cod_oferta'];
+                                            echo "<tr>";
+                                            echo "<ul>";
+                                            $estado = $row['disponible_of'];
+                                            $estado_show;
+
+                                            echo "<li>" . "<h5><b>Oferta #" . $row['cod_oferta'] . "</b></h5><h4>" . nl2br($row['titulo_of']) . "</h4><br>" . nl2br($row['descripcion_of']) . "<br>" . "<h5>Publicada: " . "<span id='timeagos' data-livestamp='$fecha_aplicacion'></span></h5></li>";
+                                            if ($estado == 0) {
+                                                $estado_show = "<h5 class='alert alert-danger'>Cerrada</h5>";
+                                            } elseif ($estado == 1) {
+                                                echo "<a class='btn btn-danger' href='ofertas_controller.php?desactivar=$cod_oferta'>Desactivar</a>";
+                                                $estado_show = "<h5 class='alert alert-success'>Disponible</h5>";
+                                                
+                                            }
+                                            echo $estado_show;
+
                                             echo "</ul>";
                                             echo "</tr>";
                                         }
