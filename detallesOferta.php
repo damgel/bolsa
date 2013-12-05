@@ -96,6 +96,7 @@
                             include_once 'clases/db_connect.php';
                             if (isset($_GET["id"])) {
                                 $controlador = $_GET['id'];
+                                //query que carga las aplicaciones
                                 $result = mysql_query("SELECT * FROM `ofertas` where cod_oferta=$controlador") or trigger_error(mysql_error());
                                 while ($row = mysql_fetch_array($result)) {
                                     foreach ($row AS $key => $value) {
@@ -149,18 +150,30 @@
                                                         $cod_oferta = $row['cod_oferta'];
                                                         echo $cod_oferta
                                                         ?>">
-                                                        <input type="hidden" name="cod_u" value="<?php
-                                                        $cod_usuario = $_SESSION['cod_estudiante'];
-                                                        echo $cod_usuario
-                                                        ?>">
-                                                               <?PHP
-                                                               if ($row['disponible_of'] == 1) {
-                                                                   echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>";
-                                                                   echo "<p><input type='submit' class='btn btn-block btn-success' value='Aplicar a esta oferta' /><input type='hidden' value='1' name='submitted' /> ";
-                                                               } else {
-                                                                   echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
+                                                               <?php
+                                                               $cod_usuario = $_SESSION['cod_estudiante'];
+
+                                                               $query3 = mysql_query("SELECT cod_oferta FROM oferta_aplicaciones WHERE cod_u=$cod_usuario LIMIT 1");
+                                                               while ($row3 = mysql_fetch_array($query)) {
+                                                                   $valor = $row3{'cod_u'};
+                                                               }
+                                                               if ($valor > 0) {
+                                                                   echo "YA APLICASTE PAPA";
                                                                }
                                                                ?>
+
+                                                        <input type="hidden" name="cod_u" value="<?php
+                                                        echo $cod_usuario
+                                                        ?>">
+                                                        <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>"
+                                                        <p><input type='submit' class='btn btn-block btn-success' value='Aplicar a esta oferta' /><input type='hidden' value='1' name='submitted' />
+                                                            <?PHP
+                                                            if ($row['disponible_of'] === 1) {
+                                                                
+                                                            } elseif ($row['disponible_of'] === 0) {
+                                                                echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
+                                                            }
+                                                            ?>
                                                     </form>
                                                 </div>
 

@@ -2,7 +2,8 @@
 include_once "clases/db_connect.php";
 if (isset($_POST['action'])) {
     $usuario = $_POST['carnet'];
-    $pass = sha1($_POST['password']);
+    //$pass = $_POST['password'];
+    $pass = $_POST['password'];
     $error;
     session_start();
     if (isset($usuario) && !empty($pass)) {
@@ -104,7 +105,7 @@ if (isset($_POST['action'])) {
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="email">Carnet UFG</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="carnet" class="form-control"  placeholder="Escribe tu carnet" required pattern=".{6,10}">
+                                        <input type="text" name="carnet" class="form-control"  placeholder="Escribe tu carnet" required>
 
                                     </div>
                                 </div>  
@@ -112,20 +113,12 @@ if (isset($_POST['action'])) {
                                 <div class="form-group">
                                     <label  class="col-lg-3 control-label" for="passwordu">Contraseña</label>
                                     <div class="col-lg-8">
-                                        <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Escriba una contrasenia" pattern=".{8,25}">
-
+                                        <input type="password" name="password" class="form-control"placeholder="Escriba una contrasenia" pattern=".{8,25}">
                                     </div>
                                 </div>
 
-                                <p class="text-center text-primary"><a href="">¿Has olvidado tu contraseña?</a></p>
-
                                 <br>
                                 <center>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox"> Recordarme
-                                    </label>
-
-
                                     <input type='submit' name='action' value="Entrar" class="btn btn-success">
                                 </center>
                                 <br>

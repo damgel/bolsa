@@ -1,10 +1,13 @@
 <?php
 include_once '../clases/db_connect.php';
+session_start();
+$cod_em = $_SESSION['cod_empresa'];
+echo $cod_em;
 if (isset($_POST['submitted'])) {
     foreach ($_POST AS $key => $value) {
         $_POST[$key] = mysql_real_escape_string($value);
     }
-    $sql = "INSERT INTO `ofertas` (`cod_em` ,  `titulo_of` ,  `descripcion_of` ,  `area_of` ,  `cargo_of` ,  `vacantes_of` ,  `contratacion_of` ,  `anoexp_ofetas` ,  `edad` ,  `genero_of` ,  `vehiculo_ofetas` ,  `salariomax_of` ,  `salariomin_of` ,  `departamento_of` , `disponible_of` ,  `aprovacion_of`,`fecha_of`  ) VALUES( '{$_POST['cod_em']}' ,  '{$_POST['titulo_of']}' ,  '{$_POST['descripcion_of']}' ,  '{$_POST['area_of']}' ,  '{$_POST['cargo_of']}' ,  '{$_POST['vacantes_of']}' ,  '{$_POST['contratacion_of']}' ,  '{$_POST['anoexp_ofetas']}' ,  '{$_POST['edad']}' ,  '{$_POST['genero_of']}' ,  '{$_POST['vehiculo_ofetas']}' ,  '{$_POST['salariomax_of']}' ,  '{$_POST['salariomin_of']}' ,  '{$_POST['departamento_of']}' , 1 ,  '{$_POST['aprovacion_of']}',now()  ) ";
+    $sql = "INSERT INTO `ofertas` (`cod_em` ,  `titulo_of` ,  `descripcion_of` ,  `area_of` ,  `cargo_of` ,  `vacantes_of` ,  `contratacion_of` ,  `anoexp_ofetas` ,  `edad` ,  `genero_of` ,  `vehiculo_ofetas` ,  `salariomax_of` ,  `salariomin_of` ,  `departamento_of` , `disponible_of` ,`fecha_of`  ) VALUES('$cod_em',  '{$_POST['titulo_of']}' ,  '{$_POST['descripcion_of']}' ,  '{$_POST['area_of']}' ,  '{$_POST['cargo_of']}' ,  '{$_POST['vacantes_of']}' ,  '{$_POST['contratacion_of']}' ,  '{$_POST['anoexp_ofetas']}' ,  '{$_POST['edad']}' ,  '{$_POST['genero_of']}' ,  '{$_POST['vehiculo_ofetas']}' ,  '{$_POST['salariomax_of']}' ,  '{$_POST['salariomin_of']}' ,  '{$_POST['departamento_of']}' , '1',now()  ) ";
     mysql_query($sql) or die(mysql_error());
     header("Location: Empleador.php"); /* Redirect browser */
 }

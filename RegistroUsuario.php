@@ -1,10 +1,7 @@
 <?php
 include_once 'clases/db_connect.php';
 if (isset($_POST['submitted'])) {
-    foreach ($_POST AS $key => $value) {
-        $_POST[$key] = mysql_real_escape_string($value);
-    }
-    $encryp_password = sha1($_POST['password']);
+    $encryp_password = $_POST['password'];
     $sql = "INSERT INTO `usuario` ( `nombre_u` ,  `apellido_u` ,  `fecha_nac_u` ,  `direccion_u` ,  `telefono_u` ,  `carnet` ,  `email_u` ,  `password_u` ,  `sexo_u`, `fecha_registro`) VALUES(  '{$_POST['nombre_u']}' ,  '{$_POST['apellido_u']}' ,  '{$_POST['fecha_nac_u']}' ,  '{$_POST['direccion_u']}' ,  '{$_POST['telefono_u']}' ,  '{$_POST['carnet']}' ,  '{$_POST['email_u']}' ,  '$encryp_password' ,  '{$_POST['sexo_u']}', now() ) ";
     mysql_query($sql) or die(mysql_error());
 }
@@ -161,32 +158,11 @@ if (isset($_POST['submitted'])) {
                     return false;
             }
         </script>
-
-
-        <script>
-            function myFunction() {
-                var pw1 = document.getElementById("pw1").value;
-                var pw2 = document.getElementById("pw2").value;
-                var ok = true;
-                if (pw1 != pw2) {
-                    //alert("Passwords Do not match");
-                    document.getElementById("pw1").style.borderColor = "#E34234";
-                    document.getElementById("pw2").style.borderColor = "#E34234";
-                    ok = false;
-                }
-                else {
-                    alert("Passwords Match!!!");
-                }
-                return ok;
-
-            }
-
-        </script>
     </head>
     <body>
 
         <div id="header" class="navbar navbar-default navbar-static-top">
-<?php include_once 'layout/header.php'; ?>
+            <?php include_once 'layout/header.php'; ?>
         </div>
 
         <div id="contenedor" class="container">
@@ -248,13 +224,13 @@ if (isset($_POST['submitted'])) {
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Password</label>
                             <div class="col-lg-4">
-                                <input id="pw1" type="password" name="password_u"  class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
+                                <input id="pw1" type="password" name="password"  class="form-control" placeholder="Escriba una contrasenia"  required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-lg-3 control-label">Confirmar Password</label>
                             <div class="col-lg-4">
-                                <input id="pw2" type="password" name="password2" class="form-control"  placeholder="Confirmar Password"  required pattern=.{8,25}>
+                                <input id="pw2" type="password" name="password" class="form-control"  placeholder="Confirmar Password"  required pattern=.{8,25}>
                             </div>
                         </div>
                         <div class="form-group">

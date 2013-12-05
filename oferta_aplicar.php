@@ -7,7 +7,7 @@ if (isset($_POST['submitted'])) {
     }
     $sql = "INSERT INTO `oferta_aplicaciones` ( `cod_em` ,  `cod_u` ,  `cod_oferta` ,  `fecha`  ) VALUES(  '{$_POST['cod_em']}' ,  '{$_POST['cod_u']}' ,  '{$_POST['cod_oferta']}' ,  now() ) ";
     mysql_query($sql) or die(mysql_error());
-    echo "Aplicacion exitosa.<br />";
-    echo "<a href='list.php'>Back To Listing</a>";
+    echo "<meta http-equiv='refresh' content='0;URL=misaplicaciones.php'>";
+
 }
 ?>
