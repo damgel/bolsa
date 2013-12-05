@@ -9,7 +9,7 @@ if (isset($_POST['action'])) {
         $query = mysql_query("SELECT cod_u,nombre_u, apellido_u,carnet FROM usuario WHERE carnet='$usuario' AND password_u='$pass' LIMIT 1");
         while ($row = mysql_fetch_array($query)) {
             $cod_usuario = $row{'cod_u'};
-            $nombre_usuario = $row{'nombre_u'} . " " . $row{'apellido_u'};
+            $nombre_usuario = $row{'nombre_u'};
             $_SESSION['cod_estudiante'] = $cod_usuario;
             $_SESSION['estudiante'] = $nombre_usuario;
             header("Location: index.php"); /* Si el usuario existe, direccionar a la pagina princial( catalogo) */
