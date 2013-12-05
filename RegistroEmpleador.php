@@ -83,6 +83,28 @@ function numeros(e){
         return false;
 		}
 </script>
+        <script>
+function myFunction() {
+    var pw1 = document.getElementById("pw1").value;
+    var pw2 = document.getElementById("pw2").value;
+    var ok = true;
+    if (pw1 != pw2) {
+        //alert("Passwords Do not match");
+        document.getElementById("pw1").style.borderColor = "#E34234";
+        document.getElementById("pw2").style.borderColor = "#E34234";
+        ok = false;
+    }
+    else {
+        alert("Passwords Match!!!");
+    }
+    return ok;
+       
+}
+
+    </script>
+
+
+
     </head>
     <body>
         <div id="header" class="navbar navbar-inverse navbar-static-top">
@@ -123,7 +145,7 @@ function numeros(e){
                     
                     
                     <div class="alert alert-success">Usuario registrado correctamente!</div>
-                    <form action="" id="registroEmpleador" method='POST' enctype="multipart/form-data" class="form-horizontal">
+                    <form action="" id="registroEmpleador" method='POST' enctype="multipart/form-data" class="form-horizontal" onsumbit="return myFunction()">
                         <fieldset>
                             <div class="sub-contenedor">
                                 <img src="assets/img/default-user.png" alt="Imagen de la compania">
@@ -150,14 +172,14 @@ function numeros(e){
                                 <div class="form-group">
                                     <label for="Contrasenia" class="col-lg-4 control-label">Contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" id="password_em" name="password_em" class="form-control" autocomplete="off" placeholder="Contraseña" required pattern=".{8,25}">
+                                        <input id="pw1" type="password"  name="password_em" class="form-control" autocomplete="off" placeholder="Contraseña" required pattern=".{8,25}">
                                     </div>  
                                 </div>
 
                                 <div class="form-group">
                                     <label for="ConfirmContrasenia"class="col-lg-4 control-label">Confirme contraseña</label>
                                     <div class="col-lg-4">
-                                        <input type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required pattern=".{8,25}">
+                                        <input id="pw2" type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required pattern=".{8,25}">
                                     </div>  
                                 </div>    
 

@@ -81,7 +81,27 @@ if (isset($_POST['submitted'])) {
                 border-bottom: solid 1px #05a8ff;
             }
         </style>
+             <script>
+function myFunction() {
+    var pw1 = document.getElementById("pw1").value;
+    var pw2 = document.getElementById("pw2").value;
+    var ok = true;
+    if (pw1 != pw2) {
+        //alert("Passwords Do not match");
+        document.getElementById("pw1").style.borderColor = "#E34234";
+        document.getElementById("pw2").style.borderColor = "#E34234";
+        ok = false;
+    }
+    else {
+        alert("Passwords Match!!!");
+    }
+    return ok;
+       
+}
 
+    </script>
+        
+        
     </head>
     <body>
         <div id="header" class="navbar navbar-default navbar-static-top">
@@ -131,7 +151,7 @@ if (isset($_POST['submitted'])) {
                                 <div class="panel-heading">Perfil</div>
                                 <div class="panel-body">
 
-                                    <form action="#" id="perfilEmpleador" name="f1" method="POST" class="form-horizontal">
+                                    <form action="#" id="perfilEmpleador" name="f1" method="POST" class="form-horizontal" onsumbit="return myFunction()">
 
                                         <div class="form-group">
                                             <label for="Nombre" class="col-lg-3 control-label">Nombre de la Empresa</label>
@@ -148,14 +168,14 @@ if (isset($_POST['submitted'])) {
                                         <div class="form-group">
                                             <label for="Contrasenia" class="col-lg-3 control-label">Contraseña</label>
                                             <div class="col-lg-4">
-                                                <input type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" autocomplete="off" required pattern=".{8,25}">
+                                                <input id="pw1" type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" autocomplete="off" required pattern=".{8,25}">
                                             </div>  
                                         </div>
 
                                         <div class="form-group">
                                             <label for="ConfirmContrasenia" class="col-lg-3 control-label">Confirme contraseña</label>
                                             <div class="col-lg-4">
-                                                <input type="password" name="confirm_password_perfilemp" class="form-control" autocomplete="off" placeholder="Confirme su contraseña" required pattern=".{8,25}">
+                                                <input id="pw2" type="password" name="confirm_password_perfilemp" class="form-control" autocomplete="off" placeholder="Confirme su contraseña" required pattern=".{8,25}">
                                             </div>  
                                         </div>    
 
