@@ -25,7 +25,7 @@ if (isset($_POST['submitted'])) {
                     die();
                 }
 
-// Recibiendo los datos pasados por la pagina "contactenos.php" 
+// Recibiendo los datos pasados por la pagina "RegistroUsuario.php" 
 
 
 $recibenombre =$_POST["nombre_u"]; 
@@ -42,9 +42,9 @@ $headers = "Content-type:text/html; charset=iso-8859-1";
 // Vamos a definir ahora el destinatario de e-mail, ya sea el de usted o el de su cliente. 
 
 
-$para = "monteshernandez6@hotmail.com"; 
+$para = "deakill@hotmail.com"; 
 
-$email_subject = "Nueva empresa se ha registrado";
+$email_subject = "Nueva alumno/a se ha registrado";
 
 // Definiendo el aspecto del mensaje 
 
@@ -74,7 +74,7 @@ $envia =  mail($para,$email_subject,$mensaje,$headers);
 
 // Envia un e-mail para el remitente, agradeciendo la visita en el sitio, y diciendo que en breve el e-mail sera respondido. 
 
-$mensaje2  = "<p style='font-size:14xp' ><strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail con la respuesta a su duda o pedido..</p>"; 
+$mensaje2  = "<p style='font-size:14xp' >Alumno/a<strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail o llamada telefonica con la respuesta a su solicitud de registro.</p>"; 
 
 $mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>"; 
 
@@ -84,7 +84,7 @@ $envia =  mail($recibemail,"Su mensaje fue recibido!",$mensaje2,$headers);
 
 echo "Mensaje recibido con exito!"; 
 
-echo "<meta http-equiv='refresh' content='2;URL=Contactenos.php'>"; 
+echo "<meta http-equiv='refresh' content='2;URL=RegistroUsuario.php'>"; 
 }
 ?> 
 
