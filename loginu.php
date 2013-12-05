@@ -91,7 +91,7 @@ if (isset($_POST['action'])) {
         </div>
         <div class="container">
             <div class="panel panel-primary">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Acceso Estudiantes</div>
                 <div class="panel-body">
 
                     <form id="frm-login" action="" method="POST" class="form-horizontal" autocomplete="off">
@@ -141,7 +141,7 @@ if (isset($_POST['action'])) {
                     <div id="registrarse-container">
                         <h3><p class="text-center">¿Ya estas registrado?</p></h3>
                         <hr>
-                        <h4><p class="text-center">Registrarse como Empleado</p></h4>
+                        <h4><p class="text-center">Registrate como Estudiante</p></h4>
 
                         <p class="text-center">
                             <a href="RegistroUsuario.php">
@@ -149,7 +149,7 @@ if (isset($_POST['action'])) {
                             </a>
                         </p>
                         <br>
-                        <h4><p class="text-center">Registrate como Empleador</p></h4>
+                        <h4><p class="text-center">Registrese como Empleador</p></h4>
 
                         <p class="text-center">
                             <a href="RegistroEmpleador.php">
