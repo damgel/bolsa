@@ -11,7 +11,6 @@
 <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
         <li><a href="panel.php">Administrar Empresas</a></li>
-        <li><a href="panel.php">Administrar Estudiantes</a></li>
         <li><a href="ofertas.php">Administrar Ofertas</a></li>
         <li><a href="panel.php">Enviar Notificacion</a></li>
     </ul>
