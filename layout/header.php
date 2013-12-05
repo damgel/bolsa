@@ -37,7 +37,7 @@
             echo "<a href = '#' class = 'dropdown-toggle' data-toggle = 'dropdown'><span class = 'glyphicon glyphicon-log-in'></span> Entrar <b class = 'caret'></b></a>";
             echo "<ul class = 'dropdown-menu'>";
             echo "<li><a href = 'login.php'><span class = 'glyphicon glyphicon-star'></span> Acceso Empresa</a></li>";
-            echo "<li><a href = 'Loginu.php'><span class = 'glyphicon glyphicon-user'></span> Acceso Estudiante</a></li>";
+            echo "<li><a href = 'loginu.php'><span class = 'glyphicon glyphicon-user'></span> Acceso Estudiante</a></li>";
             echo"</ul>";
             echo "</li>";
             echo "</ul>";
