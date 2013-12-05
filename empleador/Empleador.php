@@ -435,7 +435,7 @@ if (isset($_POST['submitted'])) {
                                                 <div class="form-group">        
                                                     <label for="salariomax_of" class="col-lg-3 control-label">Salario Maximo</label>
                                                     <div class="col-lg-4">
-                                                        <input type="text" name="salariomax_of" class="form-control" 
+                                                        <input type="number" min="200" max="10000" name="salariomax_of" class="form-control" 
                                                                onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariom" required>
                                                     </div>
                                                 </div>
@@ -443,7 +443,7 @@ if (isset($_POST['submitted'])) {
                                                 <div class="form-group"> 
                                                     <label for="salariomi" class="col-lg-3 control-label">Salario Minimo</label>
                                                     <div class="col-lg-4">
-                                                        <input type="text" name="salariomin_of" class="form-control" 
+                                                        <input type="number" min="100" max="9999" name="salariomin_of" class="form-control" 
                                                                onkeypress="return numeros(event)"  id="focusedInput" placeholder="salariomi" required>
                                                     </div>
                                                 </div>
