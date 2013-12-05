@@ -112,7 +112,7 @@ if (isset($_POST['action'])) {
                                 </div>  
 
                                 <div class="form-group">
-                                    <label  class="col-lg-3 control-label" for="passwordm">Password</label>
+                                    <label  class="col-lg-3 control-label" for="passwordm">Contraseña</label>
                                     <div class="col-lg-8">
                                         <input type="password" name="password_em" class="form-control" autocomplete="off" placeholder="Escriba una contrasenia" pattern=".{8,25}">
 
