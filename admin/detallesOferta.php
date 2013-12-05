@@ -144,21 +144,28 @@
                                                     VALIDA HASTA:<br><?php echo nl2br($row['fechaFin_of']) ?>
                                                 </div>
                                                 <div class="well">
-                                                    <a class="btn btn-block btn-success" href="ofertas_controller.php.php?activar=<?php echo $cod_oferta ?>">Activar</a>
-                                                    <a class="btn btn-block btn-danger" href="ofertas_controller.php.php?desactivar=<?php echo $cod_oferta ?>">Desactivar</a>
+                                                    <a class="btn btn-block btn-success" href="ofertas_controller.php?activar=<?php echo $cod_oferta ?>">Activar</a>
+                                                    <a class="btn btn-block btn-danger" href="ofertas_controller.php?desactivar=<?php echo $cod_oferta ?>">Desactivar</a>
 
 
                                                 </div>
                                                 <div class="well" id="wellinfo">
+                                                    <?PHP
+                                                    if ($row['aprovacion_of'] == 1) {
+                                                        echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>Aprobada</a></div></h5>";
+                                                    } else {
+                                                        echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> Denegada</a></div></h5>";
+                                                    }
+                                                    ?>
                                                     <form method="POST" action="">
                                                         <input type="hidden" name="cod_em" value="<?php echo nl2br($row['cod_em']) ?>">
                                                         <input type="hidden" name="cod_oferta" value="<?php echo nl2br($row['cod_oferta']) ?>">
                                                         <input type="hidden" name="cod_u" value="<?php echo nl2br($row['cod_oferta']) ?>">
                                                         <?PHP
                                                         if ($row['disponible_of'] == 1) {
-                                                            echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>";
+                                                            echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>Disponible</a></div></h5>";
                                                         } else {
-                                                            echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
+                                                            echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> No disponible</a></div></h5>";
                                                         }
                                                         ?>
                                                     </form>
