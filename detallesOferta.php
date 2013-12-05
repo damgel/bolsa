@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title> Panel Administrativo </title>
+        <title> detalles de Oferta </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -97,7 +97,7 @@
                             if (isset($_GET["id"])) {
                                 $controlador = $_GET['id'];
                                 //query que carga las aplicaciones
-                                $result = mysql_query("SELECT * FROM `ofertas` where cod_oferta=$controlador") or trigger_error(mysql_error());
+                                $result = mysql_query("SELECT * FROM `ofertas` where aprovacion_of=1 and cod_oferta=$controlador") or trigger_error(mysql_error());
                                 while ($row = mysql_fetch_array($result)) {
                                     foreach ($row AS $key => $value) {
                                         $row[$key] = stripslashes($value);
@@ -134,6 +134,9 @@
                                                     <h4>Salario Minimo: $<?php echo nl2br($row['salariomin_of']) ?></h4>
                                                     <h4>Departamento: <?php echo nl2br($row['departamento_of']) ?></h4>
                                                     <h4>Experiencia requerida: <?php echo nl2br($row['experiencia_of']) ?></h4>
+                                                    <?php
+                                                    $oferta_disponible = $row['aprovacion_of'];
+                                                    ?>
 
 
                                                 </div>
@@ -147,9 +150,9 @@
                                                     <form method="POST" action="oferta_aplicar.php">
                                                         <input type="hidden" name="cod_em" value="<?php echo nl2br($row['cod_em']) ?>">
                                                         <input type="hidden" name="cod_oferta" value="<?php
-                                                        $cod_oferta = $row['cod_oferta'];
-                                                        echo $cod_oferta
-                                                        ?>">
+                                            $cod_oferta = $row['cod_oferta'];
+                                            echo $cod_oferta
+                                                    ?>">
                                                                <?php
                                                                $cod_usuario = $_SESSION['cod_estudiante'];
 
@@ -163,17 +166,17 @@
                                                                ?>
 
                                                         <input type="hidden" name="cod_u" value="<?php
-                                                        echo $cod_usuario
-                                                        ?>">
-                                                        <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>"
-                                                        <p><input type='submit' class='btn btn-block btn-success' value='Aplicar a esta oferta' /><input type='hidden' value='1' name='submitted' />
-                                                            <?PHP
-                                                            if ($row['disponible_of'] === 1) {
-                                                                
-                                                            } elseif ($row['disponible_of'] === 0) {
-                                                                echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
-                                                            }
-                                                            ?>
+                                                       echo $cod_usuario
+                                                               ?>">
+
+                                                        <?PHP
+                                                        if ($oferta_disponible == 1) {
+                                                            echo "<h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>DISPONIBLE</a></div></h5>";
+                                                            echo "<p><input type='submit' class='btn btn-block btn-success' value='Aplicar a esta oferta' /><input type='hidden' value='1' name='submitted' />";
+                                                        } elseif ($oferta_disponible == 0) {
+                                                            echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> NO DISPONIBLE</a></div></h5>";
+                                                        }
+                                                        ?>
                                                     </form>
                                                 </div>
 

@@ -163,9 +163,9 @@
                                                         <input type="hidden" name="cod_u" value="<?php echo nl2br($row['cod_oferta']) ?>">
                                                         <?PHP
                                                         if ($row['disponible_of'] == 1) {
-                                                            echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>Disponible</a></div></h5>";
+                                                            echo " <h5 class='disponible'><div class='alert alert-success'><a class='alert-link'>En Curso</a></div></h5>";
                                                         } else {
-                                                            echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> No disponible</a></div></h5>";
+                                                            echo " <h5 class='disponible'><div class='alert alert-danger'><a class='alert-link'> Finalizada</a></div></h5>";
                                                         }
                                                         ?>
                                                     </form>

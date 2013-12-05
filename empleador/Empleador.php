@@ -2,7 +2,6 @@
 include_once '../clases/db_connect.php';
 session_start();
 $cod_em = $_SESSION['cod_empresa'];
-echo $cod_em;
 if (isset($_POST['submitted'])) {
     foreach ($_POST AS $key => $value) {
         $_POST[$key] = mysql_real_escape_string($value);
