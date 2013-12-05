@@ -12,7 +12,7 @@
     <ul class="nav navbar-nav">
         <li><a href="index.php">Inicio</a></li>
         <li><a href="Busqueda.php">Buscar Empleo</a></li>
-        <li><a href="Plazas.php">Ofertas Recientes</a></li>
+        <li><a href="Ofertas.php">Ofertas Recientes</a></li>
         <?php
         session_start();
         $_usuario = $_SESSION['estudiante'];
