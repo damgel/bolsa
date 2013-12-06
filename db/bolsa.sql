@@ -88,7 +88,7 @@ CREATE TABLE `empresa` (
   `departamento_em` varchar(20) DEFAULT NULL,
   `direccion_em` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`cod_em`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (3,'S','assets/images/empresa/528699d2405d6emp.jpg','blogger and partnerds','dn@hotmail.com','destiny132002','deakill@hotmail.com','700000003','www.somethinwild.com',' empresa muy cool','internet',NULL,NULL),(4,'N','assets/images/empresa/52869c4687992emp.jpg','blogger','blog402','alumina132002','bloogger@mails.com','700000003','www.somethinwild.com',' ','internet',NULL,NULL),(5,'N','assets/images/empresa/529a425b9d34e528b919259dd5descarga.jpg','empresa01','empresa01','persecuta','empresa01@emp.com','81214789','http://www.somethinwild.com',' empresa muy exitosa con 4 anios de experiencia realizando trabajo a nivel empresarial, dentro y fuera del pais.','Bienes RaÃ­ces',NULL,NULL);
+INSERT INTO `empresa` VALUES (3,'S','assets/images/empresa/528699d2405d6emp.jpg','TIGO','dn@hotmail.com','destiny132002','deakill@hotmail.com','700000003','www.somethinwild.com',' empresa muy cool','internet',NULL,NULL),(4,'S','assets/images/empresa/52869c4687992emp.jpg','TELEPERFORMANCE','blog402','alumina132002','bloogger@mails.com','700000003','www.somethinwild.com',' ','internet',NULL,NULL),(5,'S','assets/images/empresa/529a425b9d34e528b919259dd5descarga.jpg','AVIANCA','empresa01','persecuta','empresa01@emp.com','81214789','http://www.somethinwild.com',' empresa muy exitosa con 4 anios de experiencia realizando trabajo a nivel empresarial, dentro y fuera del pais.','Bienes RaÃ­ces',NULL,NULL),(6,'N','assets/images/empresa/52a059c1e6d52images.jpg','SUPER EMPRESA','superempresa','destiny132002','empresa01@hotmail.com','79263016','http://www.google.com','esta es una empresa dedicada al procesamiento y venta exclusiva de productos artesanales. ','Otros',NULL,NULL),(7,'S','assets/images/empresa/52a05c8581464Telefono.jpg','SUPER EMPRESA2','empresa sa de sv','destiny132002','empresa02@hotmail.com','700000000','http://www.somecold.com','empresa dedicada a la renta de apartamentos','Comercio Minorista','Usulutan',NULL),(8,'S','assets/images/empresa/52a05d935afdf2566829399_86e0600664_m_thumb.jpg','Telefonica','telefonica','telefonica','telefonica@telefonica.com','22770000','http://www.telefonica.com.sv','Empresa telefonica Espanola','Telecomunicaciones','San Salvador',NULL);
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ CREATE TABLE `oferta_aplicaciones` (
   `cod_oferta` int(20) DEFAULT NULL,
   `fecha` datetime DEFAULT NULL,
   PRIMARY KEY (`cod_detalleOferta`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +148,7 @@ CREATE TABLE `oferta_aplicaciones` (
 
 LOCK TABLES `oferta_aplicaciones` WRITE;
 /*!40000 ALTER TABLE `oferta_aplicaciones` DISABLE KEYS */;
-INSERT INTO `oferta_aplicaciones` VALUES (1,3,1,2,'2013-12-04 12:51:49');
+INSERT INTO `oferta_aplicaciones` VALUES (2,3,1,2,'2013-12-04 13:22:23'),(3,3,1,2,'2013-12-04 13:22:28'),(11,4,9,8,'2013-12-05 02:45:57'),(12,4,9,8,'2013-12-05 02:46:25'),(26,4,9,12,'2013-12-05 03:55:32'),(27,4,9,12,'2013-12-05 03:55:39'),(28,3,9,2,'2013-12-05 03:58:08'),(29,4,9,22,'2013-12-05 04:05:39'),(30,4,9,22,'2013-12-05 04:11:05'),(31,4,9,22,'2013-12-05 04:24:10');
 /*!40000 ALTER TABLE `oferta_aplicaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +184,7 @@ CREATE TABLE `ofertas` (
   `fechaFin_of` datetime DEFAULT NULL,
   PRIMARY KEY (`cod_oferta`) USING BTREE,
   UNIQUE KEY `cod_oferta_UNIQUE` (`cod_oferta`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +193,7 @@ CREATE TABLE `ofertas` (
 
 LOCK TABLES `ofertas` WRITE;
 /*!40000 ALTER TABLE `ofertas` DISABLE KEYS */;
-INSERT INTO `ofertas` VALUES (2,3,'DESARROLLADOR PHP','se necesita desarrollador php con experiencia en mvc y template engines. Tambien se requiren conocimientos avanzados en el desarrollo de plugins con javascript y uso avanzado de jquey. Tambien debe poseer solidos conocimientos con bases de datos.',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-04 11:09:45','2013-12-04 10:30:37'),(3,3,'Aplicacion 1','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:50','2013-12-04 10:30:44'),(4,3,'Aplicacion 2','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:53','2013-12-04 10:30:45'),(5,3,'Aplicacion 3','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:54','2013-12-04 10:30:47'),(6,3,'Aplicacion 4','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:40:56','2013-12-04 10:30:48'),(7,4,'Aplicacion 5','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:40:57','2013-12-04 10:30:49'),(8,4,'Aplicacion 6','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:40:59','2013-12-04 10:30:51'),(9,4,'Aplicacion 7','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:41:00','2013-12-04 10:30:52'),(10,4,'Aplicacion 8','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:41:02','2013-12-04 10:30:53'),(11,4,'Aplicacion 10','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:41:03','2013-12-04 11:08:54'),(12,4,'Aplicacion 11','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',0,0,'2013-12-01 17:41:04','2013-12-04 11:09:55'),(13,5,'Aplicacion 12','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:06','2013-12-04 10:30:57'),(14,5,'Aplicacion 13','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:07','2013-12-04 10:30:58'),(15,5,'Aplicacion 14','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:08','2013-12-04 10:30:59'),(16,5,'Aplicacion 15','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-01 17:41:10','2013-12-04 10:31:01');
+INSERT INTO `ofertas` VALUES (2,3,'DESARROLLADOR PHP','se necesita desarrollador php con experiencia en mvc y template engines. Tambien se requiren conocimientos avanzados en el desarrollo de plugins con javascript y uso avanzado de jquey. Tambien debe poseer solidos conocimientos con bases de datos.',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,1,'2013-12-04 11:09:45','2013-12-04 10:30:37'),(15,5,'Aplicacion 14','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:08','2013-12-04 10:30:59'),(16,5,'Aplicacion 15','se necesita desarrollador php con experiencia en mvc y template engines ',0,'Jefe de Proyecto',1,'TC',0,26,'M','',500,1200,'San Salvador','el aspirante debe ma','INGENIERO','Estudiante Universit',1,0,'2013-12-01 17:41:10','2013-12-04 10:31:01'),(22,4,'BRAND NEW OFERTA','OFERTA EXCLUSIVA, PERVERT WAY. ',0,'sexy girl',1,'MT',0,19,'F','No',500,150,'Cuscatlan',NULL,NULL,NULL,1,1,'2013-12-05 03:25:03',NULL),(23,3,'DESARROLLO DE APLICACIONES JAV','SE OFRECE UN PUESTO DE TRABAJO PARA  ',0,'administrador',1,'TC',0,26,'F','Si',500,150,'San Salvador',NULL,NULL,NULL,1,0,'2013-12-05 04:28:03',NULL),(24,8,'dba oracle','Administrador base de datos ',0,'dba oracle',1,'TC',0,25,'M','Si',1700,1200,'San Salvador',NULL,NULL,NULL,1,0,'2013-12-05 05:12:10',NULL);
 /*!40000 ALTER TABLE `ofertas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -244,7 +244,7 @@ CREATE TABLE `usuario` (
   `carnet` varchar(60) DEFAULT NULL,
   `fecha_registro` datetime DEFAULT NULL,
   PRIMARY KEY (`cod_u`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -253,7 +253,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'JOSE MANUEL','GUILLEN RAMIREZ','1991-04-14','FINAL 4A CALLE PONIE','79263019','damgel@outlook.com','destiny132002','Masculino','gr102909',NULL),(2,'JOSE MANUEL','GUILLEN','1991-04-14','FINAL 4A CALLE PONIE','79263019','damgel@outlook.com','da39a3ee5e6b4b0d3255','Masculino','gr102909',NULL),(3,'JMANUEL','GRAMIREZ','1991-04-14','FINAL 4A CALLE PONIE','79263019','damgel@outlook.com','da39a3ee5e6b4b0d3255','Masculino','gr102909','2013-12-02 10:21:34');
+INSERT INTO `usuario` VALUES (9,'JOSE GUILLEN','RAMIREZZ','1991-04-14','FINAL 4A CALLE PONIE','79263016','deakill@hotmail.com','destiny132002','Masculino','gr102909','2013-12-05 02:39:58');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,4 +270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-12-04 13:21:03
+-- Dump completed on 2013-12-06 11:39:16

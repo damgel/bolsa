@@ -16,68 +16,63 @@ if (isset($_POST['submitted'])) {
             foreach ($_POST AS $key => $value) {
                 $_POST[$key] = mysql_real_escape_string($value);
             }
-            $sql = "INSERT INTO `empresa` ( `imagen_em` ,  `nombre_em` ,  `usuario_em` ,  `password_em` ,  `email_em` ,  `telefono_em` ,  `url_em` ,  `descripcion_em` ,  `actividad_em` ,  `activa_em`  ) VALUES(  '$name_ok' ,  '{$_POST['nombre_em']}' ,  '{$_POST['usuario_em']}' ,  '{$_POST['password_em']}' ,  '{$_POST['email_em']}' ,  '{$_POST['telefono_em']}' ,  '{$_POST['url_em']}' ,  '{$_POST['descripcion_em']}' ,  '{$_POST['actividad_em']}' ,  'N'  ) ";
+            $sql = "INSERT INTO `empresa` ( `imagen_em` ,  `nombre_em` ,  `usuario_em` ,  `password_em` ,  `email_em` ,  `telefono_em` ,  `url_em` ,  `descripcion_em` ,  `actividad_em` ,  `activa_em` ,  `departamento_em`   ) VALUES(  '$name_ok' ,  '{$_POST['nombre_em']}' ,  '{$_POST['usuario_em']}' ,  '{$_POST['password_em']}' ,  '{$_POST['email_em']}' ,  '{$_POST['telefono_em']}' ,  '{$_POST['url_em']}' ,  '{$_POST['descripcion_em']}' ,  '{$_POST['actividad_em']}' ,  'N','{$_POST['departamento_em']}'  ) ";
             mysql_query($sql) or die(mysql_error());
-            echo "Registro Agregado.<br />";
-            echo "<a href='listarEmplesa.php'>Regresar</a>";
+            echo "<div class='alert alert-success'>Empresa registrada exitosamente!</div>";
         }
     }
     /* ------------------------------------END FILE UPLOADER-------------------------------------------- */
 }
 ?>
 
-<?php  
-
+<?php
 if (isset($_POST['submitted'])) {
-
-
-                if (!isset($_POST['nombre_em']) ||
-                        !isset($_POST['telefono_em']) ||
-                        !isset($_POST['email_em'])) {
-
-                    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-                    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-                    die();
-                }
+    if (!isset($_POST['nombre_em']) ||
+            !isset($_POST['telefono_em']) ||
+            !isset($_POST['email_em'])) {
+        echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+        echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+        die();
+    }
 
 // Recibiendo los datos pasados por la pagina "RegistroEmpleador.php" 
 
 
-$recibenombre =$_POST["nombre_em"]; 
+    $recibenombre = $_POST["nombre_em"];
 
-$tel = $_POST['telefono_em'];
- 
-$recibemail = $_POST["email_em"]; 
+    $tel = $_POST['telefono_em'];
+
+    $recibemail = $_POST["email_em"];
 
 
 // Definiendo las cabeceras del e-mail 
 
-$headers = "Content-type:text/html; charset=iso-8859-1"; 
+    $headers = "Content-type:text/html; charset=iso-8859-1";
 
 // Vamos a definir ahora el destinatario de e-mail, ya sea el de usted o el de su cliente. 
 
 
-$para = "deakill@hotmail.com"; 
+    $para = "deakill@hotmail.com";
 
-$email_subject = "Nueva empresa se ha registrado";
+    $email_subject = "Nueva empresa se ha registrado";
 
 // Definiendo el aspecto del mensaje 
 
 
 
 
-$mensaje   = "<h3>Mensaje de la Bolsa de Trabajo</h3> "; 
+    $mensaje = "<h3>Mensaje de la Bolsa de Trabajo</h3> ";
 
 
-$mensaje  .= "Nombre: ". $recibenombre;
+    $mensaje .= "Nombre: " . $recibenombre;
 
-$mensaje  .= "<br>"; 
+    $mensaje .= "<br>";
 
-$mensaje  .="Telefono: " .$tel;
+    $mensaje .="Telefono: " . $tel;
 
-$mensaje  .= "<br>"; 
+    $mensaje .= "<br>";
 
-$mensaje  .="E-mail: " .$recibemail ;
+    $mensaje .="E-mail: " . $recibemail;
 
 
 
@@ -85,22 +80,20 @@ $mensaje  .="E-mail: " .$recibemail ;
 
 // Enviando el mensaje para el Administrador
 
-$envia =  mail($para,$email_subject,$mensaje,$headers); 
+    $envia = mail($para, $email_subject, $mensaje, $headers);
 
 // Envia un e-mail para el remitente, agradeciendo la visita en el sitio, y diciendo que en breve el e-mail sera respondido. 
 
 
-$mensaje2  = "<p style='font-size:14xp' > Empresa <strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail o llamada telefonica con la respuesta a su solicitud de registro.</p>"; 
+    $mensaje2 = "<p style='font-size:14xp' > Empresa <strong>" . $recibenombre . "</strong>. Agradecemos su visita y su interes por participar en la bolsa de trabajo de la Universidad Francisco Gavidia . Antes de 48 horas usted recibira un e-mail o llamada telefonica con la respuesta a su solicitud de registro.</p>";
 
-$mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>"; 
+    $mensaje2 .= "<p  style='font-size:14xp' >Observacion - No es necesario responder este mensaje.</p>";
 
-$envia =  mail($recibemail,"Su mensaje fue recibido!",$mensaje2,$headers); 
+    $envia = mail($recibemail, "Su mensaje fue recibido!", $mensaje2, $headers);
 
 // Muestra en la pantalla el mensaje de éxito, y después redirecciona de vuelta para la pagina del contacto. 
 
-echo "Mensaje recibido con exito!"; 
-
-echo "<meta http-equiv='refresh' content='2;URL=RegistroEmpleador.php'>"; 
+    echo "<meta http-equiv='refresh' content='5;URL=login.php'>";
 }
 ?> 
 
@@ -142,45 +135,45 @@ echo "<meta http-equiv='refresh' content='2;URL=RegistroEmpleador.php'>";
                 text-align: center;
             }
         </style>
-        
-                <script>
-function numeros(e){
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " 0123456789";
-    especiales = [8,37,39,46];
- 
-    tecla_especial = false
-    for(var i in especiales){
- if(key == especiales[i]){
-     tecla_especial = true;
-     break;
-        } 
-    }
- 
-    if(letras.indexOf(tecla)==-1 && !tecla_especial)
-        return false;
-		}
-</script>
-        <script>
-function myFunction() {
-    var pw1 = document.getElementById("pw1").value;
-    var pw2 = document.getElementById("pw2").value;
-    var ok = true;
-    if (pw1 != pw2) {
-        //alert("Passwords Do not match");
-        document.getElementById("pw1").style.borderColor = "#E34234";
-        document.getElementById("pw2").style.borderColor = "#E34234";
-        ok = false;
-    }
-    else {
-        alert("Passwords Match!!!");
-    }
-    return ok;
-       
-}
 
-    </script>
+        <script>
+            function numeros(e) {
+                key = e.keyCode || e.which;
+                tecla = String.fromCharCode(key).toLowerCase();
+                letras = " 0123456789";
+                especiales = [8, 37, 39, 46];
+
+                tecla_especial = false
+                for (var i in especiales) {
+                    if (key == especiales[i]) {
+                        tecla_especial = true;
+                        break;
+                    }
+                }
+
+                if (letras.indexOf(tecla) == -1 && !tecla_especial)
+                    return false;
+            }
+        </script>
+        <script>
+            function myFunction() {
+                var pw1 = document.getElementById("pw1").value;
+                var pw2 = document.getElementById("pw2").value;
+                var ok = true;
+                if (pw1 != pw2) {
+                    //alert("Passwords Do not match");
+                    document.getElementById("pw1").style.borderColor = "#E34234";
+                    document.getElementById("pw2").style.borderColor = "#E34234";
+                    ok = false;
+                }
+                else {
+                    alert("Passwords Match!!!");
+                }
+                return ok;
+
+            }
+
+        </script>
 
 
 
@@ -221,9 +214,8 @@ function myFunction() {
                             border: solid 1px #05a8ff;
                         }
                     </style>
-                    
-                    
-                    <div class="alert alert-success">Usuario registrado correctamente!</div>
+
+
                     <form action="" id="registroEmpleador" method='POST' enctype="multipart/form-data" class="form-horizontal" onsumbit="return myFunction()">
                         <fieldset>
                             <div class="sub-contenedor">
@@ -253,13 +245,6 @@ function myFunction() {
                                     <div class="col-lg-4">
                                         <input id="pw1" type="password"  name="password_em" class="form-control" autocomplete="off" placeholder="Contraseña" required pattern=".{8,25}">
                                     </div>  
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="ConfirmContrasenia"class="col-lg-4 control-label">Confirme contraseña</label>
-                                    <div class="col-lg-4">
-                                        <input id="pw2" type="password" name="confirm_password" class="form-control" placeholder="Confirme su contraseña" required pattern=".{8,25}">
-                                    </div>  
                                 </div>    
 
                                 <div class="form-group">
@@ -288,7 +273,31 @@ function myFunction() {
                                         <Textarea name="descripcion_em" class="form-control col-lg-6" rows="2" placeholder="Descripcion de su empresa"> </textarea>
 
                                 </div>
-                             </div>         
+                                     
+                             </div>   
+                                <div class="form-group">
+                                            <label for="departamento" class="col-lg-3 control-label">departamento</label>
+                                            <div class="col-lg-4">
+                                                <select name="departamento_em" class="form-control valid" required="">
+                                                    <option value="">- Seleccione -</option>
+                                                    <option value="San Salvador">San Salvador</option>
+                                                    <option value="La Paz">La Paz</option>
+                                                    <option value="San Miguel">San Miguel</option>
+                                                    <option value="La union">La Union</option>
+                                                    <option value="La Libertad">La Libertad</option>
+                                                    <option value="Santa Ana">Santa Ana</option>
+                                                    <option value="Sonsonate">Sonsonate</option>
+                                                    <option value="Ahuachapan">Ahuachapan</option>
+                                                    <option value="San Vicente">San Vicente</option>
+                                                    <option value="Chalatenango">Chalatenango</option>
+                                                    <option value="Cabanias">Cabañas</option>
+                                                    <option value="Cuscatlan">Cuscatlan</option>
+                                                    <option value="Usulutan">Usulutan</option>
+                                                    <option value="Morazan">Morazan</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
                        
                         <div class="form-group">
                     <label for="actividadEmpresa"class="col-lg-4 control-label">Actividad Empresa</label>

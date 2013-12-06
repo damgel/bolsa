@@ -121,7 +121,6 @@ if (isset($_POST['submitted'])) {
                             <li class=""><a href="#Ofertas">Publicar Ofertas</a></li>
                             <li class=""><a href="#OfertasPublicadas">Ver Ofertas Publicadas</a></li>
                             <li class=""><a href="#Aplicacion">Ver Aplicaciones</a></li>
-                            <li class=""><a href="#Quitar">Quitar Ofertas</a></li>
                         </ul>
                     </div>
                 </div>
@@ -175,14 +174,6 @@ if (isset($_POST['submitted'])) {
                                                 <input id="pw1" type="password" name="password_perfilemp" class="form-control" placeholder="Contraseña" autocomplete="off" required pattern=".{8,25}">
                                             </div>  
                                         </div>
-
-                                        <div class="form-group">
-                                            <label for="ConfirmContrasenia" class="col-lg-3 control-label">Confirme contraseña</label>
-                                            <div class="col-lg-4">
-                                                <input id="pw2" type="password" name="confirm_password_perfilemp" class="form-control" autocomplete="off" placeholder="Confirme su contraseña" required pattern=".{8,25}">
-                                            </div>  
-                                        </div>    
-
 
                                         <div class="form-group">
                                             <label for="correo" class="col-lg-3 control-label">Correo</label>

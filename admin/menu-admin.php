@@ -12,7 +12,7 @@
     <ul class="nav navbar-nav">
         <li><a href="panel.php">Administrar Empresas</a></li>
         <li><a href="ofertas.php">Administrar Ofertas</a></li>
-        <li><a href="panel.php">Enviar Notificacion</a></li>
+        <li><a href="contactar.php">Enviar Notificacion</a></li>
     </ul>
 
     <form class="navbar-form navbar-right" role="search">
